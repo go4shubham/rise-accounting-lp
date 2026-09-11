@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rise Accounting | Your whole finance team, for less than one hire</title>
+<meta name="description" content="Chartered accountants, bookkeepers, tax and payroll experts in one team. Replies within 24 hours. One fixed monthly fee.">
+<link rel="preload" as="image" href="assets/hero-london-4k.webp" fetchpriority="high">
+<link rel="icon" href="assets/logo-f25648fb.svg">
+<!--
+  HOW TO EDIT THIS PAGE
+  1. Words in lists (services, why Rise, reviews, steps, FAQs, chatbot): edit the CONFIG script just below.
+     To add a service, copy one line in "services" and change the words. It appears in the grid, the filters and the nav menu.
+  2. Colours and font: change the THEME variables at the top of the <style> block.
+  3. Hero, section headings and footer: plain HTML further down, marked with EDIT comments.
+  4. Form and chat: see the "HOOK UP" comments in the script at the bottom (HubSpot form + HubSpot chat).
+-->
+<script>
+/* =====================================================================
+   RISE LANDING PAGE — CONTENT CONFIG
+   Edit anything below, save, refresh. No other code needs to change.
+
+   colour options (Rise Accounting brand palette): "cyan" | "steel" | "navy" | "slate"
+   icon options: see ICON LIST at the bottom of this block
+   ===================================================================== */
+window.RISE = {
+
+  /* ---------- Service groups (used for filters, colours and the nav menu) ---------- */
+  categories: {
+    accounting: { label: "Accounting & compliance",        colour: "cyan"  },
+    operations: { label: "Finance operations & reporting", colour: "steel" },
+    growth:     { label: "Growth & advisory",              colour: "navy"  },
+    global:     { label: "International expansion",        colour: "slate" }
+  },
+
+  /* ---------- SERVICES ----------
+     Add a service: copy one line, change the words. Keep "line" to one short sentence.
+     featured: true  = shown before "Show all" is clicked. 8 featured keeps the grid tidy. */
+  services: [
+    { cat: "accounting", icon: "user-round-check",       title: "Dedicated Chartered Accountant",          line: "A named contact, regular updates and direct access.",        featured: true },
+    { cat: "accounting", icon: "book-open-check",        title: "Bookkeeping on Xero or QuickBooks",       line: "Day-to-day records and bank reconciliations, kept current.", featured: true },
+    { cat: "accounting", icon: "file-check-2",           title: "Year-end accounts & Confirmation Statement", line: "Annual accounts and company filings, done on time.",      featured: true },
+    { cat: "accounting", icon: "receipt-pound-sterling", title: "VAT registration & returns",              line: "Registration, returns and ongoing compliance.",              featured: true },
+    { cat: "accounting", icon: "wallet",                 title: "Payroll & pensions",                      line: "Payslips, pensions and optional direct payments.",           featured: true },
+    { cat: "operations", icon: "chart-column",           title: "Management accounts",                     line: "Monthly or quarterly P&L, balance sheet and cash flow.",     featured: true },
+    { cat: "growth",     icon: "rocket",                 title: "SEIS & EIS Advance Assurance",            line: "Eligibility review, application and HMRC queries.",          featured: true },
+    { cat: "global",     icon: "building-2",             title: "Dubai company formation",                 line: "Free Zone guidance, setup and after-setup support.",         featured: true },
+    { cat: "accounting", icon: "landmark",               title: "Corporation Tax filing",                  line: "Your return prepared and submitted to HMRC." },
+    { cat: "operations", icon: "receipt",                title: "Sales invoicing & credit control",        line: "Invoices sent and customer payments followed up." },
+    { cat: "operations", icon: "banknote",               title: "Supplier bills & payment runs",           line: "Bills approved and suppliers paid on time." },
+    { cat: "operations", icon: "chart-line",             title: "Cash-flow forecasts & budgets",           line: "Rolling forecasts and actual-versus-budget checks." },
+    { cat: "operations", icon: "presentation",           title: "KPI & board reporting",                   line: "Performance dashboards with clear commentary." },
+    { cat: "operations", icon: "plug-zap",               title: "Finance systems & processes",             line: "Tool setup, invoice capture and connected workflows." },
+    { cat: "growth",     icon: "scale",                  title: "Business valuations",                     line: "For a sale, investment or tax purposes." },
+    { cat: "growth",     icon: "chart-pie",              title: "EMI option schemes",                      line: "Valuation, scheme setup and ongoing compliance." },
+    { cat: "growth",     icon: "trending-up",            title: "Financial forecasting & modelling",       line: "Revenue forecasts, runway and break-even analysis." },
+    { cat: "growth",     icon: "layers-3",               title: "Scenario planning",                       line: "Model hiring, investment and growth decisions." },
+    { cat: "growth",     icon: "hand-coins",             title: "Fundraising & lender reporting",          line: "The numbers investors and lenders ask for." },
+    { cat: "global",     icon: "percent",                title: "UAE accounting, VAT & corporate tax",     line: "Books, returns, annual reporting and local compliance." },
+    { cat: "global",     icon: "users-round",            title: "UAE payroll & WPS",                       line: "Payroll and wage-protection rules, handled." },
+    { cat: "global",     icon: "plane",                  title: "UK–UAE tax planning",                     line: "Cross-border structuring and residency advice." },
+    { cat: "global",     icon: "flag",                   title: "US company setup & ongoing finance",      line: "Formation, books, payroll, tax and annual reporting." },
+    { cat: "global",     icon: "shield-check",           title: "US sales tax & audit support",            line: "Sales tax returns and help preparing for audit." }
+  ],
+
+  /* ---------- WHY RISE (left list). "visual" must match a block in the page: accountant | chat | fee | books | proactive | grow ---------- */
+  why: [
+    { visual: "accountant", colour: "cyan",  icon: "user-round-check",     title: "A dedicated Chartered Accountant", line: "One named expert who knows your business inside out." },
+    { visual: "advisory",   colour: "navy",  icon: "rocket",               title: "Growth & advisory",               line: "SEIS, EIS, EMI, valuations and forecasts for your next big move." },
+    { visual: "global",     colour: "steel", icon: "earth",                title: "International expansion",         line: "Your UK team, our own Dubai team and US CPAs, all joined up." },
+    { visual: "chat",       colour: "cyan",  icon: "messages-square",      title: "Answers within 24 hours",         line: "On Slack, Teams, email or a call. Ad-hoc questions welcome." },
+    { visual: "fee",        colour: "slate", icon: "badge-pound-sterling", title: "One fixed monthly fee",           line: "Only pay for what you need. No hourly billing, no surprise bills." },
+    { visual: "books",      colour: "steel", icon: "refresh-cw",           title: "Real-time books",                 line: "Reconciled all year, so you always know where you stand." },
+    { visual: "proactive",  colour: "navy",  icon: "bell-ring",            title: "We stay ahead of deadlines",      line: "Reminders well before anything is due. You never chase us." },
+    { visual: "grow",       colour: "cyan",  icon: "trending-up",          title: "Grows with you",                  line: "From your first hire to a full outsourced finance team." }
+  ],
+
+  /* ---------- REVIEWS. Wrap the key phrase in [[double brackets]] to highlight it. ---------- */
+  reviews: [
+    { name: "Barnes Benson",   role: "Strategic Advisor, TourHero",   photo: "assets/img-227c3aaa.webp",  tag: "Reliability",     colour: "cyan",
+      quote: "Integrity, reliability, and communication are what matter most and [[Rise Accounting has ticked all three boxes.]] I know if the team goes off to do something, it will be delivered to the standard we agreed on." },
+    { name: "Hayyaan Ahmad",   role: "Co-Founder, Round",             photo: "assets/img-894f8c47.webp", tag: "Fast replies",    colour: "navy",
+      quote: "[[They are super responsive and aim to deliver quality.]] We've been using them for almost 2 years and really pleased with Fatjeta and the rest of the team." },
+    { name: "Joy Abisaab",     role: "Founder, Mast",                 photo: "assets/img-4780e80c.webp",     tag: "Accuracy",        colour: "steel",
+      quote: "The whole team really know their stuff technically speaking. [[I'm no longer having to check the accounting work being delivered]] which is a huge time save." },
+    { name: "Eleanor Humphrey", role: "Co-Founder & CEO, topl",       photo: "assets/img-e70dcdb0.webp", tag: "Proactive",       colour: "slate",
+      quote: "Their attention to detail and [[proactive approach has made a significant difference]] in streamlining our financial processes, helping me to run my business more efficiently." },
+    { name: "Dimas Urgal",     role: "Finance Lead, Proxima Fusion",  photo: "assets/img-0a34bfff.webp",   tag: "Partnership",     colour: "cyan",
+      quote: "Very good and experienced accountants. [[They are more than service providers, they are partners.]]" },
+    { name: "Nick Kuan",       role: "Director of Finance, Fertifa",  photo: "assets/img-4f8bdc0c.webp",    tag: "Onboarding",      colour: "navy",
+      quote: "Communication was great from the very first interaction, through onboarding and now working together. [[It was fast and straightforward to progress]] which is important given how quickly we're moving." },
+    { name: "Pete Robins",     role: "Founder, Project5",             photo: "assets/img-22465c54.webp",    tag: "Serial founder",  colour: "steel",
+      quote: "Project5 is the 5th business I've started... Now in our scale-up stage, [[I'll be sticking with Rise Accounting]] as they've simply delivered on what I needed." },
+    { name: "Aleck O'Neill",   role: "Altair Aviation Services",      photo: "assets/img-4778e0ed.webp",   tag: "UAE setup",       colour: "slate",
+      quote: "Setting up a business in the UAE from abroad can feel pretty daunting, and I wasn't sure where to start. Rise Accounting made the whole process a lot more straightforward than I expected. [[Their insight has had a meaningful impact on my tax position.]]" },
+    { name: "James Douglas",   role: "CCO, Black Star AI",            photo: "assets/img-5441055b.webp",   tag: "SEIS approval",   colour: "cyan",
+      quote: "Highly personable and results oriented company. Had the pleasure of working with Ashwini, who helped us at every stage and made critical and intelligent suggestions that were [[instrumental in achieving our objective in SEIS approval.]]" }
+  ],
+
+  /* ---------- HOW IT WORKS ---------- */
+  steps: [
+    { icon: "handshake",         title: "Get a quote",          line: "Tell us what you need. We suggest a plan and a fixed quote." },
+    { icon: "user-round-check",  title: "Meet your accountant", line: "Matched in as little as 24 hours. We run the handover for you." },
+    { icon: "laptop-minimal-check", title: "Software setup",    line: "We set up or tidy Xero, QuickBooks, Dext and the rest." },
+    { icon: "circle-check",      title: "Back to business",     line: "We take over every deadline. You get your time back." }
+  ],
+
+  /* ---------- FAQS (keep answers to two short lines) ---------- */
+  faqs: [
+    { q: "Why should I use a digital-first accounting firm?",
+      a: "Your books stay up to date in Xero or QuickBooks all year, not caught up once a quarter. Receipts flow in automatically through Dext or Apron, and your accountant answers on Slack or Teams, so you always know where you stand." },
+    { q: "What should I look for when choosing an accounting firm?",
+      a: "A named accountant who knows your business, replies within a day and charges a fixed fee, not by the hour. Check they can advise on tax, fundraising and growth too, not just file on time." },
+    { q: "How much does an accounting firm charge?",
+      a: "At Rise Accounting you pay one fixed monthly fee, based on what your business needs. You only pay for services you use, such as VAT or payroll, and ad-hoc questions and extra calls are always included." },
+    { q: "Do I need an accounting firm or just bookkeeping software?",
+      a: "Software records your numbers. An accountant makes sure they're right, files with HMRC and Companies House, and tells you what they mean. With Rise Accounting you get both: we set up the software and handle the rest." },
+    { q: "How do I switch to a new accounting firm?",
+      a: "Send us your current accountant's details. We request professional clearance, collect your records, check you're compliant and handle all HMRC communication. You can switch at any time of year, with no extra onboarding fee." },
+    { q: "When is the right time to hire an accounting firm?",
+      a: "Earlier than most founders think. Common moments are when you incorporate, near the £90,000 VAT threshold, when you hire your first employee or when you start raising money. Good foundations early prevent costly fixes later." },
+    { q: "How is Rise Accounting different from other accounting firms?",
+      a: "You get a dedicated Chartered Accountant, replies within 24 hours on Slack or Teams, and one fixed monthly fee. Our founding team comes from corporate finance, so we help with growth, fundraising and expansion to Dubai and the US." },
+    { q: "Can an accounting firm help me grow my business?",
+      a: "Yes. Monthly management accounts, forecasts and scenario plans show you when to hire, raise or spend. We also handle SEIS and EIS, EMI share options, valuations and international expansion." }
+  ],
+
+  /* ---------- CHATBOT. keys = words that trigger the answer. cta: true shows a "Talk to an expert" button. ---------- */
+  bot: {
+    greeting: "Hi! I can answer quick questions about Rise Accounting. Pick a topic or type your own.",
+    chips: ["Pricing & fees", "What's included", "Switching accountants", "VAT & tax returns", "Payroll & pensions", "Reporting & forecasts", "SEIS, EIS & EMI", "Dubai & US", "Talk to an expert"],
+    topics: [
+      { keys: ["price", "pricing", "cost", "fee", "charge", "how much", "expensive", "cheap", "quote", "budget"],
+        answer: "One fixed monthly fee, based on what you actually need. You only pay for services you use, and ad-hoc questions and extra calls are always included. Tap below to get a quote.", cta: true },
+      { keys: ["switch", "switching", "change accountant", "current accountant", "handover", "hmrc", "leave", "move to"],
+        answer: "Switching is simple. Tell us who you're with and we get professional clearance, collect your records and check everything is in order. We also handle all communication with HMRC about the change." },
+      { keys: ["reply", "response", "respond", "fast", "quick", "slack", "teams", "24", "response times"],
+        answer: "You get answers within 24 hours, on Slack, Teams, email or a call. Ad-hoc questions are always welcome and never billed by the hour." },
+      { keys: ["who", "dedicated", "chartered", "meet", "london", "point of contact", "my accountant"],
+        answer: "You get one dedicated accountant as your single point of contact. UK clients are matched with someone in our London office, so you can meet face to face." },
+      { keys: ["xero", "quickbooks", "software", "integrat", "stripe", "shopify", "paypal", "amazon", "a2x", "dext", "apron", "tools", "system", "xero & tools"],
+        answer: "We work in Xero or QuickBooks and connect the tools you already use, like Stripe, Shopify, PayPal, Amazon, A2X, Dext and Apron. As a Xero Platinum Partner we pass on up to 80% off Xero for your first 6 months." },
+      { keys: ["seis", "eis", "emi", "option", "raise", "raising", "investor", "fundrais", "valuation", "funding", "shares"],
+        answer: "For SEIS and EIS, your advance assurance application goes to HMRC within 48 hours of our eligibility call. We also set up EMI share option schemes, from valuation to HMRC registration, and value businesses for funding or a sale." },
+      { keys: ["dubai", "uae", "usa", "america", "united states", "international", "abroad", "expand", "expansion", "free zone", "dubai & us"],
+        answer: "We have our own team in Dubai and work with CPAs in the US. That covers Dubai company setup, UAE corporate tax and VAT, and US company setup, sales tax and payroll, all joined up with your UK accounts." },
+      { keys: ["included", "include", "what's included", "what do i get", "scope", "package"],
+        answer: "Your dedicated accountant, bookkeeping on Xero or QuickBooks, year-end accounts and Corporation Tax as standard. Add VAT, payroll, management accounts or forecasting when you need them, all in one monthly fee. Ad-hoc questions are always included." },
+      { keys: ["vat", "tax return", "tax returns", "corporation tax", "ct600", "year end", "year-end", "confirmation statement", "making tax digital", "mtd", "self assessment"],
+        answer: "We handle VAT registration and returns under Making Tax Digital, your year-end accounts, confirmation statement and Corporation Tax return. If you're getting close to the £90,000 VAT threshold, we'll flag it early." },
+      { keys: ["payroll", "pension", "pensions", "payslip", "paye", "auto-enrol", "wages", "salaries"],
+        answer: "We run your payroll every month: payslips, PAYE, pensions and auto-enrolment, done right and on time. We can make the payments to your team too." },
+      { keys: ["report", "reporting", "management accounts", "forecast", "forecasts", "cash flow", "cash-flow", "budget", "board", "kpi", "runway"],
+        answer: "You get monthly or quarterly management accounts with plain-English commentary, plus cash-flow forecasts, budgets and board-ready KPI reports when you need them." },
+      { keys: ["service", "services", "offer", "bookkeeping"],
+        answer: "We cover bookkeeping, VAT, payroll, year-end accounts and Corporation Tax, management accounts, forecasting, CFO advice, SEIS and EIS, EMI schemes, valuations, and support in Dubai and the US.", link: { label: "See all services", href: "#services" } },
+      { keys: ["in-house", "in house", "hire", "hiring", "finance manager", "finance director", "cfo", "recruit"],
+        answer: "Hiring in-house usually costs over 75% of the salary again in recruitment, onboarding and management, and takes 3 to 6 months. With Rise Accounting you get a full finance team straight away, for one fixed monthly fee." },
+      { keys: ["saas", "tech", "startup", "start-up", "hospitality", "restaurant", "ecommerce", "e-commerce", "agency", "agencies", "sector", "industry"],
+        answer: "We specialise in tech and SaaS, hospitality, e-commerce and marketing agencies, so your accountant already knows how businesses like yours make and spend money." },
+      { keys: ["start", "onboard", "onboarding", "how long", "get started", "set up", "setup", "week"],
+        answer: "Most teams are up and running in under a week. We match you with your accountant in as little as 24 hours, then set up your software and take over your deadlines." },
+      { keys: ["human", "person", "call", "speak", "talk", "book", "expert", "phone", "email", "talk to a human"],
+        answer: "Happy to connect you. Tap below and an accountant will reply within 24 hours. Or ring us on 020 7600 2643.", cta: true },
+      { keys: ["hi", "hello", "hey", "morning", "afternoon"],
+        answer: "Hi there! What would you like to know? Pick a topic below or type a question." }
+    ],
+    fallback: "Good question. That one is best answered by an accountant who can look at your setup. Want to talk to an expert?"
+  }
+};
+
+/* ICON LIST (use in services, why and steps):
+   user-round-check, book-open-check, file-check-2, receipt-pound-sterling, wallet, chart-column, briefcase-business,
+   file-user, chart-line, presentation, rocket, chart-pie, scale, building-2, building, landmark, earth, globe, plane,
+   clock-3, messages-square, message-circle, badge-pound-sterling, pound-sterling, calendar-check, calendar-clock,
+   users-round, user-round, timer, zap, handshake, circle-help, clipboard-check, banknote, coins, hand-coins, piggy-bank,
+   refresh-cw, plug-zap, receipt, trending-up, layers-3, shield-check, sparkles, calculator, laptop-minimal-check,
+   bell-ring, file-spreadsheet, map-pin, lock, flag, store, percent, circle-check, star, wand-sparkles
+*/
+
+</script>
+<style>
+/* ============================ THEME (edit these) ============================ */
+:root{
+  --navy:#0B2540;      /* Rise navy: headings, buttons, footer */
+  --navy-2:#173A5E;
+  --ink-2:#465A70;     /* body text */
+  --ink-3:#7B8DA2;     /* muted text */
+  --cyan:#10C2F0;      /* Rise accent from the logo */
+  --cyan-6:#0A8FBE;
+  --cyan-50:#E7F7FD;
+  --sun:#FFC53D;
+  --sun-6:#C88A00;
+  --sun-50:#FFF5D8;
+  --mint:#1BC49A;
+  --mint-6:#0C8F6E;
+  --mint-50:#E1F7EF;
+  --coral:#F4665A;
+  --bg:#F5F8FC;
+  --line:#E1E8F0;
+  --font:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --shadow:0 1px 2px rgba(11,37,64,.05),0 12px 30px -14px rgba(11,37,64,.18);
+  --shadow-lg:0 2px 6px rgba(11,37,64,.05),0 26px 60px -20px rgba(11,37,64,.3);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --maxw:1200px;
+}
+/* ============================ BASE ============================ */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font);font-size:17px;line-height:1.55;color:var(--navy);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,h5,p,figure,blockquote,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+h1,h2{font-weight:700;letter-spacing:-.028em;line-height:1.06;text-wrap:balance}
+h2{font-size:clamp(30px,3.5vw,46px)}
+a{color:inherit}
+button{font:inherit;color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.ic{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.bic{width:24px;height:24px;fill:currentColor;flex:none}
+section{padding:108px 0;position:relative}
+.head{text-align:center;max-width:780px;margin:0 auto 54px}
+.sub{font-size:18.5px;line-height:1.5;color:var(--ink-2);margin-top:16px;text-wrap:pretty}
+.head .sub{max-width:58ch;margin-left:auto;margin-right:auto}
+.white{background:#fff}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:8px}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;animation-delay:0s!important;transition-duration:.001ms!important}html{scroll-behavior:auto}}
+
+/* ============================ BUTTONS ============================ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:13px;border:0;cursor:pointer;font-weight:600;font-size:16.5px;text-decoration:none;white-space:nowrap;transition:transform .2s var(--ease),box-shadow .2s var(--ease),background-color .2s}
+.btn .ic{width:19px;height:19px;stroke-width:2}
+.btn-primary{background:var(--navy);color:#fff;box-shadow:0 12px 26px -12px rgba(11,37,64,.6)}
+.btn-primary:hover{background:var(--navy-2);transform:translateY(-2px);box-shadow:0 18px 32px -14px rgba(11,37,64,.6)}
+.btn-soft{background:#fff;color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-soft:hover{box-shadow:inset 0 0 0 1.5px var(--navy)}
+.btn-sm{height:44px;padding:0 18px;font-size:15px;border-radius:11px}
+.tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:999px;font-size:12.5px;font-weight:700;font-style:normal;white-space:nowrap}
+.tag.cyan{background:var(--cyan-50);color:var(--cyan-6)}
+.tag.sun{background:var(--sun-50);color:var(--sun-6)}
+.tag.mint{background:var(--mint-50);color:var(--mint-6)}
+.tag.coral{background:#FDECEA;color:#C9392C}
+
+/* ============================ NAV ============================ */
+.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.9);backdrop-filter:saturate(170%) blur(14px);-webkit-backdrop-filter:saturate(170%) blur(14px);border-bottom:1px solid transparent;transition:border-color .25s,box-shadow .25s}
+.nav.scrolled{border-bottom-color:var(--line);box-shadow:0 8px 24px -20px rgba(11,37,64,.5)}
+.nav-in{height:72px;display:flex;align-items:center;gap:22px}
+.logo img{height:25px;width:auto}
+.menu{display:flex;align-items:center;gap:2px;margin-left:14px}
+.menu>a,.dd>button{display:flex;align-items:center;gap:4px;padding:9px 12px;border-radius:9px;font-size:15px;font-weight:500;color:var(--ink-2);text-decoration:none;background:none;border:0;cursor:pointer;transition:color .15s,background-color .15s}
+.menu>a:hover,.dd>button:hover{color:var(--navy);background:var(--bg)}
+.menu>a.on{color:var(--navy);background:var(--cyan-50)}
+.dd>button .ic{width:16px;height:16px;transition:transform .2s}
+.dd:hover>button .ic,.dd:focus-within>button .ic{transform:rotate(180deg)}
+.nav-r{margin-left:auto;display:flex;align-items:center;gap:18px}
+.tel{display:flex;align-items:center;gap:8px;font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap}
+.tel .ic{width:18px;height:18px;color:var(--cyan-6)}
+.dd{position:relative}
+.dd-panel{position:absolute;top:calc(100% + 12px);left:-16px;width:760px;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow-lg);padding:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px 20px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s var(--ease),transform .2s var(--ease),visibility .2s}
+.dd-panel::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.dd:hover .dd-panel,.dd:focus-within .dd-panel{opacity:1;visibility:visible;transform:none}
+.dd-col h5{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--navy);padding:4px 10px 8px}
+.dd-col h5 i{width:8px;height:8px;border-radius:50%}
+.dd-col a{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;font-size:14.5px;color:var(--ink-2);text-decoration:none;line-height:1.3}
+.dd-col a .ic{width:18px;height:18px;color:var(--navy);stroke-width:1.7}
+.dd-col a:hover{background:var(--bg);color:var(--navy)}
+.burger{display:none;width:44px;height:44px;border-radius:11px;border:1px solid var(--line);background:#fff;place-items:center;cursor:pointer}
+.mnav{display:none}
+@media (max-width:1140px){.tel span{display:none}}
+@media (max-width:1020px){.menu{display:none}.burger{display:grid}
+  .mnav{display:block;position:fixed;top:72px;left:0;right:0;z-index:59;background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow-lg);padding:10px 20px 20px;transform:translateY(-8px);opacity:0;visibility:hidden;transition:.2s var(--ease)}
+  .mnav.open{transform:none;opacity:1;visibility:visible}
+  .mnav a{display:block;padding:14px 8px;font-size:17px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
+  .mnav a:last-child{border-bottom:0}}
+@media (max-width:560px){.tel{display:none}.nav-in{gap:10px}.logo img{height:21px}.nav .btn-sm{height:40px;padding:0 14px;font-size:14px}}
+
+/* ============================ HERO ============================ */
+.hero{padding:30px 0 40px;overflow:hidden}
+.hero-art{position:relative;width:min(800px,94vw,calc((100vh - 460px) * 2.35));min-width:min(460px,92vw);margin:0 auto}
+.scene{width:100%;height:auto;display:block;overflow:visible}
+.scene .ln{fill:none;stroke:var(--navy);stroke-width:2.3;stroke-linecap:round}
+.scene .ln-soft{fill:none;stroke:var(--navy);stroke-opacity:.28;stroke-width:2;stroke-linecap:round}
+.win-bg{fill:#DFF4FC}
+.win-frame{fill:none;stroke:var(--navy);stroke-width:2.4}
+.sill{fill:#fff;stroke:var(--navy);stroke-width:2.2}
+.sun{fill:var(--sun)}
+.cloud{fill:#fff;stroke:var(--navy);stroke-opacity:.3;stroke-width:1.6;stroke-linejoin:round}
+.desk{fill:#fff;stroke:var(--navy);stroke-width:2.4}
+.lid{fill:#fff;stroke:var(--navy);stroke-width:2.4;stroke-linejoin:round}
+.pot{fill:var(--sun);stroke:var(--navy);stroke-width:2.2;stroke-linejoin:round}
+.leaf{fill:#86E0C4;stroke:var(--navy);stroke-width:2}
+.fold{stroke:var(--navy);stroke-width:2.2}
+.f1{fill:var(--cyan)}.f2{fill:#fff}.f3{fill:var(--sun)}
+.mug{fill:#fff;stroke:var(--navy);stroke-width:2.2;stroke-linejoin:round}
+.steam{fill:none;stroke:var(--navy);stroke-opacity:.35;stroke-width:2;stroke-linecap:round}
+/* London skyline, shared by hero and closing band */
+.sk path,.sk rect,.sk circle,.sk ellipse{fill:none;stroke:var(--navy);stroke-width:1.5;stroke-opacity:.55;stroke-linecap:round;stroke-linejoin:round}
+.sk .skf,.sk .skw{fill:#fff}
+.sk .skt{fill:#C7EEDF;stroke-opacity:.4}
+.sk .sk-thin{stroke-width:1;stroke-opacity:.38}
+.sk .sk-back rect{fill:#C9EBF9;stroke:none}
+
+/* floating hero cards */
+.fc{position:absolute;z-index:3;opacity:0;transform:translateY(14px) scale(.96)}
+.fc>div{display:flex;align-items:center;gap:11px;background:#fff;border:1px solid rgba(225,232,240,.9);border-radius:15px;box-shadow:var(--shadow-lg);padding:12px 15px;font-size:13.5px;line-height:1.35;animation:bob 7s ease-in-out infinite}
+.fc b{display:block;font-weight:700;font-size:14px}
+.fc span{color:var(--ink-3);font-size:12.5px}
+.hero.go .fc{animation:pop .75s var(--ease) forwards}
+.hero.go .fc-vat{animation-delay:.2s}
+.hero.go .fc-pl{animation-delay:.55s}
+.hero.go .fc-chat{animation-delay:.9s}
+.hero.go .fc-books{animation-delay:1.25s}
+.fc-pl>div{animation-delay:-2s}.fc-chat>div{animation-delay:-4s}.fc-books>div{animation-delay:-5.5s}
+@keyframes pop{to{opacity:1;transform:none}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.fc-vat{left:-2%;top:13%}
+.fc-pl{right:-1%;top:3%}
+.fc-chat{right:-4%;top:47%;width:268px}
+.fc-books{left:3%;top:63%}
+.tick{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--mint-50);color:var(--mint-6)}
+.tick .ic{width:18px;height:18px;stroke-width:2.6}
+.fc-pl>div{flex-direction:column;align-items:stretch;gap:8px;width:190px}
+.pl-top{display:flex;justify-content:space-between;align-items:center}
+.pl-val{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.mini-bars{display:flex;align-items:flex-end;gap:5px;height:34px}
+.mini-bars i{flex:1;border-radius:3px;background:#D5E9F6}
+.mini-bars i:last-child{background:var(--cyan)}
+.fc-chat>div{align-items:flex-start}
+.av{position:relative;width:38px;height:38px;border-radius:50%;background:var(--sun-50);overflow:hidden;flex:none;border:2px solid #fff;box-shadow:0 0 0 1.5px var(--line)}
+.av svg{width:100%;height:100%;display:block}
+.av-on{position:relative;flex:none}
+.av-on::after{content:"";position:absolute;right:0;bottom:1px;width:10px;height:10px;border-radius:50%;background:var(--mint);border:2px solid #fff}
+.chat-h{display:flex;align-items:baseline;gap:8px}
+.chat-h span{font-size:12px}
+.chat-msg{font-size:13.5px;color:var(--navy);margin-top:3px}
+.typing{display:inline-flex;gap:4px;padding:8px 0 4px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#B9C7D6;animation:blink 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes blink{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-2px)}}
+.fc-chat .chat-msg{display:none}
+.fc-chat.said .chat-msg{display:block;animation:fadein .4s var(--ease)}
+.fc-chat.said .typing{display:none}
+@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.pulse{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 rgba(27,196,154,.6);animation:pulse 2.2s infinite;flex:none}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(27,196,154,0)}100%{box-shadow:0 0 0 0 rgba(27,196,154,0)}}
+.fc-books>div{padding:10px 15px;font-weight:600;font-size:13.5px;border-radius:999px}
+
+.hero-copy{text-align:center;max-width:920px;margin:18px auto 0;position:relative;z-index:2}
+.pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 16px 6px 7px;font-size:14px;font-weight:600;color:var(--ink-2);box-shadow:0 6px 18px -12px rgba(11,37,64,.35)}
+.pill .bic{width:26px;height:26px;color:#13B5EA}
+.pill .qb{color:#2CA01C;margin-left:-16px;border:2px solid #fff;border-radius:50%;background:#fff}
+.pill .sep{width:1px;height:16px;background:var(--line)}
+.hero h1{font-size:clamp(38px,4.75vw,66px);margin-top:18px}
+.lede{font-size:clamp(17px,1.45vw,20px);line-height:1.5;color:var(--ink-2);max-width:58ch;margin:16px auto 0;text-wrap:balance}
+.hero-cta{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}
+.ticks{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:14.5px;font-weight:500;color:var(--ink-2)}
+.ticks li{display:flex;align-items:center;gap:7px}
+.ticks .ic{width:18px;height:18px;color:var(--mint-6);stroke-width:2.5}
+@media (max-width:760px){
+  .hero{padding-top:20px}
+  .fc-pl,.fc-books{display:none}
+  .fc-vat{left:0;top:2%}
+  .fc-vat>div{padding:9px 11px}
+  .fc-chat{right:0;top:auto;bottom:-6%;width:220px}
+  .fc-chat>div{padding:10px 12px}
+  .hero-copy{margin-top:34px}
+  .hero-cta .btn{width:100%}
+}
+
+/* ============================ CLIENTS ============================ */
+.clients{padding:36px 0 22px}
+.clients p{text-align:center;font-size:14.5px;font-weight:500;color:var(--ink-3);margin-bottom:24px}
+.logos{display:flex;justify-content:space-between;align-items:center;gap:26px 34px;flex-wrap:wrap;max-width:1060px;margin:0 auto}
+.logos img{width:auto;opacity:.5;transition:opacity .2s}
+.logos img:hover{opacity:.95}
+@media (max-width:760px){.logos{justify-content:center;gap:22px 30px}.logos img{transform:scale(.85)}}
+
+/* ============================ SERVICES ============================ */
+#services{padding-top:96px}
+.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:-22px 0 48px}
+.chip{display:inline-flex;align-items:center;gap:9px;height:42px;padding:0 17px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:14.5px;font-weight:600;color:var(--ink-2);cursor:pointer;transition:border-color .2s,background-color .2s,color .2s}
+.chip i{width:9px;height:9px;border-radius:50%}
+.chip b{font-weight:600;color:var(--ink-3)}
+.chip:hover{border-color:var(--navy);color:var(--navy)}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.chip.on b{color:rgba(255,255,255,.55)}
+.svc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;padding-bottom:40px}
+.cell{display:flex}
+.svc-grid .cell:nth-child(4n+2),.svc-grid .cell:nth-child(4n+4){transform:translateY(40px)}
+.cell.enter{animation:rise .55s var(--ease) both}
+@keyframes rise{from{opacity:0;translate:0 18px}to{opacity:1;translate:0 0}}
+.svc{position:relative;display:flex;flex-direction:column;align-items:flex-start;width:100%;text-align:left;padding:26px 24px 26px;background:#fff;border:0;border-radius:20px;box-shadow:var(--shadow);border-bottom:4px solid var(--c);cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.svc:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.svc-ic{position:relative;width:54px;height:50px;margin-bottom:20px;color:var(--navy)}
+.svc-ic .blob{position:absolute;right:2px;bottom:0;width:28px;height:28px;border-radius:50%;background:var(--c)}
+.svc-ic .ic{position:relative;width:42px;height:42px;stroke-width:1.45}
+.svc-t{font-size:17.5px;font-weight:700;line-height:1.25;letter-spacing:-.01em}
+.svc-d{font-size:15px;line-height:1.45;color:var(--ink-2);margin-top:8px}
+.svc-go{position:absolute;top:20px;right:20px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--bg);opacity:0;transform:scale(.8);transition:opacity .2s,transform .2s var(--ease)}
+.svc-go .ic{width:17px;height:17px;stroke-width:2.2}
+.svc:hover .svc-go,.svc:focus-visible .svc-go{opacity:1;transform:none}
+.svc.alt{background:var(--navy);color:#fff}
+.svc.alt .svc-ic{color:#fff}
+.svc.alt .svc-d{color:rgba(255,255,255,.72)}
+.svc.alt .svc-go{background:rgba(255,255,255,.12);opacity:1;transform:none}
+.more{display:flex;justify-content:center;margin-top:34px}
+.more .ic{transition:transform .25s var(--ease)}
+.more.open .ic{transform:rotate(180deg)}
+@media (max-width:1080px){.svc-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .svc-grid .cell:nth-child(4n+2),.svc-grid .cell:nth-child(4n+4){transform:none}
+  .svc-grid .cell:nth-child(3n+2){transform:translateY(40px)}}
+@media (max-width:820px){.svc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .svc-grid .cell:nth-child(3n+2){transform:none}
+  .svc-grid .cell:nth-child(even){transform:translateY(30px)}}
+@media (max-width:520px){.svc-grid{grid-template-columns:1fr;padding-bottom:0}.svc-grid .cell:nth-child(n){transform:none}
+  .svc{padding:22px 20px;flex-direction:row;gap:16px}.svc-ic{margin:0;width:46px;height:44px}.svc-ic .ic{width:36px;height:36px}.svc-ic .blob{width:22px;height:22px}}
+
+/* ============================ WHY RISE ============================ */
+.why{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:60px;align-items:center}
+.why-h h2{max-width:13ch}
+.why-list{margin-top:34px;display:flex;flex-direction:column;gap:6px}
+.wi{position:relative;display:flex;gap:16px;align-items:flex-start;width:100%;padding:15px 18px 17px;border-radius:16px;background:transparent;border:0;text-align:left;cursor:pointer;overflow:hidden;transition:background-color .2s}
+.wi:hover{background:var(--bg)}
+.wi.on{background:var(--bg)}
+.wi-ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;flex:none;background:var(--c50);color:var(--c6);transition:transform .25s var(--ease)}
+.wi.on .wi-ic{transform:scale(1.06)}
+.wi-t{display:block;font-weight:700;font-size:17.5px;line-height:1.3;padding-top:2px}
+.wi-d{display:block;font-size:15px;color:var(--ink-2);max-height:0;opacity:0;overflow:hidden;transition:max-height .35s var(--ease),opacity .3s,margin-top .3s}
+.wi.on .wi-d{max-height:64px;opacity:1;margin-top:3px}
+.wi .prog{position:absolute;left:80px;right:18px;bottom:7px;height:3px;border-radius:3px;background:var(--line);opacity:0}
+.wi.on .prog{opacity:1}
+.wi .prog i{display:block;height:100%;width:0;border-radius:3px;background:var(--c)}
+.wi.on.run .prog i{animation:prog 6s linear forwards}
+@keyframes prog{to{width:100%}}
+.stage{position:relative;height:540px;border-radius:30px;background:var(--stage,var(--cyan-50));transition:background-color .5s;overflow:hidden}
+.stage::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-140px;top:-160px;background:rgba(255,255,255,.55)}
+.v{position:absolute;inset:0;display:grid;place-items:center;padding:36px;opacity:0;transform:translateY(18px) scale(.98);transition:opacity .45s var(--ease),transform .45s var(--ease);pointer-events:none}
+.v.on{opacity:1;transform:none;pointer-events:auto}
+.card{background:#fff;border-radius:20px;box-shadow:var(--shadow-lg)}
+.fl{position:absolute;display:flex;align-items:center;gap:11px;background:#fff;border-radius:14px;box-shadow:var(--shadow-lg);padding:11px 15px;font-size:13.5px;line-height:1.3}
+.fl b{display:block;font-size:14px}
+.fl span{color:var(--ink-3);font-size:12.5px}
+.fl .ico{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;flex:none}
+.fl .ico .ic{width:19px;height:19px;stroke-width:2}
+/* visual: accountant */
+.va{position:relative;width:100%;max-width:460px}
+.va img{width:100%;height:380px;object-fit:cover;object-position:60% 40%;border-radius:22px;box-shadow:var(--shadow-lg)}
+.va .t1{left:-26px;bottom:34px}
+.va .t2{right:-22px;top:28px}
+/* visual: chat */
+.win{width:100%;max-width:470px;background:#fff;border-radius:20px;box-shadow:var(--shadow-lg);overflow:hidden}
+.win-top{display:flex;align-items:center;gap:7px;padding:13px 16px;border-bottom:1px solid var(--line);font-size:14px;font-weight:700}
+.win-top>i{width:10px;height:10px;border-radius:50%;background:#E5ECF3}
+.win-top .ic{width:16px;height:16px;margin-left:8px;color:var(--ink-3)}
+.msgs{padding:18px 18px 8px;display:flex;flex-direction:column;gap:16px}
+.m{display:flex;gap:11px}
+.m-av{width:38px;height:38px;border-radius:11px;flex:none;display:grid;place-items:center;font-weight:700;font-size:13px;overflow:hidden}
+.m-av.you{background:var(--cyan-50);color:var(--cyan-6)}
+.m-av.rise{background:var(--sun-50)}
+.m-av svg{width:100%;height:100%}
+.m-h{display:flex;align-items:baseline;gap:8px;font-size:14px}
+.m-h time{font-size:12px;color:var(--ink-3)}
+.m p{font-size:14.5px;color:var(--ink-2);margin-top:2px}
+.att{display:inline-flex;align-items:center;gap:9px;margin-top:9px;padding:8px 12px;border:1px solid var(--line);border-radius:11px;font-size:13px;font-weight:600}
+.att .ic{width:20px;height:20px;color:var(--mint-6)}
+.composer{margin:10px 16px 16px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-size:13.5px;color:var(--ink-3)}
+.vc{position:relative}
+.vc .t1{right:-18px;top:-22px}
+/* visual: fee */
+.fee-h{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:20px 22px 14px}
+.fee-h b{font-size:18px}
+.fee-h span{display:block;font-size:13.5px;color:var(--ink-3)}
+.fee-l li{display:flex;align-items:center;gap:12px;padding:11px 22px;border-top:1px solid var(--line);font-size:15px;font-weight:500}
+.fee-l li .ic{width:20px;height:20px;color:var(--navy);stroke-width:1.7}
+.fee-l li .tag{margin-left:auto}
+.fee-l li.no{color:var(--ink-3)}
+.fee-l li.no s{text-decoration-thickness:1.5px}
+/* visual: books */
+.dash{padding:20px 22px 22px}
+.dash-h{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.dash-h b{font-size:17px}
+.live{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--mint-6)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.kpis div{background:var(--bg);border-radius:13px;padding:12px 13px}
+.kpis span{display:block;font-size:12px;color:var(--ink-3)}
+.kpis b{display:block;font-size:19px;font-weight:800;letter-spacing:-.02em;margin-top:2px}
+.kpis em{font-style:normal;font-size:12px;font-weight:700;color:var(--mint-6)}
+.chart{margin-top:16px;padding:14px 14px 8px;border:1px solid var(--line);border-radius:14px}
+.chart-h{display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink-3);margin-bottom:10px}
+.bars{display:flex;align-items:flex-end;gap:8px;height:110px}
+.bars i{flex:1;border-radius:6px 6px 3px 3px;background:#D4EAF7;transform-origin:bottom;transform:scaleY(.1);transition:transform .8s var(--ease)}
+.bars i:last-child{background:var(--cyan)}
+.v.on .bars i{transform:scaleY(1)}
+.months{display:flex;gap:8px;margin-top:6px}
+.months span{flex:1;text-align:center;font-size:11px;color:var(--ink-3)}
+/* visual: proactive */
+.dl-h{display:flex;gap:12px;align-items:center;padding:18px 20px 14px}
+.dl-h .ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--sun-50);color:var(--sun-6);flex:none}
+.dl-h b{font-size:17px;display:block}
+.dl-h span{font-size:13.5px;color:var(--ink-3)}
+.dl li{display:flex;align-items:center;gap:14px;padding:12px 20px;border-top:1px solid var(--line)}
+.dl time{width:46px;text-align:center;flex:none;font-size:11.5px;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;line-height:1.1}
+.dl time b{display:block;font-size:20px;color:var(--navy);letter-spacing:-.02em}
+.dl li div{flex:1;min-width:0}
+.dl li div b{display:block;font-size:15px}
+.dl li div span{font-size:13px;color:var(--ink-3)}
+/* visual: grow */
+.grow{position:relative;width:100%;max-width:500px;height:400px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:end}
+.gs{background:#fff;border-radius:18px;box-shadow:var(--shadow);padding:16px 14px;display:flex;flex-direction:column;gap:9px;transform-origin:bottom;transform:scaleY(.6);opacity:0;transition:transform .7s var(--ease),opacity .5s}
+.v.on .gs{transform:none;opacity:1}
+.v.on .gs:nth-child(2){transition-delay:.12s}.v.on .gs:nth-child(3){transition-delay:.24s}
+.gs.s1{height:46%}.gs.s2{height:68%}.gs.s3{height:92%}
+.gs li{font-size:13.5px;font-weight:600;display:flex;gap:7px;align-items:flex-start;line-height:1.3}
+.gs li .ic{width:16px;height:16px;color:var(--mint-6);stroke-width:2.6;margin-top:1px}
+.gs .tag{align-self:flex-start;margin-bottom:4px}
+.grow-note{position:absolute;left:0;right:0;top:0;text-align:center;font-size:14.5px;font-weight:600;color:var(--ink-2)}
+@media (max-width:980px){.why{grid-template-columns:1fr;gap:34px}.why-h h2{max-width:none}.stage{height:480px}}
+@media (max-width:560px){.stage{height:440px;border-radius:24px}.v{padding:20px}.va img{height:300px}.va .t1{left:-8px}.va .t2{right:-8px}.fl{padding:9px 11px}
+  .kpis b{font-size:16px}.grow{height:340px}.gs li{font-size:12.5px}}
+
+/* ============================ INTEGRATIONS ============================ */
+.flow{position:relative;display:grid;grid-template-columns:1.15fr .9fr .9fr 1.1fr;gap:70px;align-items:center;background:#fff;border-radius:30px;box-shadow:var(--shadow);padding:40px 44px}
+.flow-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.flow-lines path{fill:none;stroke:#D6E2EE;stroke-width:1.6;stroke-dasharray:4 5}
+.flow-lines circle{filter:drop-shadow(0 0 3px rgba(16,194,240,.5))}
+.fcol{position:relative;z-index:2;display:flex;flex-direction:column;gap:10px}
+.fcol h4{font-size:13px;font-weight:700;color:var(--ink-3);margin:4px 2px 2px}
+.fcol h4:not(:first-child){margin-top:14px}
+.node{display:flex;align-items:center;gap:11px;height:48px;padding:0 16px 0 6px;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:15px;font-weight:600;box-shadow:0 4px 12px -8px rgba(11,37,64,.25);transition:transform .2s var(--ease),border-color .2s}
+.node:hover{transform:translateX(3px);border-color:var(--cyan)}
+.lg{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--bg);overflow:hidden}
+.lg .bic{width:21px;height:21px}
+.lg img{width:100%;height:100%}
+.lg .ic{width:19px;height:19px}
+.hub{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:26px 18px 22px;border-radius:24px;background:linear-gradient(180deg,#F1FAFE,#fff);border:1.5px solid #CFEFFB}
+.hub-logos{display:flex}
+.hub-logos .bic{width:58px;height:58px;border-radius:50%;background:#fff;border:3px solid #fff;box-shadow:0 6px 16px -8px rgba(11,37,64,.35)}
+.hub-logos .bic+.bic{margin-left:-14px}
+.hub b{font-size:17px;margin-top:6px}
+.hub span{font-size:13.5px;color:var(--ink-3)}
+.risec{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:26px 18px 22px;border-radius:24px;background:var(--navy);color:#fff}
+.risec img{height:20px;width:auto}
+.team{display:flex;margin:6px 0 2px}
+.team .av{width:46px;height:46px;border:3px solid var(--navy);box-shadow:none}
+.team .av+.av{margin-left:-12px}
+.team .av:nth-child(2){background:var(--cyan-50)}.team .av:nth-child(3){background:var(--mint-50)}
+.risec b{font-size:17px}
+.risec span{font-size:13.5px;color:rgba(255,255,255,.7)}
+.out .lg{border-radius:12px}
+.out .lg.cyan{background:var(--cyan-50);color:var(--cyan-6)}.out .lg.sun{background:var(--sun-50);color:var(--sun-6)}.out .lg.mint{background:var(--mint-50);color:var(--mint-6)}
+.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.perk{display:flex;gap:15px;align-items:flex-start;padding:22px;background:#fff;border-radius:20px;border:1px solid var(--line)}
+.perk .lg{width:46px;height:46px;border-radius:14px}
+.perk .lg .bic{width:30px;height:30px}
+.perk b{display:block;font-size:16px}
+.perk span{font-size:14.5px;color:var(--ink-2)}
+@media (max-width:1020px){
+  .flow{grid-template-columns:1fr;gap:0;padding:28px 22px}
+  .flow-lines{display:none}
+  .fcol{align-items:center}
+  .fcol:not(:last-child)::after{content:"";width:2px;height:44px;margin:14px auto 4px;background:repeating-linear-gradient(to bottom,var(--cyan) 0 5px,transparent 5px 10px);border-radius:2px}
+  .f-src .grp{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+  .fcol h4{text-align:center}
+  .hub,.risec{width:100%;max-width:340px}
+  .f-out{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .f-out::after{display:none}
+  .perks{grid-template-columns:1fr}}
+@media (max-width:520px){.f-out{grid-template-columns:1fr}.node{font-size:14px}}
+
+/* ============================ REVIEWS ============================ */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+.rev{display:flex;flex-direction:column;height:100%;background:#fff;border-radius:22px;box-shadow:var(--shadow);padding:28px 28px 24px;border-top:4px solid var(--c)}
+.rev-top{display:flex;justify-content:space-between;align-items:center}
+.rev-top .ic{width:30px;height:30px;color:var(--c);fill:var(--c);stroke:none;opacity:.9}
+.rev blockquote{font-size:17px;line-height:1.55;color:var(--ink-2);margin-top:18px;flex:1}
+.rev mark{background:linear-gradient(transparent 58%,var(--hl) 58%);color:var(--navy);font-weight:600;padding:0 1px}
+.rev figcaption{display:flex;align-items:center;gap:12px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.rev figcaption img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.rev figcaption b{display:block;font-size:15.5px}
+.rev figcaption span{font-size:13.5px;color:var(--ink-3)}
+.rev-grid .rev:nth-child(2){margin-top:34px}
+@media (max-width:960px){.rev-grid{grid-template-columns:1fr;max-width:600px;margin:0 auto}.rev-grid .rev:nth-child(2){margin-top:0}}
+
+/* ============================ HOW IT WORKS ============================ */
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:26px;counter-reset:s}
+.steps::before{content:"";position:absolute;top:38px;left:12.5%;right:12.5%;height:2px;background:repeating-linear-gradient(90deg,#BFE6F6 0 8px,transparent 8px 16px)}
+.st{position:relative;text-align:center;counter-increment:s}
+.st-ic{position:relative;width:78px;height:78px;margin:0 auto;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:var(--shadow);color:var(--navy)}
+.st-ic::after{content:counter(s);position:absolute;top:-4px;right:-4px;width:26px;height:26px;border-radius:50%;background:var(--c);color:var(--navy);font-size:13px;font-weight:800;display:grid;place-items:center;border:3px solid var(--bg)}
+.st-ic .ic{width:32px;height:32px;stroke-width:1.6}
+.st h3{font-size:18.5px;font-weight:700;margin-top:20px}
+.st p{font-size:15px;color:var(--ink-2);margin:6px auto 0;max-width:24ch}
+.how-cta{display:flex;justify-content:center;margin-top:48px}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr;gap:34px 18px}.steps::before{display:none}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+
+/* ============================ FAQ ============================ */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;max-width:1040px;margin:0 auto;align-items:start}
+.q{background:var(--bg);border-radius:16px;overflow:hidden;transition:background-color .2s}
+.q.open{background:#fff;box-shadow:var(--shadow)}
+.q button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 22px;background:none;border:0;text-align:left;font-size:16.5px;font-weight:600;cursor:pointer}
+.q button .pm{width:30px;height:30px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;transition:transform .25s var(--ease),background-color .2s}
+.q.open button .pm{transform:rotate(45deg);background:var(--cyan-50)}
+.q button .ic{width:16px;height:16px;stroke-width:2.4}
+.q .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s var(--ease)}
+.q.open .a{grid-template-rows:1fr}
+.q .a>div{overflow:hidden}
+.q .a p{padding:0 22px 20px;font-size:15.5px;color:var(--ink-2)}
+@media (max-width:820px){.faq{grid-template-columns:1fr}}
+
+/* ============================ CLOSING CTA ============================ */
+.cta{padding:30px 0 108px}
+.cta-panel{position:relative;overflow:hidden;border-radius:34px;background:linear-gradient(180deg,#E3F5FD 0%,#F3FBFE 100%);padding:76px 32px 230px;text-align:center}
+.cta-sun{position:absolute;width:84px;height:84px;border-radius:50%;background:var(--sun);right:15%;bottom:150px}
+.cta-sky{position:absolute;left:0;right:0;bottom:0;width:100%;height:210px}
+.cta-sky .sk path,.cta-sky .sk rect,.cta-sky .sk circle,.cta-sky .sk ellipse{stroke-opacity:.42}
+.cta-in{position:relative;z-index:2;max-width:760px;margin:0 auto}
+.cta .ticks{margin-top:22px}
+.cta .btn{margin-top:30px}
+@media (max-width:600px){.cta-panel{padding:52px 22px 170px;border-radius:26px}.cta-sky{height:150px}.cta-sun{width:56px;height:56px;bottom:110px}}
+
+/* ============================ FOOTER ============================ */
+.foot{background:var(--navy);color:rgba(255,255,255,.78);padding:72px 0 30px;font-size:15px}
+.foot a{color:inherit;text-decoration:none}
+.foot a:hover{color:#fff}
+.foot-top{display:grid;grid-template-columns:1.1fr 2.4fr;gap:48px}
+.foot-brand img{height:26px;width:auto}
+.foot-brand p{margin-top:16px;max-width:30ch}
+.partners{display:flex;gap:10px;margin-top:22px}
+.partners .bic{width:36px;height:36px;border-radius:50%;background:#fff;border:2px solid #fff}
+.foot-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.foot h5{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:14px}
+.foot-cols a{display:block;padding:5px 0}
+.foot-mid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:52px;padding-top:34px;border-top:1px solid rgba(255,255,255,.12)}
+.foot-mid p{line-height:1.6}
+.foot-bot{display:flex;justify-content:space-between;gap:20px;margin-top:44px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:13.5px}
+@media (max-width:900px){.foot-top{grid-template-columns:1fr}.foot-cols{grid-template-columns:1fr 1fr}.foot-mid{grid-template-columns:1fr}}
+
+/* ============================ MODAL FORM ============================ */
+.modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;visibility:hidden;opacity:0;transition:opacity .25s,visibility .25s}
+.modal.open{visibility:visible;opacity:1}
+.m-back{position:absolute;inset:0;background:rgba(11,37,64,.55);backdrop-filter:blur(6px)}
+.m-box{position:relative;display:grid;grid-template-columns:.85fr 1.15fr;width:100%;max-width:880px;max-height:calc(100vh - 40px);background:#fff;border-radius:26px;box-shadow:0 40px 90px -30px rgba(0,0,0,.5);overflow:hidden;transform:translateY(16px) scale(.98);transition:transform .35s var(--ease)}
+.modal.open .m-box{transform:none}
+.m-side{position:relative;background:var(--navy);color:#fff;padding:36px 32px;display:flex;flex-direction:column;overflow:hidden}
+.m-side img{height:22px;width:auto}
+.m-side h3{font-size:27px;line-height:1.15;letter-spacing:-.02em;margin-top:34px}
+.m-side ul{margin-top:24px;display:flex;flex-direction:column;gap:13px;font-size:15px;color:rgba(255,255,255,.85)}
+.m-side li{display:flex;gap:10px;align-items:flex-start}
+.m-side li .ic{width:19px;height:19px;color:var(--mint);stroke-width:2.6;margin-top:2px}
+.m-contact{margin-top:auto;padding-top:28px;font-size:14px;color:rgba(255,255,255,.7);display:flex;flex-direction:column;gap:8px}
+.m-contact a{display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;font-weight:600}
+.m-contact .ic{width:17px;height:17px;color:var(--cyan)}
+.m-side::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:var(--cyan);opacity:.12;right:-70px;bottom:-70px}
+.m-main{position:relative;padding:34px 34px 30px;overflow-y:auto}
+.m-x{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:0;background:var(--bg);display:grid;place-items:center;cursor:pointer}
+.m-x .ic{width:18px;height:18px;stroke-width:2.2}
+.m-about{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px}
+.m-prog{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;color:var(--ink-3);padding-right:48px}
+.m-prog .bar{flex:1;height:5px;border-radius:5px;background:var(--bg);overflow:hidden}
+.m-prog .bar i{display:block;height:100%;width:50%;background:var(--cyan);border-radius:5px;transition:width .35s var(--ease)}
+.m-step{display:none;margin-top:22px}
+.m-step.on{display:block;animation:fadein .35s var(--ease)}
+.m-step h4{font-size:22px;letter-spacing:-.015em;line-height:1.2}
+.opts{display:grid;gap:10px;margin-top:18px}
+.opt{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:16px 18px;border-radius:14px;border:1.5px solid var(--line);background:#fff;font-size:16px;font-weight:600;text-align:left;cursor:pointer;transition:border-color .15s,background-color .15s}
+.opt:hover{border-color:var(--navy)}
+.opt.sel{border-color:var(--cyan);background:var(--cyan-50)}
+.opt .ic{width:18px;height:18px;color:var(--ink-3)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.f{display:flex;flex-direction:column;gap:6px}
+.f.full{grid-column:1/-1}
+.f label{font-size:13.5px;font-weight:600}
+.f input,.f select{height:50px;padding:0 14px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font:inherit;font-size:16px;color:var(--navy);transition:border-color .15s,box-shadow .15s}
+.f input:focus,.f select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 4px rgba(16,194,240,.15)}
+.f.err input{border-color:var(--coral)}
+.f small{display:none;font-size:12.5px;color:#C9392C}
+.f.err small{display:block}
+.phone{display:flex;gap:8px}
+.phone select{width:118px;flex:none}
+.phone input{flex:1;min-width:0}
+.m-actions{display:flex;gap:10px;margin-top:22px}
+.m-actions .btn{flex:1}
+.fine{font-size:12.5px;color:var(--ink-3);margin-top:12px}
+.done{text-align:center;padding:30px 0 10px}
+.done .tick{width:64px;height:64px;margin:0 auto 18px}
+.done .tick .ic{width:30px;height:30px}
+.done p{color:var(--ink-2);margin-top:10px}
+@media (max-width:760px){.m-box{grid-template-columns:1fr}.m-side{padding:22px 24px}.m-side h3{font-size:21px;margin-top:14px}.m-side ul,.m-contact,.m-side::after{display:none}.m-main{padding:24px 22px}.fields{grid-template-columns:1fr}}
+
+/* ============================ CHATBOT ============================ */
+.bot-btn{position:fixed;right:22px;bottom:22px;z-index:80;display:flex;align-items:center;gap:10px;height:58px;padding:0 20px 0 8px;border-radius:999px;border:0;background:var(--navy);color:#fff;font-weight:600;font-size:15px;cursor:pointer;box-shadow:0 16px 34px -12px rgba(11,37,64,.65);transition:transform .2s var(--ease)}
+.bot-btn:hover{transform:translateY(-2px)}
+.bot-av{width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;position:relative}
+.bot-av img{width:24px;height:auto}
+.bot-btn .bot-av::after{content:"";position:absolute;right:0;bottom:1px;width:11px;height:11px;border-radius:50%;background:var(--mint);border:2px solid var(--navy)}
+.bot{position:fixed;right:22px;bottom:92px;z-index:81;width:380px;max-width:calc(100vw - 28px);height:min(560px,calc(100vh - 120px));display:flex;flex-direction:column;background:#fff;border-radius:24px;box-shadow:0 30px 80px -24px rgba(11,37,64,.5);overflow:hidden;visibility:hidden;opacity:0;transform:translateY(14px) scale(.98);transform-origin:bottom right;transition:opacity .25s,transform .3s var(--ease),visibility .25s}
+.bot.open{visibility:visible;opacity:1;transform:none}
+.bot-h{display:flex;align-items:center;gap:12px;padding:16px 16px 16px 18px;background:var(--navy);color:#fff}
+.bot-h b{display:block;font-size:16px}
+.bot-h span{font-size:12.5px;color:rgba(255,255,255,.7)}
+.bot-x{margin-left:auto;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;cursor:pointer}
+.bot-x .ic{width:17px;height:17px;stroke-width:2.2}
+.bot-body{flex:1;overflow-y:auto;padding:18px 16px 8px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+.bm{max-width:86%;padding:11px 14px;border-radius:16px;font-size:14.5px;line-height:1.45;animation:fadein .3s var(--ease)}
+.bm.me{align-self:flex-end;background:var(--navy);color:#fff;border-bottom-right-radius:5px}
+.bm.bot-msg{align-self:flex-start;background:#fff;border:1px solid var(--line);border-bottom-left-radius:5px}
+.bm .btn{height:40px;padding:0 14px;font-size:14px;margin-top:10px;border-radius:10px}
+.bm .typing{padding:2px 0}
+.bot-chips{display:flex;gap:7px;overflow-x:auto;padding:10px 14px;background:var(--bg);border-top:1px solid var(--line);scrollbar-width:none}
+.bot-chips::-webkit-scrollbar{display:none}
+.bot-chips button{flex:none;height:34px;padding:0 13px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:13px;font-weight:600;cursor:pointer}
+.bot-chips button:hover{border-color:var(--navy)}
+.bot-in{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}
+.bot-in input{flex:1;min-width:0;height:46px;padding:0 14px;border-radius:12px;border:1.5px solid var(--line);font:inherit;font-size:15px}
+.bot-in input:focus{outline:none;border-color:var(--cyan)}
+.bot-in button{width:46px;height:46px;border-radius:12px;border:0;background:var(--navy);color:#fff;display:grid;place-items:center;cursor:pointer}
+.bot-in .ic{width:19px;height:19px}
+.totop{position:fixed;right:30px;bottom:94px;z-index:79;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--navy);display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(8px);transition:.25s var(--ease)}
+.totop.show{opacity:1;visibility:visible;transform:none}
+.totop .ic{width:19px;height:19px;stroke-width:2.2}
+body.bot-open .totop{opacity:0;visibility:hidden}
+@media (max-width:560px){.bot-btn{right:14px;bottom:14px;height:52px;padding:0 8px}.bot-btn .lbl{display:none}.bot{right:14px;bottom:76px}.totop{right:18px;bottom:78px}}
+
+/* ============================ FIXES ============================ */
+.av,.av-on{display:block}
+.grp{display:flex;flex-direction:column;gap:10px}
+.node{white-space:nowrap}
+.head .sub{text-wrap:balance}
+section{padding:96px 0}
+.logo img{height:24px}
+.svc-foot{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:34px}
+.svc-foot .more{margin-top:0}
+.more-note{font-size:15.5px;color:var(--ink-2);text-align:center}
+.more-note button{background:none;border:0;padding:0;font-weight:700;color:var(--navy);text-decoration:underline;text-decoration-color:var(--cyan);text-decoration-thickness:2px;text-underline-offset:4px;cursor:pointer}
+.scene image{image-rendering:auto}
+@media (max-width:1020px){.f-src .grp{flex-direction:row;flex-wrap:wrap;justify-content:center}}
+@media (max-width:560px){.logo img{height:20px}}
+
+.menu>a,.dd>button{white-space:nowrap}
+.menu{flex-shrink:0}
+.nw{white-space:nowrap}
+@media (max-width:1100px){.menu{display:none}.burger{display:grid}}
+@media (max-width:1100px) and (min-width:1021px){.mnav{display:block;position:fixed;top:72px;left:0;right:0;z-index:59;background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow-lg);padding:10px 20px 20px;transform:translateY(-8px);opacity:0;visibility:hidden;transition:.2s var(--ease)}
+  .mnav.open{transform:none;opacity:1;visibility:visible}.mnav a{display:block;padding:14px 8px;font-size:17px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}}
+@media (max-width:560px){
+  .hero-art{width:120vw;min-width:0;margin-left:-10vw}
+  .fc-chat{display:none}
+  .fc-books{display:block;left:auto;right:12vw;top:auto;bottom:4%}
+  .fc-vat{left:11vw;top:0}
+  .fc-vat>div{padding:8px 11px;gap:9px}.fc-vat .tick{width:28px;height:28px}
+  .fc b{font-size:13px}.fc span{font-size:11.5px}
+  .fc-books>div{padding:7px 12px;font-size:12.5px}
+  .pill{font-size:13px;padding:5px 14px 5px 6px}.pill .sep,.pill-2{display:none}.pill .bic{width:22px;height:22px}
+  .hero-copy{margin-top:22px}
+  .filters{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;margin:-26px -28px 30px;padding:0 28px;scrollbar-width:none}
+  .filters::-webkit-scrollbar{display:none}.chip{flex:none}
+  .svc{display:grid;grid-template-columns:46px 1fr;column-gap:16px;align-items:start}
+  .svc-ic{grid-row:1/3;margin:0}
+  .svc-t,.svc-d{grid-column:2}.svc-d{margin-top:4px}
+  .svc-go{display:none}
+}
+
+:root{--coral:#FF7A66;--coral-50:#FFEEEA;--coral-6:#D2432E;--cyan-7:#067AA8}
+.tag.coral{background:var(--coral-50);color:var(--coral-6)}
+/* nav menu: 4 groups */
+.dd-panel{width:1010px;left:-150px;grid-template-columns:repeat(4,1fr)}
+/* reviews carousel */
+.rev-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 30px;margin:0 -4px;scrollbar-width:none}
+.rev-track::-webkit-scrollbar{display:none}
+.rev-track .rev{flex:0 0 calc((100% - 44px)/3);scroll-snap-align:start;margin-top:0}
+.rev-track .rev blockquote{font-size:16.5px}
+.rev-top .ic{stroke:none}
+.rev-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:8px}
+.rev-nav .arrow{width:50px;height:50px;border-radius:50%;border:1.5px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;transition:background-color .2s,border-color .2s,color .2s}
+.rev-nav .arrow:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+.rev-nav .arrow .ic{width:22px;height:22px;stroke-width:2.2}
+.rev-dots{display:flex;gap:8px}
+.rev-dots button{width:9px;height:9px;padding:0;border:0;border-radius:99px;background:#D2DBE5;cursor:pointer;transition:width .3s var(--ease),background-color .3s}
+.rev-dots button.on{width:28px;background:var(--navy)}
+@media (max-width:960px){.rev-track .rev{flex-basis:calc((100% - 22px)/2)}}
+@media (max-width:620px){.rev-track .rev{flex-basis:88%}}
+/* back to top: clear and visible */
+.totop{width:52px;height:52px;border:0;background:var(--navy);color:#fff;right:25px;bottom:96px;box-shadow:0 14px 28px -10px rgba(11,37,64,.6)}
+.totop:hover{background:var(--navy-2)}
+.totop .ic{width:22px;height:22px}
+.m-lede{margin-top:10px;font-size:15px;color:rgba(255,255,255,.75)}
+/* closing band: layered London silhouette */
+.cta-sky .sil-b{fill:#D5EDF8}
+.cta-sky .sil-f{fill:#A5D7ED}
+.cta-sky .sil-s{fill:none;stroke:#A5D7ED;stroke-linecap:round}
+.cta-sky .sil-w{fill:#E9F6FC}
+.rev-track .rev{height:auto}
+
+/* ============================ V9 HERO: left-aligned copy over a Rise-blue London backdrop ============================ */
+.hero{position:relative;isolation:isolate;overflow:hidden;padding:0;display:flex;align-items:center;min-height:min(800px,calc(100vh - 176px))}
+.hero-bg{position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(90deg,var(--bg) 0%,rgba(245,248,252,.97) 32%,rgba(245,248,252,.7) 50%,rgba(245,248,252,.1) 70%,rgba(245,248,252,0) 100%),
+  linear-gradient(180deg,rgba(245,248,252,0) 72%,rgba(245,248,252,.8) 100%),
+  var(--hero-img) 70% 34%/cover no-repeat}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:40px;width:100%;padding-top:60px;padding-bottom:60px}
+.hero-copy{max-width:700px;margin:0;text-align:left}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:14.5px;font-weight:700;color:var(--navy-2);letter-spacing:.01em}
+.eyebrow::before{content:"";width:28px;height:3px;border-radius:3px;background:var(--cyan)}
+.hero h1{font-size:clamp(40px,5vw,70px);line-height:1.04;margin-top:18px;max-width:14ch}
+.hero h1 mark{color:inherit;background:linear-gradient(180deg,transparent 62%,#B6EAFA 62%,#B6EAFA 90%,transparent 90%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hero .lede{margin:20px 0 0;max-width:46ch;text-wrap:pretty}
+.hero-cta{justify-content:flex-start;margin-top:30px}
+.btn-lg{height:60px;padding:0 36px;font-size:17px;border-radius:14px}
+.proof{display:flex;align-items:center;flex-wrap:wrap;gap:16px 24px;margin-top:30px}
+.pf{display:flex;align-items:center;gap:12px}
+.pf-logos{display:flex}
+.pf-logos>*{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;box-shadow:0 0 0 2.5px var(--bg),0 6px 14px -6px rgba(11,37,64,.35)}
+.pf-logos>*+*{margin-left:-11px}
+.pf-logos span svg{width:23px;height:23px}
+.pf b{display:block;font-size:15px;line-height:1.25}
+.pf div>span{display:block;font-size:13.5px;color:var(--ink-2);line-height:1.35}
+.pf .stars{display:flex;gap:2px;color:#F5B301;margin-bottom:2px}
+.stars .ic{width:15px;height:15px;fill:currentColor;stroke:currentColor;stroke-width:1}
+.pf-sep{width:1px;height:40px;background:#CAD5E1}
+.hero .ticks{justify-content:flex-start;margin-top:26px}
+.hero-side{position:relative;min-height:380px}
+.hq{position:absolute;left:-10px;bottom:0;width:320px;background:#fff;border-radius:20px;box-shadow:var(--shadow-lg);padding:20px 22px 18px}
+.hq .stars{display:flex;gap:2px;color:#F5B301}
+.hq blockquote{margin-top:10px;font-size:16.5px;line-height:1.45;font-weight:500;color:var(--navy)}
+.hq figcaption{display:flex;align-items:center;gap:11px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.hq img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.hq b{display:block;font-size:14px}.hq figcaption span{font-size:12.5px;color:var(--ink-3)}
+/* client strip: white logos on Rise navy */
+.clients{margin-top:0;padding:0;background:var(--navy)}
+.clients .wrap{display:flex;align-items:center;gap:44px;min-height:104px;padding-top:22px;padding-bottom:22px}
+.clients p{flex:none;max-width:150px;margin:0;text-align:left;font-size:14px;font-weight:600;line-height:1.35;color:rgba(255,255,255,.72)}
+.clients .logos{flex:1;max-width:none;margin:0}
+.clients .logos img{filter:brightness(0) invert(1);opacity:.92;transform:none}
+.clients .logos img:hover{opacity:1}
+/* service icons: clean tinted tile instead of the colour blob */
+.svc-ic{width:52px;height:52px;border-radius:15px;background:var(--c50);color:var(--c6);display:grid;place-items:center;margin-bottom:20px}
+.svc-ic .blob{display:none}
+.svc-ic .ic{position:static;width:26px;height:26px;stroke-width:1.8}
+@media (max-width:1020px){.hero-grid{grid-template-columns:1fr}.hero-side{display:none}
+  .hero-bg{background:linear-gradient(90deg,var(--bg) 0%,rgba(245,248,252,.94) 55%,rgba(245,248,252,.6) 100%),linear-gradient(180deg,rgba(245,248,252,0) 72%,rgba(245,248,252,.8) 100%),var(--hero-img) 70% 34%/cover no-repeat}}
+@media (max-width:760px){.clients .wrap{flex-direction:column;gap:16px}.clients p{max-width:none;text-align:center}.clients .logos{justify-content:center;gap:18px 28px}.clients .logos img{transform:scale(.8)}}
+@media (max-width:560px){.hero{min-height:0}.hero-grid{padding-top:34px;padding-bottom:40px}.hero h1{font-size:38px}.btn-lg{width:100%}
+  .proof{flex-direction:column;align-items:flex-start;gap:14px}.pf-sep{display:none}
+  .hero-bg{background:linear-gradient(180deg,rgba(245,248,252,.45) 0%,rgba(245,248,252,.9) 38%,var(--bg) 72%),var(--hero-img) 74% top/auto 380px no-repeat}
+  .svc-ic{width:46px;height:46px;border-radius:13px}.svc-ic .ic{width:23px;height:23px}}
+
+.hero{--hero-img:url(assets/hero-london-4k.webp)}
+.hero-grid{grid-template-columns:minmax(0,1fr) 340px}
+.hero-copy{max-width:780px}
+.hero h1{font-size:clamp(40px,4.15vw,60px);max-width:none}
+@media (max-width:1020px){.hero-grid{grid-template-columns:1fr}}
+@media (max-width:560px){.hero h1{font-size:38px}.hero h1 br{display:none}.eyebrow{font-size:13px}.eyebrow::before{display:none}}
+
+/* ============================ NAV: 5 jump buttons, centred, no phone ============================ */
+.logo{background:none;border:0;padding:0;cursor:pointer;display:block}
+.menu{margin:0 auto}
+.menu>button{display:flex;align-items:center;padding:9px 13px;border-radius:9px;border:0;background:none;font-size:15px;font-weight:500;color:var(--ink-2);cursor:pointer;white-space:nowrap;transition:color .15s,background-color .15s}
+.menu>button:hover{color:var(--navy);background:var(--bg)}
+.menu>button.on{color:var(--navy);background:var(--cyan-50)}
+.nav-r{margin-left:0}
+.mnav button{display:block;width:100%;text-align:left;padding:14px 8px;border:0;border-bottom:1px solid var(--line);background:none;font-size:17px;font-weight:600;color:var(--navy);cursor:pointer}
+.mnav button:last-child{border-bottom:0}
+@media (min-width:901px){.menu{display:flex}.burger{display:none}.mnav{display:none!important}}
+@media (max-width:900px){.menu{display:none}.burger{display:grid}.nav-r{margin-left:auto}
+  .mnav{display:block;position:fixed;top:72px;left:0;right:0;z-index:59;background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow-lg);padding:10px 20px 20px;transform:translateY(-8px);opacity:0;visibility:hidden;transition:.2s var(--ease)}
+  .mnav.open{transform:none;opacity:1;visibility:visible}}
+
+/* headline: painted brush stroke under the key phrase */
+.hero h1{line-height:1.1;text-wrap:balance}
+.hero h1 .stroke{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 28' preserveAspectRatio='none'%3E%3Cpath fill='%2310C2F0' d='M2 18.5c28-5 70-8.6 121-10.2 58-1.8 116-1.3 170 .2 36 1 72 3 104 5.3 3 .3 3.6 3.3.6 4-34 1-70 .4-107-.3-54-1-112-1.1-166 .6-39 1.2-80 3.7-118 7.3-4.4.4-8.4-5.9-4.6-6.9z'/%3E%3Cpath fill='%2310C2F0' opacity='.5' d='M18 22.6c60-4.6 130-6.4 200-6 58 .4 118 2.2 170 4.8 2.4.1 2.5 2 .1 2.2-56 1-116 .3-172 .5-66 .2-132 1.2-197.6 3.3-2.6.1-2.9-4.5-.5-4.8z'/%3E%3C/svg%3E") no-repeat 0 100%/100% .24em;padding-bottom:.1em;-webkit-box-decoration-break:clone;box-decoration-break:clone;animation:paint 1s .35s var(--ease) both}
+@keyframes paint{from{background-size:0% .24em}to{background-size:100% .24em}}
+.hero h1{font-size:clamp(38px,3.75vw,53px)}
+.hero-grid{grid-template-columns:minmax(0,1fr) 320px}
+.hero-copy{max-width:820px}
+.hq{width:300px}
+.hero h1 .stroke{background-size:100% .27em}
+@keyframes paint{from{background-size:0% .27em}to{background-size:100% .27em}}
+@media (max-width:560px){.hero h1{font-size:38px}}
+
+/* ============================ SEE-THROUGH NAV OVER THE HERO ============================ */
+.nav{background:transparent;border-bottom-color:transparent;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;transition:background-color .3s,box-shadow .3s,border-color .3s}
+.nav::before{content:"";position:absolute;left:0;right:0;top:0;height:96px;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(245,248,252,.55),rgba(245,248,252,0));transition:opacity .3s}
+.nav.scrolled{background:rgba(255,255,255,.9);-webkit-backdrop-filter:saturate(170%) blur(14px);backdrop-filter:saturate(170%) blur(14px);border-bottom-color:var(--line);box-shadow:0 8px 24px -20px rgba(11,37,64,.5)}
+.nav.scrolled::before{opacity:0}
+.hero{margin-top:-72px;padding-top:72px;min-height:min(880px,calc(100vh - 104px))}
+.hero-bg{background-position:0 0,0 0,72% top}
+@media (max-width:1020px){.hero-bg{background-position:0 0,0 0,72% top}}
+@media (max-width:560px){.hero-bg{background-position:0 0,74% top}.nav::before{height:80px}}
+@media (max-width:1020px){.hero-grid{grid-template-columns:1fr}.hero-side{display:none}}
+@media (max-width:560px){.hero-bg{background:linear-gradient(180deg,rgba(245,248,252,.45) 0px,rgba(245,248,252,.9) 230px,var(--bg) 372px),var(--hero-img) 74% top/auto 380px no-repeat}}
+
+/* ============================ REVIEW FIXES ============================ */
+.m-side img{align-self:flex-start}                       /* popup logo was stretched by the flex column */
+.av img,.m-av img{width:100%;height:100%;object-fit:cover;display:block}
+.team .av{background:#fff}
+.team .av-more{display:grid;place-items:center;background:var(--cyan)!important;color:var(--navy)}
+.team .av-more .ic{width:20px;height:20px;stroke-width:2.4}
+.m-av.rise{background:#fff}
+/* chatbot: every topic visible at once, two columns */
+.bot{height:min(640px,calc(100vh - 110px))}
+.bot-chips{display:grid;grid-template-columns:1fr 1fr;gap:7px;overflow:visible;padding:12px 14px}
+.bot-chips button{height:auto;min-height:38px;padding:8px 12px;border-radius:11px;white-space:normal;text-align:left;line-height:1.25;font-size:13.5px}
+.bot-chips .chip-cta{grid-column:1/-1;text-align:center;background:var(--navy);border-color:var(--navy);color:#fff}
+.bot-chips .chip-cta:hover{background:var(--navy-2)}
+.bot-in input{font-size:16px}                            /* stops iPhone zoom on tap */
+
+.logo{flex:none;padding:8px 0}.logo img{max-width:none}
+.risec img{height:auto;max-height:20px;max-width:100%}
+.more-note button{padding:6px 2px}
+.m-contact a{padding:6px 0}
+@media (max-width:1180px) and (min-width:1021px){.flow{gap:34px;padding:34px 26px}.node{white-space:normal;height:auto;min-height:48px;padding-top:6px;padding-bottom:6px;line-height:1.25}}
+
+.bot-btn{opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,transform .3s var(--ease),visibility .3s}
+.bot-btn.show{opacity:1;visibility:visible;transform:none}
+.bot-btn.show:hover{transform:translateY(-2px)}
+
+.team .av{width:44px;height:44px}
+.team .av+.av{margin-left:-10px}
+.risec .av img{height:100%;max-height:none;width:100%;object-fit:cover}
+.team .av{background:#fff!important}
+
+/* =====================================================================
+   RISE ACCOUNTING BRAND PALETTE (from Charlotte's feedback)
+   Navy #0B243F · Navy 700 #0D2E4E · Cyan #3BCBF7 · Steel #3B6186 · Slate #2E445A
+   Mist #EEF2F8 · Ice #D3E1EB · Paper #F6F7F9 · Cloud #DAE4EC · Line 2 #D3E1EC · Slate #5D6180
+   Tints are brand colours at transparency. Old colour names now point at the palette.
+   ===================================================================== */
+:root{
+  --navy:#0B243F; --navy-2:#0D2E4E; --ink-2:#2E445A; --ink-3:#5D6180;
+  --cyan:#3BCBF7; --cyan-6:#3B6186; --cyan-7:#3B6186; --cyan-50:rgba(59,203,247,.16);
+  --steel:#3B6186; --mist:#EEF2F8; --ice:#D3E1EB; --cloud:#DAE4EC;
+  --sun:#3B6186; --sun-6:#3B6186; --sun-50:rgba(59,97,134,.12);
+  --mint:#3BCBF7; --mint-6:#3B6186; --mint-50:rgba(59,203,247,.16);
+  --coral:#5D6180; --coral-6:#5D6180; --coral-50:rgba(93,97,128,.12);
+  --bg:#F6F7F9; --line:#D3E1EC;
+}
+.tag.cyan{background:rgba(59,203,247,.18);color:var(--navy)}
+.tag.steel,.tag.sun{background:rgba(59,97,134,.12);color:var(--steel)}
+.tag.navy,.tag.mint{background:var(--navy);color:#fff}
+.tag.slate,.tag.coral{background:rgba(93,97,128,.12);color:#5D6180}
+.stars,.tr .stars,.pf .stars,.hq .stars{color:var(--cyan)}
+.f.err input{border-color:#D64545}
+.bars i{background:var(--ice)}
+.win-top>i{background:var(--cloud)}
+.hub{background:var(--mist);border-color:var(--line)}
+.rev-dots button{background:var(--cloud)}
+.flow-lines path{stroke:var(--line)}
+.steps::before{background:repeating-linear-gradient(90deg,var(--ice) 0 8px,transparent 8px 16px)}
+.st-ic::after{background:var(--c);color:var(--t,#0B243F);border-color:var(--bg)}
+.pulse{box-shadow:0 0 0 0 rgba(59,203,247,.6)}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(59,203,247,0)}100%{box-shadow:0 0 0 0 rgba(59,203,247,0)}}
+.btn-primary{background:var(--navy)}
+.btn-primary:hover{background:var(--navy-2)}
+
+/* ---------------- HERO: cityscape with Navy at ~50% ---------------- */
+.hero-bg{background:linear-gradient(90deg,rgba(11,36,63,.32) 0%,rgba(11,36,63,0) 62%),linear-gradient(rgba(11,36,63,.5),rgba(11,36,63,.5)),var(--hero-img) center 36%/cover no-repeat}
+@media (max-width:1020px){.hero-bg{background:linear-gradient(rgba(11,36,63,.62),rgba(11,36,63,.62)),var(--hero-img) center 36%/cover no-repeat}}
+@media (max-width:560px){.hero-bg{background:linear-gradient(rgba(11,36,63,.62),rgba(11,36,63,.62)),var(--hero-img) 62% center/cover no-repeat}}
+.hero .eyebrow{color:#fff}
+.hero h1{color:#fff}
+.hero h1 .stroke{background:none!important;animation:none;padding:0;color:var(--cyan)}
+.hero .lede{color:rgba(255,255,255,.86)}
+.hero .btn-primary{background:var(--cyan);color:var(--navy);box-shadow:0 14px 30px -12px rgba(0,0,0,.45)}
+.hero .btn-primary:hover{background:#6ad8fa}
+.hero .pf b{color:#fff}
+.hero .pf div>span{color:rgba(255,255,255,.78)}
+.hero .pf-sep{background:rgba(255,255,255,.28)}
+.hero .pf-logos>*{box-shadow:0 0 0 2.5px rgba(11,36,63,.55),0 6px 14px -6px rgba(0,0,0,.4)}
+.hero .ticks{color:rgba(255,255,255,.86)}
+.hero .ticks .ic{color:var(--cyan)}
+/* nav: white over the photo, back to navy-on-white once scrolled */
+.nav::before{display:none}
+.logo .lg-light,.logo .lg-dark{height:24px;width:auto;max-width:none}
+.logo .lg-dark{display:none}
+.nav.scrolled .logo .lg-light{display:none}
+.nav.scrolled .logo .lg-dark{display:block}
+.nav:not(.scrolled) .menu>button{color:rgba(255,255,255,.88)}
+.nav:not(.scrolled) .menu>button:hover,.nav:not(.scrolled) .menu>button.on{color:#fff;background:rgba(255,255,255,.14)}
+.nav:not(.scrolled) .btn-primary{background:var(--cyan);color:var(--navy);box-shadow:none}
+.nav:not(.scrolled) .burger{background:transparent;border-color:rgba(255,255,255,.4);color:#fff}
+@media (max-width:560px){.logo .lg-light,.logo .lg-dark{height:20px}}
+/* longer "Why Rise Accounting" link: switch to the menu button a little earlier */
+@media (min-width:1061px){.menu{display:flex}.burger{display:none}}
+@media (max-width:1060px){.menu{display:none}.burger{display:grid}.nav-r{margin-left:auto}
+  .mnav{display:block!important;position:fixed;top:72px;left:0;right:0;z-index:59;background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow-lg);padding:10px 20px 20px;transform:translateY(-8px);opacity:0;visibility:hidden;transition:.2s var(--ease)}
+  .mnav.open{transform:none;opacity:1;visibility:visible}}
+@media (min-width:1061px){.mnav{display:none!important}}
+
+/* ---------------- SERVICES: equal straight rows ---------------- */
+.svc-grid{padding-bottom:0}
+.svc-grid .cell:nth-child(n){transform:none!important}
+.svc-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.svc-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:1080px){.svc-grid,.svc-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:820px){.svc-grid,.svc-grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.svc-grid,.svc-grid.three{grid-template-columns:1fr}}
+.svc-ic{background:var(--c50);color:var(--c6)}
+
+/* ---------------- WHY RISE ACCOUNTING: heading on top, picture level with the options ---------------- */
+.why-top{margin-bottom:34px}
+.why-top .sub{max-width:52ch}
+.why{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:56px;align-items:start}
+.why-list{margin-top:0}
+.stage{height:570px}
+.adv-i{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;flex:none;background:var(--mist);color:var(--steel)}
+.adv-i .ic{width:18px;height:18px;stroke-width:1.9}
+.adv-foot{display:flex;align-items:center;gap:12px;padding:14px 20px 18px;border-top:1px solid var(--line);font-size:13.5px;font-weight:600;color:var(--ink-2)}
+.adv-foot .bar{flex:1;height:8px;border-radius:8px;background:var(--mist);overflow:hidden}
+.adv-foot .bar i{display:block;height:100%;width:0;background:var(--cyan);border-radius:8px;transition:width 1s var(--ease)}
+.v.on .adv-foot .bar i{width:80%}
+.adv-foot b{color:var(--navy)}
+.glob{position:relative;width:100%;max-width:470px;display:flex;flex-direction:column;gap:14px}
+.glob-h{text-align:center;font-size:14.5px;font-weight:700;color:var(--ink-2);margin-bottom:4px}
+.glob::before{content:"";position:absolute;left:43px;top:62px;bottom:64px;width:2px;background:repeating-linear-gradient(to bottom,var(--steel) 0 6px,transparent 6px 12px);opacity:.5}
+.loc{position:relative;display:flex;align-items:center;gap:16px;background:#fff;border-radius:18px;box-shadow:var(--shadow);padding:16px 18px;transform:translateX(18px);opacity:0;transition:transform .5s var(--ease),opacity .5s}
+.v.on .loc{transform:none;opacity:1}
+.v.on .loc:nth-of-type(2){transition-delay:.1s}.v.on .loc:nth-of-type(3){transition-delay:.2s}
+.code{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;flex:none;font-weight:800;font-size:14px;letter-spacing:.02em}
+.code.c1{background:var(--navy);color:#fff}.code.c2{background:var(--cyan);color:var(--navy)}.code.c3{background:var(--steel);color:#fff}
+.loc b{display:block;font-size:16px}
+.loc span{font-size:13.5px;color:var(--ink-2);line-height:1.4}
+.glob-f{display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;color:var(--navy);margin-top:4px}
+.glob-f .ic{width:18px;height:18px;color:var(--steel);stroke-width:2.4}
+@media (max-width:980px){.why{grid-template-columns:1fr;gap:30px}.stage{height:500px}}
+@media (max-width:560px){.stage{height:470px}.loc{padding:12px 14px}.code{width:44px;height:44px;font-size:12.5px}.glob::before{left:35px}}
+
+/* ---------------- CLOSING BAND: photo with Navy overlay ---------------- */
+.cta-panel{--cta-img:url(assets/cta-london-4k.webp);background:linear-gradient(rgba(11,36,63,.58),rgba(11,36,63,.58)),var(--cta-img) center 55%/cover no-repeat;padding:96px 32px}
+.cta-panel h2{color:#fff}
+.cta-panel .sub{color:rgba(255,255,255,.86)}
+.cta .ticks{color:rgba(255,255,255,.88)}
+.cta .ticks .ic{color:var(--cyan)}
+.cta .btn-primary{background:var(--cyan);color:var(--navy)}
+.cta .btn-primary:hover{background:#6ad8fa}
+@media (max-width:600px){.cta-panel{padding:60px 22px}}
+/* picture panel runs the full height of the options list, top and bottom aligned */
+.why{align-items:stretch}
+.stage{height:auto;min-height:570px}
+@media (max-width:980px){.stage{height:500px;min-height:0}}
+@media (max-width:560px){.stage{height:470px}}
+/* star ratings in gold (requested), everything else stays on the brand palette */
+.stars,.tr .stars,.pf .stars,.hq .stars{color:#F5B301}
+
+/* ============================ FINAL PHOTOS: Navy at 50% over both (Charlotte) ============================ */
+.hero-bg{background:linear-gradient(90deg,rgba(11,36,63,.3) 0%,rgba(11,36,63,0) 60%),linear-gradient(rgba(11,36,63,.5),rgba(11,36,63,.5)),var(--hero-img) center 40%/cover no-repeat}
+@media (max-width:1020px){.hero-bg{background:linear-gradient(180deg,rgba(11,36,63,.15),rgba(11,36,63,.3)),linear-gradient(rgba(11,36,63,.5),rgba(11,36,63,.5)),var(--hero-img) 55% center/cover no-repeat}}
+@media (max-width:560px){.hero-bg{background:linear-gradient(180deg,rgba(11,36,63,.15),rgba(11,36,63,.3)),linear-gradient(rgba(11,36,63,.5),rgba(11,36,63,.5)),var(--hero-img) 58% center/cover no-repeat}}
+.cta-panel{background:radial-gradient(ellipse 58% 70% at 50% 50%,rgba(11,36,63,.3),rgba(11,36,63,0) 78%),linear-gradient(rgba(11,36,63,.5),rgba(11,36,63,.5)),var(--cta-img) center 45%/cover no-repeat}
+.bot-av img{width:26px;height:26px}
+.m-side img{height:24px;width:auto}
+.foot-brand img{height:28px;width:auto}
+.hero .pf .stars,.hero .pf b.stars,.hq .stars{color:#F5B301}
+
+
+.cta-panel{--cta-img:none}
+.cta-panel.bg-in{--cta-img:url(assets/cta-london-4k.webp)}
+</style>
+<style>
+@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(assets/font-7bfd10a3.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:500;font-display:swap;src:url(assets/font-94e34f97.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:600;font-display:swap;src:url(assets/font-4376f595.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:700;font-display:swap;src:url(assets/font-70aaa687.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:800;font-display:swap;src:url(assets/font-6d348a4f.woff2) format('woff2')}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-user-round-check" viewBox="0 0 24 24"><path d="M2 21a8 8 0 0 1 13.292-6" />
+  <circle cx="10" cy="8" r="5" />
+  <path d="m16 19 2 2 4-4" /></symbol><symbol id="i-book-open-check" viewBox="0 0 24 24"><path d="M12 5v16" />
+  <path d="m16 12 2 2 4-4" />
+  <path d="M22 6V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2h4.001A2 2 0 0022 17v-1.344" /></symbol><symbol id="i-file-check-2" viewBox="0 0 24 24"><path d="M10.5 22H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v6" />
+  <path d="M14 2v5a1 1 0 0 0 1 1h5" />
+  <path d="m14 20 2 2 4-4" /></symbol><symbol id="i-receipt-pound-sterling" viewBox="0 0 24 24"><path d="M10 17V9.5a1 1 0 0 1 5 0" />
+  <path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z" />
+  <path d="M8 13h5" />
+  <path d="M8 17h7" /></symbol><symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
+  <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /></symbol><symbol id="i-chart-column" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16" />
+  <path d="M18 17V9" />
+  <path d="M13 17V5" />
+  <path d="M8 17v-3" /></symbol><symbol id="i-briefcase-business" viewBox="0 0 24 24"><path d="M12 12h.01" />
+  <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+  <path d="M22 13a18.15 18.15 0 0 1-20 0" />
+  <rect width="20" height="14" x="2" y="6" rx="2" /></symbol><symbol id="i-file-user" viewBox="0 0 24 24"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
+  <path d="M14 2v5a1 1 0 0 0 1 1h5" />
+  <path d="M16 22a4 4 0 0 0-8 0" />
+  <circle cx="12" cy="15" r="3" /></symbol><symbol id="i-chart-line" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16" />
+  <path d="m19 9-5 5-4-4-3 3" /></symbol><symbol id="i-presentation" viewBox="0 0 24 24"><path d="M2 3h20" />
+  <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" />
+  <path d="m7 21 5-5 5 5" /></symbol><symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09" />
+  <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z" />
+  <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05" /></symbol><symbol id="i-chart-pie" viewBox="0 0 24 24"><path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z" />
+  <path d="M21.21 15.89A10 10 0 1 1 8 2.83" /></symbol><symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18" />
+  <path d="m19 8 3 8a5 5 0 0 1-6 0zV7" />
+  <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" />
+  <path d="m5 8 3 8a5 5 0 0 1-6 0zV7" />
+  <path d="M7 21h10" /></symbol><symbol id="i-building-2" viewBox="0 0 24 24"><path d="M10 12h4" />
+  <path d="M10 8h4" />
+  <path d="M14 21v-3a2 2 0 0 0-4 0v3" />
+  <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" />
+  <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" /></symbol><symbol id="i-landmark" viewBox="0 0 24 24"><path d="M10 18v-7" />
+  <path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z" />
+  <path d="M14 18v-7" />
+  <path d="M18 18v-7" />
+  <path d="M3 22h18" />
+  <path d="M6 18v-7" /></symbol><symbol id="i-earth" viewBox="0 0 24 24"><path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
+  <path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17" />
+  <path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05" />
+  <circle cx="12" cy="12" r="10" /></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" />
+  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+  <path d="M2 12h20" /></symbol><symbol id="i-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" /></symbol><symbol id="i-clock-3" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" />
+  <path d="M12 6v6h4" /></symbol><symbol id="i-messages-square" viewBox="0 0 24 24"><path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+  <path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1" /></symbol><symbol id="i-message-circle" viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></symbol><symbol id="i-badge-pound-sterling" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+  <path d="M8 12h4" />
+  <path d="M10 16V9.5a2.5 2.5 0 0 1 5 0" />
+  <path d="M8 16h7" /></symbol><symbol id="i-pound-sterling" viewBox="0 0 24 24"><path d="M18 7c0-5.333-8-5.333-8 0" />
+  <path d="M10 7v14" />
+  <path d="M6 21h12" />
+  <path d="M6 13h10" /></symbol><symbol id="i-calendar-check" viewBox="0 0 24 24"><path d="M8 2v3" />
+  <path d="M16 2v3" />
+  <rect x="3" y="3" width="18" height="18" rx="2" />
+  <path d="M3 9h18" />
+  <path d="m9 15 2 2 4-4" /></symbol><symbol id="i-users-round" viewBox="0 0 24 24"><path d="M18 21a8 8 0 0 0-16 0" />
+  <circle cx="10" cy="8" r="5" />
+  <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" /></symbol><symbol id="i-user-round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5" />
+  <path d="M20 21a8 8 0 0 0-16 0" /></symbol><symbol id="i-timer" viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2" />
+  <line x1="12" x2="15" y1="14" y2="11" />
+  <circle cx="12" cy="14" r="8" /></symbol><symbol id="i-zap" viewBox="0 0 24 24"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" /></symbol><symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10" />
+  <path d="M7 17 17 7" /></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" /></symbol><symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7" />
+  <path d="M12 19V5" /></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" /></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></symbol><symbol id="i-mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+  <rect x="2" y="4" width="20" height="16" rx="2" /></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 5h16" />
+  <path d="M4 12h16" />
+  <path d="M4 19h16" /></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" />
+  <path d="m6 6 12 12" /></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+  <path d="m21.854 2.147-10.94 10.939" /></symbol><symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8" />
+  <rect width="16" height="12" x="4" y="8" rx="2" />
+  <path d="M2 14h2" />
+  <path d="M20 14h2" />
+  <path d="M15 13v2" />
+  <path d="M9 13v2" /></symbol><symbol id="i-handshake" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3" />
+  <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+  <path d="m21 3 1 11h-2" />
+  <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+  <path d="M3 4h8" /></symbol><symbol id="i-circle-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" /></symbol><symbol id="i-clipboard-check" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+  <path d="m9 14 2 2 4-4" /></symbol><symbol id="i-banknote" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="2" />
+  <circle cx="12" cy="12" r="2" />
+  <path d="M6 12h.01M18 12h.01" /></symbol><symbol id="i-coins" viewBox="0 0 24 24"><path d="M13.744 17.736a6 6 0 1 1-7.48-7.48" />
+  <path d="M15 6h1v4" />
+  <path d="m6.134 14.768.866-.5 2 3.464" />
+  <circle cx="16" cy="8" r="6" /></symbol><symbol id="i-refresh-cw" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+  <path d="M21 3v5h-5" />
+  <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+  <path d="M8 16H3v5" /></symbol><symbol id="i-plug-zap" viewBox="0 0 24 24"><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z" />
+  <path d="m2 22 3-3" />
+  <path d="M7.5 13.5 10 11" />
+  <path d="M10.5 16.5 13 14" />
+  <path d="m18 3-4 4h6l-4 4" /></symbol><symbol id="i-receipt" viewBox="0 0 24 24"><path d="M12 17V7" />
+  <path d="M16 8h-6a2 2 0 0 0 0 4h4a2 2 0 0 1 0 4H8" />
+  <path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z" /></symbol><symbol id="i-trending-up" viewBox="0 0 24 24"><path d="M16 7h6v6" />
+  <path d="m22 7-8.5 8.5-5-5L2 17" /></symbol><symbol id="i-layers-3" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />
+  <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
+  <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /></symbol><symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+  <path d="m9 12 2 2 4-4" /></symbol><symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
+  <path d="M20 2v4" />
+  <path d="M22 4h-4" />
+  <circle cx="4" cy="20" r="2" /></symbol><symbol id="i-calculator" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2" />
+  <line x1="8" x2="16" y1="6" y2="6" />
+  <line x1="16" x2="16" y1="14" y2="18" />
+  <path d="M16 10h.01" />
+  <path d="M12 10h.01" />
+  <path d="M8 10h.01" />
+  <path d="M12 14h.01" />
+  <path d="M8 14h.01" />
+  <path d="M12 18h.01" />
+  <path d="M8 18h.01" /></symbol><symbol id="i-hand-coins" viewBox="0 0 24 24"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17" />
+  <path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9" />
+  <path d="m2 16 6 6" />
+  <circle cx="16" cy="9" r="2.9" />
+  <circle cx="6" cy="5" r="3" /></symbol><symbol id="i-piggy-bank" viewBox="0 0 24 24"><path d="M11 17h3v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a3.16 3.16 0 0 0 2-2h1a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-1a5 5 0 0 0-2-4V3a4 4 0 0 0-3.2 1.6l-.3.4H11a6 6 0 0 0-6 6v1a5 5 0 0 0 2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1z" />
+  <path d="M16 10h.01" />
+  <path d="M2 8v1a2 2 0 0 0 2 2h1" /></symbol><symbol id="i-laptop-minimal-check" viewBox="0 0 24 24"><path d="M2 20h20" />
+  <path d="m9 10 2 2 4-4" />
+  <rect x="3" y="4" width="18" height="12" rx="2" /></symbol><symbol id="i-bell-ring" viewBox="0 0 24 24"><path d="M10.268 21a2 2 0 0 0 3.464 0" />
+  <path d="M22 8c0-2.3-.8-4.3-2-6" />
+  <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+  <path d="M4 2C2.8 3.7 2 5.7 2 8" /></symbol><symbol id="i-file-spreadsheet" viewBox="0 0 24 24"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
+  <path d="M14 2v5a1 1 0 0 0 1 1h5" />
+  <path d="M8 13h2" />
+  <path d="M14 13h2" />
+  <path d="M8 17h2" />
+  <path d="M14 17h2" /></symbol><symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+  <circle cx="12" cy="10" r="3" /></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14" />
+  <path d="M12 5v14" /></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" /></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+  <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol><symbol id="i-quote" viewBox="0 0 24 24"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+  <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" /></symbol><symbol id="i-building" viewBox="0 0 24 24"><path d="M12 10h.01" />
+  <path d="M12 14h.01" />
+  <path d="M12 6h.01" />
+  <path d="M16 10h.01" />
+  <path d="M16 14h.01" />
+  <path d="M16 6h.01" />
+  <path d="M8 10h.01" />
+  <path d="M8 14h.01" />
+  <path d="M8 6h.01" />
+  <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3" />
+  <rect x="4" y="2" width="16" height="20" rx="2" /></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528" /></symbol><symbol id="i-store" viewBox="0 0 24 24"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5" />
+  <path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244" />
+  <path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05" /></symbol><symbol id="i-percent" viewBox="0 0 24 24"><line x1="19" x2="5" y1="5" y2="19" />
+  <circle cx="6.5" cy="6.5" r="2.5" />
+  <circle cx="17.5" cy="17.5" r="2.5" /></symbol><symbol id="i-calendar-clock" viewBox="0 0 24 24"><path d="M16 14v2.2l1.6 1" />
+  <path d="M16 2v3" />
+  <path d="M21 7.338V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h2.338" />
+  <path d="M3 9h5.859" />
+  <path d="M8 2v3" />
+  <circle cx="16" cy="16" r="6" /></symbol><symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" />
+  <path d="m16 9-5.5 5.5L8 12" /></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></symbol><symbol id="i-wand-sparkles" viewBox="0 0 24 24"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72" />
+  <path d="m14 7 3 3" />
+  <path d="M5 6v4" />
+  <path d="M19 14v4" />
+  <path d="M10 2v2" />
+  <path d="M7 8H3" />
+  <path d="M21 16h-4" />
+  <path d="M11 3H9" /></symbol><symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14" />
+  <path d="m19 12-7 7-7-7" /></symbol><symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m16 6-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414-8.586a4 4 0 1 0-5.657-5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379-8.551" /></symbol><symbol id="i-hash" viewBox="0 0 24 24"><line x1="4" x2="20" y1="9" y2="9" />
+  <line x1="4" x2="20" y1="15" y2="15" />
+  <line x1="10" x2="8" y1="3" y2="21" />
+  <line x1="16" x2="14" y1="3" y2="21" /></symbol><symbol id="i-at-sign" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" />
+  <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" /></symbol><symbol id="i-smile" viewBox="0 0 24 24"><path d="M15 10V9" />
+  <path d="M16.472 15a6 6 0 01-8.943 0" />
+  <path d="M9 10V9" />
+  <circle cx="12" cy="12" r="10" /></symbol><symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></symbol><symbol id="b-xero" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.585 14.655c-1.485 0-2.69-1.206-2.69-2.689 0-1.485 1.207-2.691 2.69-2.691 1.485 0 2.69 1.207 2.69 2.691s-1.207 2.689-2.69 2.689zM7.53 14.644c-.099 0-.192-.041-.267-.116l-2.043-2.04-2.052 2.047c-.069.068-.16.108-.258.108-.202 0-.368-.166-.368-.368 0-.099.04-.191.111-.263l2.04-2.05-2.038-2.047c-.075-.069-.113-.162-.113-.261 0-.203.166-.366.368-.366.098 0 .188.037.258.105l2.055 2.048 2.048-2.045c.069-.071.162-.108.26-.108.211 0 .375.165.375.366 0 .098-.029.188-.104.258l-2.056 2.055 2.055 2.051c.068.069.104.16.104.258 0 .202-.165.368-.365.368h-.01zm8.017-4.591c-.796.101-.882.476-.882 1.404v2.787c0 .202-.165.366-.366.366-.203 0-.367-.165-.368-.366v-4.53c0-.204.16-.366.362-.366.166 0 .316.125.346.289.27-.209.6-.317.93-.317h.105c.195 0 .359.165.359.368 0 .201-.164.352-.375.359 0 0-.09 0-.164.008l.053-.002zm-3.091 2.205H8.625c0 .019.003.037.006.057.02.105.045.211.083.31.194.531.765 1.275 1.829 1.29.33-.003.631-.086.9-.229.21-.12.391-.271.525-.428.045-.058.09-.112.12-.168.18-.229.405-.186.54-.083.164.135.18.391.045.57l-.016.016c-.21.27-.435.495-.689.66-.255.164-.525.284-.811.345-.33.09-.645.104-.975.06-1.095-.135-2.01-.93-2.28-2.01-.06-.21-.09-.42-.09-.645 0-.855.421-1.695 1.125-2.205.885-.615 2.085-.66 3-.075.63.405 1.035 1.021 1.185 1.771.075.419-.21.794-.734.81l.068-.046zm6.129-2.223c-1.064 0-1.931.865-1.931 1.931 0 1.064.866 1.931 1.931 1.931s1.931-.867 1.931-1.931c0-1.065-.866-1.933-1.931-1.933v.002zm0 2.595c-.367 0-.666-.297-.666-.666 0-.367.3-.665.666-.665.367 0 .667.299.667.665 0 .369-.3.667-.667.666zm-8.04-2.603c-.91 0-1.672.623-1.886 1.466v.03h3.776c-.203-.855-.973-1.494-1.891-1.494v-.002z"/></symbol><symbol id="b-quickbooks" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm.642 4.1335c.9554 0 1.7296.776 1.7296 1.7332v9.0667h1.6c1.614 0 2.9275-1.3156 2.9275-2.933 0-1.6173-1.3136-2.9333-2.9276-2.9333h-.6654V7.3334h.6654c2.5722 0 4.6577 2.0897 4.6577 4.667 0 2.5774-2.0855 4.6666-4.6577 4.6666H12.642zM7.9837 7.333h3.3291v12.533c-.9555 0-1.73-.7759-1.73-1.7332V9.0662H7.9837c-1.6146 0-2.9277 1.316-2.9277 2.9334 0 1.6175 1.3131 2.9333 2.9277 2.9333h.6654v1.7332h-.6654c-2.5725 0-4.6577-2.0892-4.6577-4.6665 0-2.5771 2.0852-4.6666 4.6577-4.6666Z"/></symbol><symbol id="b-stripe" viewBox="0 0 24 24"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z"/></symbol><symbol id="b-shopify" viewBox="0 0 24 24"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/></symbol><symbol id="b-paypal" viewBox="0 0 24 24"><path d="M15.607 4.653H8.941L6.645 19.251H1.82L4.862 0h7.995c3.754 0 6.375 2.294 6.473 5.513-.648-.478-2.105-.86-3.722-.86m6.57 5.546c0 3.41-3.01 6.853-6.958 6.853h-2.493L11.595 24H6.74l1.845-11.538h3.592c4.208 0 7.346-3.634 7.153-6.949a5.24 5.24 0 0 1 2.848 4.686M9.653 5.546h6.408c.907 0 1.942.222 2.363.541-.195 2.741-2.655 5.483-6.441 5.483H8.714Z"/></symbol><symbol id="b-google" viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></symbol><symbol id="b-hubspot" viewBox="0 0 24 24"><path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.978v-.067A2.2 2.2 0 0017.238.845h-.067a2.2 2.2 0 00-2.193 2.193v.067a2.196 2.196 0 001.252 1.973l.013.006v2.852a6.22 6.22 0 00-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 104.3 4.656l-.012.006 7.697 5.991a6.176 6.176 0 00-1.038 3.446c0 1.343.425 2.588 1.147 3.607l-.013-.02-2.342 2.343a1.968 1.968 0 00-.58-.095h-.002a2.033 2.033 0 102.033 2.033 1.978 1.978 0 00-.1-.595l.005.014 2.317-2.317a6.247 6.247 0 104.782-11.134l-.036-.005zm-.964 9.378a3.206 3.206 0 113.215-3.207v.002a3.206 3.206 0 01-3.207 3.207z"/></symbol></defs></svg>
+
+
+<!-- ============================ NAV ============================ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <button class="logo" data-go="top" aria-label="Back to top"><img class="lg-light" src="assets/logo-98bf498e.svg" alt="Rise Accounting"><img class="lg-dark" src="assets/logo-7a1dd755.svg" alt=""></button>
+    <nav class="menu" id="menu" aria-label="Page sections">
+      <button data-go="services">Services</button>
+      <button data-go="why">Why Rise Accounting</button>
+      <button data-go="integrations">Integrations</button>
+      <button data-go="reviews">Success stories</button>
+      <button data-go="faq">FAQs</button>
+    </nav>
+    <div class="nav-r">
+      <button class="btn btn-primary btn-sm" data-form>Talk to an expert</button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mnav" id="mnav">
+  <button data-go="services">Services</button><button data-go="why">Why Rise Accounting</button><button data-go="integrations">Integrations</button>
+  <button data-go="reviews">Success stories</button><button data-go="faq">FAQs</button>
+</div>
+
+<main id="top">
+<!-- ============================ HERO (EDIT copy here) ============================ -->
+<section class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Trusted by startups and SMEs in the UK &amp; UAE</p>
+      <h1>Get your whole finance team<br> for <span class="stroke">less than the cost of one hire</span>.</h1>
+      <p class="lede">Chartered accountants, bookkeepers, tax and payroll experts in one team. Replies within 24 hours. One fixed monthly fee.</p>
+      <div class="hero-cta"><button class="btn btn-primary btn-lg" data-form>Talk to an expert</button></div>
+      <div class="proof">
+        <div class="pf">
+          <span class="pf-logos"><svg class="bic" style="color:#13B5EA"><use href="#b-xero"/></svg><svg class="bic" style="color:#2CA01C"><use href="#b-quickbooks"/></svg></span>
+          <div><b>Xero Platinum Partner</b><span>QuickBooks Certified Partner</span></div>
+        </div>
+        <i class="pf-sep"></i>
+        <div class="pf">
+          <span class="pf-logos"><span><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.7 7.3a6.7 6.7 0 1 0 0 9.4" fill="none" stroke="#17313B" stroke-width="3.2"/><circle cx="12" cy="12" r="2.5" fill="#EF4335"/></svg></span></span>
+          <div><b class="stars" aria-label="5 stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></b><span>5-star rated on Google &amp; Clutch</span></div>
+        </div>
+      </div>
+      <ul class="ticks">
+        <li><svg class="ic"><use href="#i-check"/></svg>Free consultation</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Live in under a week</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>No hourly billing</li>
+      </ul>
+    </div>
+    <aside class="hero-side">
+      <figure class="hq">
+        <div class="stars" aria-label="5 stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></div>
+        <blockquote>“They are super responsive and aim to deliver quality.”</blockquote>
+        <figcaption><img src="assets/img-894f8c47.webp" alt=""><div><b>Hayyaan Ahmad</b><span>Co-Founder, Round</span></div></figcaption>
+      </figure>
+    </aside>
+  </div>
+</section>
+
+<!-- ============================ CLIENTS ============================ -->
+<div class="clients">
+  <div class="wrap">
+    <p>Trusted by high-growth startups and SMEs</p>
+    <div class="logos">
+      <img src="assets/img-d66909f2.webp" alt="Cauli Box" style="height:44px">
+      <img src="assets/img-0dfeba16.webp" alt="hifo.co" style="height:31px">
+      <img src="assets/img-ca3b3acc.webp" alt="Kyte" style="height:48px">
+      <img src="assets/img-55505122.webp" alt="Ameba" style="height:29px">
+      <img src="assets/img-fc3f94c6.webp" alt="Mast." style="height:25px">
+      <img src="assets/img-1b8a298e.webp" alt="Round" style="height:20px">
+    </div>
+  </div>
+</div>
+
+<!-- ============================ SERVICES (cards come from CONFIG) ============================ -->
+<section id="services">
+  <div class="wrap">
+    <div class="head">
+      <h2>Everything your scaling business needs</h2>
+      <p class="sub">Start with what causes the most headaches. Add more as you grow.</p>
+    </div>
+    <div class="filters" id="filters" role="tablist" aria-label="Filter services"></div>
+    <div class="svc-grid" id="svcGrid"></div>
+    <div class="svc-foot"><div class="more" id="more"><button class="btn btn-soft" id="moreBtn"><span>Show all services</span><svg class="ic"><use href="#i-chevron-down"/></svg></button></div>
+    <p class="more-note">Not sure what you need? <button data-form>Tell us what's slowing you down</button></p></div>
+  </div>
+</section>
+
+<!-- ============================ WHY RISE ============================ -->
+<section id="why" class="white">
+  <div class="wrap">
+    <div class="why-top">
+      <h2>What Rise Accounting does for you</h2>
+      <p class="sub">What you get from day one, and as you grow.</p>
+    </div>
+    <div class="why">
+    <div class="why-list" id="whyList" role="tablist" aria-label="Reasons to choose Rise Accounting"></div>
+
+    <div class="stage" id="stage">
+      <!-- visual: accountant -->
+      <div class="v" data-v="accountant">
+        <div class="va">
+          <img src="assets/img-d728c9ed.webp" alt="Two Rise Accounting accountants reviewing a client's numbers">
+          <div class="fl t1"><span class="ico" style="background:var(--cyan-50);color:var(--cyan-6)"><svg class="ic"><use href="#i-user-round-check"/></svg></span><div><b>Your accountant</b><span>Same person, every month</span></div></div>
+          <div class="fl t2"><span class="ico" style="background:var(--sun-50);color:var(--sun-6)"><svg class="ic"><use href="#i-calendar-check"/></svg></span><div><b>Monthly catch-up</b><span>In person or on Teams</span></div></div>
+        </div>
+      </div>
+      <!-- visual: growth & advisory -->
+      <div class="v" data-v="advisory">
+        <div class="win dl adv">
+          <div class="dl-h"><span class="ico"><svg class="ic"><use href="#i-rocket"/></svg></span><div><b>Growth &amp; advisory</b><span>Senior finance advice for your next big move</span></div></div>
+          <ul>
+            <li><span class="adv-i"><svg class="ic"><use href="#i-rocket"/></svg></span><div><b>SEIS &amp; EIS advance assurance</b><span>Sent to HMRC within 48 hours</span></div><em class="tag mint">Submitted</em></li>
+            <li><span class="adv-i"><svg class="ic"><use href="#i-chart-pie"/></svg></span><div><b>EMI share options</b><span>Valuation, scheme setup and HMRC</span></div><em class="tag cyan">In progress</em></li>
+            <li><span class="adv-i"><svg class="ic"><use href="#i-trending-up"/></svg></span><div><b>Forecast &amp; runway</b><span>Hiring and funding scenarios</span></div><em class="tag sun">19 months</em></li>
+            <li><span class="adv-i"><svg class="ic"><use href="#i-presentation"/></svg></span><div><b>Investor &amp; board reporting</b><span>The numbers investors ask for</span></div><em class="tag mint">Ready</em></li>
+          </ul>
+          <div class="adv-foot"><span>Investor pack</span><div class="bar"><i></i></div><b>80%</b></div>
+        </div>
+      </div>
+      <!-- visual: international expansion -->
+      <div class="v" data-v="global">
+        <div class="glob">
+          <p class="glob-h">One team across three markets</p>
+          <div class="loc"><span class="code c1">UK</span><div><b>London</b><span>Your dedicated accountant, UK tax, payroll and reporting</span></div></div>
+          <div class="loc"><span class="code c2">UAE</span><div><b>Dubai</b><span>Our own Dubai team: Free Zone setup, UAE VAT and corporate tax</span></div></div>
+          <div class="loc"><span class="code c3">US</span><div><b>United States</b><span>US CPAs we work with: company setup, sales tax and payroll</span></div></div>
+          <p class="glob-f"><svg class="ic"><use href="#i-check"/></svg>All joined up with your UK accounts</p>
+        </div>
+      </div>
+      <!-- visual: chat -->
+      <div class="v" data-v="chat">
+        <div class="vc">
+          <div class="win">
+            <div class="win-top"><i></i><i></i><i></i><svg class="ic"><use href="#i-hash"/></svg>rise-accounting</div>
+            <div class="msgs">
+              <div class="m"><div class="m-av you">You</div><div><div class="m-h"><b>You</b><time>09:12</time></div><p>Can we afford two more hires in Q1?</p></div></div>
+              <div class="m"><div class="m-av rise"><img src="assets/img-0305565d.webp" alt=""></div><div><div class="m-h"><b>Your Rise Accounting accountant</b><time>09:31</time></div><p>Yes, if revenue holds at this month's level. I've modelled both hires for you.</p><div class="att"><svg class="ic"><use href="#i-file-spreadsheet"/></svg>Q1 hiring forecast.xlsx</div></div></div>
+            </div>
+            <div class="composer">Message #rise-accounting</div>
+          </div>
+          <div class="fl t1"><span class="ico" style="background:var(--mint-50);color:var(--mint-6)"><svg class="ic"><use href="#i-timer"/></svg></span><div><b>Replied in 19 minutes</b><span>On Slack, Teams, email or a call</span></div></div>
+        </div>
+      </div>
+      <!-- visual: fee -->
+      <div class="v" data-v="fee">
+        <div class="win fee">
+          <div class="fee-h"><div><b>Your monthly fee</b><span>Only pay for what you need</span></div><em class="tag mint">No surprise bills</em></div>
+          <ul class="fee-l">
+            <li><svg class="ic"><use href="#i-book-open-check"/></svg>Bookkeeping<em class="tag cyan">In your fee</em></li>
+            <li><svg class="ic"><use href="#i-receipt-pound-sterling"/></svg>VAT returns<em class="tag cyan">In your fee</em></li>
+            <li><svg class="ic"><use href="#i-wallet"/></svg>Payroll &amp; pensions<em class="tag cyan">In your fee</em></li>
+            <li><svg class="ic"><use href="#i-file-check-2"/></svg>Year-end accounts &amp; tax<em class="tag cyan">In your fee</em></li>
+            <li><svg class="ic"><use href="#i-message-circle"/></svg>Ad-hoc questions<em class="tag mint">Always free</em></li>
+            <li><svg class="ic"><use href="#i-calendar-check"/></svg>Extra calls &amp; meetings<em class="tag mint">Always free</em></li>
+            <li class="no"><svg class="ic"><use href="#i-clock-3"/></svg><s>Billing by the hour</s><em class="tag coral">Never</em></li>
+          </ul>
+        </div>
+      </div>
+      <!-- visual: books -->
+      <div class="v" data-v="books">
+        <div class="win dash">
+          <div class="dash-h"><b>Finance overview</b><span class="live"><i class="pulse"></i>Reconciled today, 08:02</span></div>
+          <div class="kpis">
+            <div><span>Cash in bank</span><b>£312,400</b></div>
+            <div><span>Revenue, Oct</span><b>£96,850</b><em>+9% on Sep</em></div>
+            <div><span>Runway</span><b>19 months</b></div>
+          </div>
+          <div class="chart">
+            <div class="chart-h"><span>Monthly revenue</span><span>Updated daily from your bank feeds</span></div>
+            <div class="bars"><i style="height:48%"></i><i style="height:55%;transition-delay:.05s"></i><i style="height:51%;transition-delay:.1s"></i><i style="height:64%;transition-delay:.15s"></i><i style="height:70%;transition-delay:.2s"></i><i style="height:78%;transition-delay:.25s"></i><i style="height:92%;transition-delay:.3s"></i></div>
+            <div class="months"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- visual: proactive -->
+      <div class="v" data-v="proactive">
+        <div class="win dl">
+          <div class="dl-h"><span class="ico"><svg class="ic"><use href="#i-bell-ring"/></svg></span><div><b>Coming up</b><span>You don't need to chase us. We stay on top of it.</span></div></div>
+          <ul>
+            <li><time><b>07</b>Nov</time><div><b>VAT return, Q3</b><span>Drafted and ready for your OK</span></div><em class="tag sun">Needs you</em></li>
+            <li><time><b>19</b>Nov</time><div><b>PAYE and pensions</b><span>Payment scheduled</span></div><em class="tag mint">Done</em></li>
+            <li><time><b>01</b>Dec</time><div><b>Confirmation statement</b><span>Details checked with you</span></div><em class="tag cyan">On it</em></li>
+            <li><time><b>31</b>Dec</time><div><b>Corporation tax</b><span>Bill estimated early, no surprises</span></div><em class="tag mint">Ready</em></li>
+          </ul>
+        </div>
+      </div>
+      <!-- visual: grow -->
+      <div class="v" data-v="grow">
+        <div class="grow">
+          <p class="grow-note">Same team the whole way. No switching as you grow.</p>
+          <ul class="gs s1"><em class="tag cyan">Starting out</em><li><svg class="ic"><use href="#i-check"/></svg>Bookkeeping</li><li><svg class="ic"><use href="#i-check"/></svg>VAT returns</li><li><svg class="ic"><use href="#i-check"/></svg>Year-end accounts</li></ul>
+          <ul class="gs s2"><em class="tag sun">Scaling up</em><li><svg class="ic"><use href="#i-check"/></svg>Management accounts</li><li><svg class="ic"><use href="#i-check"/></svg>Payroll</li><li><svg class="ic"><use href="#i-check"/></svg>Forecasting</li><li><svg class="ic"><use href="#i-check"/></svg>SEIS, EIS &amp; EMI</li></ul>
+          <ul class="gs s3"><em class="tag mint">Full finance team</em><li><svg class="ic"><use href="#i-check"/></svg>CFO advisory</li><li><svg class="ic"><use href="#i-check"/></svg>Bills &amp; credit control</li><li><svg class="ic"><use href="#i-check"/></svg>Board reporting</li><li><svg class="ic"><use href="#i-check"/></svg>Dubai &amp; US</li></ul>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ INTEGRATIONS ============================ -->
+<section id="integrations">
+  <div class="wrap">
+    <div class="head">
+      <h2>Plugs into the tools you already use</h2>
+      <p class="sub">Nothing to rip out. Your data flows in and your numbers come out ready.</p>
+    </div>
+    <div class="flow" id="flow">
+      <svg class="flow-lines" id="flowLines" aria-hidden="true"></svg>
+      <div class="fcol f-src">
+        <h4>Sales &amp; payments</h4>
+        <div class="grp">
+          <div class="node" data-src><span class="lg"><svg class="bic" style="color:#635BFF"><use href="#b-stripe"/></svg></span>Stripe</div>
+          <div class="node" data-src><span class="lg"><svg class="bic" style="color:#7AB55C"><use href="#b-shopify"/></svg></span>Shopify</div>
+          <div class="node" data-src><span class="lg"><svg class="bic" style="color:#003087"><use href="#b-paypal"/></svg></span>PayPal</div>
+          <div class="node" data-src><span class="lg"><img src="assets/img-78c4c61c.webp" alt=""></span>Amazon &amp; A2X</div>
+        </div>
+        <h4>Receipts &amp; bills</h4>
+        <div class="grp">
+          <div class="node" data-src><span class="lg"><img src="assets/img-0bd2bb27.webp" alt=""></span>Dext</div>
+          <div class="node" data-src><span class="lg"><img src="assets/img-dfc2f9ff.webp" alt=""></span>Apron</div>
+          <div class="node" data-src><span class="lg" style="color:var(--navy)"><svg class="ic"><use href="#i-landmark"/></svg></span>Bank feeds</div>
+        </div>
+      </div>
+      <div class="fcol f-hub">
+        <div class="hub" data-hub>
+          <div class="hub-logos"><svg class="bic" style="color:#13B5EA"><use href="#b-xero"/></svg><svg class="bic" style="color:#2CA01C"><use href="#b-quickbooks"/></svg></div>
+          <b>Your books, live</b>
+          <span>In Xero or QuickBooks</span>
+          <em class="tag cyan">Xero Platinum Partner</em>
+        </div>
+      </div>
+      <div class="fcol f-rise">
+        <div class="risec" data-rise>
+          <img src="assets/logo-98bf498e.svg" alt="Rise Accounting">
+          <div class="team">
+            <span class="av"><img src="assets/img-dc3b91ce.webp" alt="Rise Accounting team member"></span>
+            <span class="av"><img src="assets/img-0305565d.webp" alt="Rise Accounting team member"></span>
+            <span class="av"><img src="assets/img-d05ba58e.webp" alt="Rise Accounting team member"></span>
+            <span class="av"><img src="assets/img-4b69b387.webp" alt="Rise Accounting team member"></span>
+          </div>
+          <b>Your Rise Accounting team</b>
+          <span>Checks, reconciles and explains</span>
+        </div>
+      </div>
+      <div class="fcol f-out">
+        <div class="node out" data-out><span class="lg cyan"><svg class="ic"><use href="#i-chart-column"/></svg></span>Management accounts</div>
+        <div class="node out" data-out><span class="lg sun"><svg class="ic"><use href="#i-file-check-2"/></svg></span>VAT &amp; tax filed</div>
+        <div class="node out" data-out><span class="lg mint"><svg class="ic"><use href="#i-wallet"/></svg></span>Payroll paid</div>
+        <div class="node out" data-out><span class="lg cyan"><svg class="ic"><use href="#i-messages-square"/></svg></span>Answers in Slack or Teams</div>
+      </div>
+    </div>
+    <div class="perks">
+      <div class="perk"><span class="lg"><svg class="bic" style="color:#13B5EA"><use href="#b-xero"/></svg></span><div><b>Up to 80% off Xero for 6 months</b><span>Our Platinum Partner discount, passed straight to you.</span></div></div>
+      <div class="perk"><span class="lg" style="background:var(--sun-50);color:var(--sun-6)"><svg class="ic"><use href="#i-receipt"/></svg></span><div><b>Receipts captured for you</b><span>Dext or Apron grabs every bill and expense automatically.</span></div></div>
+      <div class="perk"><span class="lg" style="background:var(--mint-50);color:var(--mint-6)"><svg class="ic"><use href="#i-plug-zap"/></svg></span><div><b>Keep the tools you like</b><span>Stripe, Shopify, PayPal, Amazon, A2X and more.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ REVIEWS (cards come from CONFIG) ============================ -->
+<section id="reviews" class="white">
+  <div class="wrap">
+    <div class="head">
+      <h2>Don't take our word for it</h2>
+      <p class="sub">Founders and finance leads on what changed after they moved to Rise Accounting.</p>
+    </div>
+    <div class="rev-track" id="revTrack" aria-roledescription="carousel" aria-label="Client reviews"></div>
+    <div class="rev-nav">
+      <button class="arrow" id="revPrev" aria-label="Previous review"><svg class="ic"><use href="#i-chevron-left"/></svg></button>
+      <div class="rev-dots" id="revDots"></div>
+      <button class="arrow" id="revNext" aria-label="Next review"><svg class="ic"><use href="#i-chevron-right"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ HOW IT WORKS ============================ -->
+<section id="how">
+  <div class="wrap">
+    <div class="head">
+      <h2>Up and running in less than a week</h2>
+      <p class="sub">Already have an accountant? We handle the handover, including telling HMRC.</p>
+    </div>
+    <ol class="steps" id="steps"></ol>
+    <div class="how-cta"><button class="btn btn-primary" data-form>Talk to an expert</button></div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section id="faq" class="white">
+  <div class="wrap">
+    <div class="head"><h2>Questions we get asked a lot</h2></div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ============================ CLOSING CTA ============================ -->
+<section class="cta white">
+  <div class="wrap">
+    <div class="cta-panel">
+      <div class="cta-in">
+        <h2>Get a finance team that's already on it</h2>
+        <p class="sub">Talk to an accountant for free. We'll look at your setup and suggest a plan that fits.</p>
+        <ul class="ticks">
+          <li><svg class="ic"><use href="#i-check"/></svg>Free consultation</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Chartered Accountants</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Built for SMEs</li>
+        </ul>
+        <button class="btn btn-primary" data-form>Talk to an expert</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="assets/logo-98bf498e.svg" alt="Rise Accounting">
+        <p>Accounting partners for fast-growing businesses in the UK, Dubai and the US.</p>
+        <div class="partners"><svg class="bic" style="color:#13B5EA"><use href="#b-xero"/></svg><svg class="bic" style="color:#2CA01C"><use href="#b-quickbooks"/></svg></div>
+      </div>
+      <div class="foot-cols">
+        <div><h5>Accounting</h5>
+          <a href="https://riseaccounting.co.uk/accounting-packages/">Accounting packages</a>
+          <a href="https://riseaccounting.co.uk/year-end-accounts/">Year-end accounts</a>
+          <a href="https://riseaccounting.co.uk/management-accounts/">Management accounts</a>
+          <a href="https://riseaccounting.co.uk/outsourced-finance-function/">Outsourced finance function</a></div>
+        <div><h5>Growth</h5>
+          <a href="https://riseaccounting.co.uk/emi/">EMI options</a>
+          <a href="https://riseaccounting.co.uk/seis-eis-advance-assurance/">SEIS &amp; EIS</a>
+          <a href="https://riseaccounting.co.uk/financial-forecasting-modelling/">Financial forecasting</a></div>
+        <div><h5>International</h5>
+          <a href="https://riseaccounting.co.uk/dubai/">Dubai accounting</a>
+          <a href="https://riseaccounting.co.uk/dubai-tax-consultant/">Dubai tax consultants</a>
+          <a href="https://riseaccounting.co.uk/set-up-a-company-in-dubai-uk/">Set up in Dubai</a>
+          <a href="https://riseaccounting.co.uk/united-states/">United States</a></div>
+        <div><h5>Company</h5>
+          <a href="https://riseaccounting.co.uk/about/">About Rise Accounting</a>
+          <a href="https://riseaccounting.co.uk/switch-to-rise/">Switch to Rise Accounting</a>
+          <a href="https://riseaccounting.co.uk/success-stories/">Success stories</a>
+          <a href="https://riseaccounting.co.uk/careers/">Careers</a></div>
+      </div>
+    </div>
+    <div class="foot-mid">
+      <div><h5>Contact</h5><p><a href="mailto:info@therisegroup.co.uk">info@therisegroup.co.uk</a><br><a href="tel:+442076002643">020 7600 2643</a><br><a href="https://www.linkedin.com/company/rise-accounting">LinkedIn</a></p></div>
+      <div><h5>London</h5><p>131 Finsbury Pavement<br>London EC2A 1NT</p></div>
+      <div><h5>Dubai</h5><p>Dubai Hills Business Park<br>Building 4, 7th Floor</p></div>
+    </div>
+    <div class="foot-bot"><span>© 2026 Rise Group Services Ltd.</span><span><!-- EDIT: turn into a link once you have the privacy policy URL -->Privacy Policy</span></div>
+  </div>
+</footer>
+
+<!-- ============================ POPUP FORM ============================ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="m-back" data-close></div>
+  <div class="m-box">
+    <aside class="m-side">
+      <img src="assets/logo-98bf498e.svg" alt="Rise Accounting">
+      <h3 id="mTitle">Talk to an expert</h3><p class="m-lede">A free, no-obligation call with one of our accountants.</p>
+      <ul>
+        <li><svg class="ic"><use href="#i-check"/></svg>We look at your current setup</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>You get a suggested plan and a fixed quote</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>No obligation and no hard sell</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Reply within 24 hours</li>
+      </ul>
+      <div class="m-contact">Rather talk now?
+        <a href="tel:+442076002643"><svg class="ic"><use href="#i-phone"/></svg>020 7600 2643</a>
+        <a href="mailto:info@therisegroup.co.uk"><svg class="ic"><use href="#i-mail"/></svg>info@therisegroup.co.uk</a>
+      </div>
+    </aside>
+    <div class="m-main">
+      <button class="m-x" data-close aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button>
+      <div class="m-about tag cyan" id="mAbout" hidden></div>
+      <div class="m-prog" id="mProg"><span id="mStepTxt">Step 1 of 2</span><div class="bar"><i id="mBar"></i></div></div>
+      <div class="m-step on" data-s="1">
+        <h4>What location do you need support in?</h4>
+        <div class="opts" id="spendOpts"></div>
+      </div>
+      <form class="m-step" data-s="2" id="mForm" novalidate>
+        <h4>Where should we reach you?</h4>
+        <div class="fields">
+          <div class="f full"><label for="fName">Name</label><input id="fName" name="name" autocomplete="name" required><small>Please add your name</small></div>
+          <div class="f full"><label for="fCo">Company name</label><input id="fCo" name="company" autocomplete="organization" required><small>Please add your company</small></div>
+          <div class="f full"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@company.co.uk" required><small>Please add a valid email</small></div>
+          <div class="f full"><label for="fPhone">Phone number</label>
+            <div class="phone"><select id="fCc" name="country_code" aria-label="Country code"><option value="+44" selected>UK +44</option><option value="+971">UAE +971</option><option value="+1">US +1</option><option value="+353">IE +353</option><option value="">Other</option></select>
+            <input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="7700 900123" required></div><small>Please add a phone number</small></div>
+        </div>
+        <div class="m-actions"><button type="button" class="btn btn-soft" id="mBack">Back</button><button type="submit" class="btn btn-primary">Talk to an expert</button></div>
+        <p class="fine">We only use your details to reply to you. An accountant gets back to you within 24 hours.</p>
+      </form>
+      <div class="m-step" data-s="3">
+        <div class="done">
+          <span class="tick"><svg class="ic"><use href="#i-check"/></svg></span>
+          <h4 id="doneTitle">Thanks, you're booked in</h4>
+          <p>An accountant will be in touch within 24 hours to find a time that suits you.</p>
+          <button class="btn btn-soft" data-close style="margin-top:22px">Back to the page</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ CHATBOT ============================ -->
+<button class="bot-btn" id="botBtn" aria-controls="bot" aria-expanded="false">
+  <span class="bot-av"><img src="assets/logo-f25648fb.svg" alt=""></span><span class="lbl">Ask us anything</span>
+</button>
+<div class="bot" id="bot" role="dialog" aria-label="Rise Accounting assistant">
+  <div class="bot-h">
+    <span class="bot-av"><img src="assets/logo-f25648fb.svg" alt=""></span>
+    <div><b>Rise Accounting assistant</b><span>Instant answers. A human is one tap away.</span></div>
+    <button class="bot-x" id="botX" aria-label="Close chat"><svg class="ic"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="bot-body" id="botBody" aria-live="polite"></div>
+  <div class="bot-chips" id="botChips"></div>
+  <form class="bot-in" id="botForm"><input id="botInput" placeholder="Type your question" autocomplete="off" aria-label="Your question"><button aria-label="Send"><svg class="ic"><use href="#i-send"/></svg></button></form>
+</div>
+<button class="totop" id="toTop" aria-label="Back to top"><svg class="ic"><use href="#i-arrow-up"/></svg></button>
+
+<script>
+(function () {
+  const C = window.RISE;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const icon = (n, cls = 'ic') => `<svg class="${cls}"><use href="#i-${n}"/></svg>`;
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const COL = {
+    cyan:  { c: '#3BCBF7', c50: '#3BCBF7', c6: '#0B243F', hl: 'rgba(59,203,247,.35)', bg: '#EEF2F8' },
+    steel: { c: '#3B6186', c50: '#3B6186', c6: '#FFFFFF', hl: 'rgba(59,97,134,.2)',   bg: '#D3E1EB' },
+    navy:  { c: '#0B243F', c50: '#0B243F', c6: '#3BCBF7', hl: 'rgba(59,203,247,.3)',  bg: '#DAE4EC' },
+    slate: { c: '#5D6180', c50: '#5D6180', c6: '#FFFFFF', hl: 'rgba(93,97,128,.2)',   bg: '#EEF2F8' },
+  };
+  COL.sun = COL.steel; COL.mint = COL.navy; COL.coral = COL.slate;   // older colour names still map onto the brand palette
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------------- SERVICES ---------------- */
+  const grid = $('#svcGrid'), filters = $('#filters'), moreWrap = $('#more'), moreBtn = $('#moreBtn');
+  let filter = 'all', showAll = false;
+  const catCol = k => COL[(C.categories[k] || {}).colour || 'cyan'];
+
+  function renderFilters() {
+    const counts = {};
+    C.services.forEach(s => counts[s.cat] = (counts[s.cat] || 0) + 1);
+    let h = `<button class="chip on" data-f="all" role="tab" aria-selected="true">All services <b>${C.services.length}</b></button>`;
+    Object.entries(C.categories).forEach(([k, v]) => {
+      if (!counts[k]) return;
+      h += `<button class="chip" data-f="${k}" role="tab" aria-selected="false"><i style="background:${COL[v.colour].c}"></i>${esc(v.label)} <b>${counts[k]}</b></button>`;
+    });
+    filters.innerHTML = h;
+  }
+  function svcCard(s) {
+    const col = catCol(s.cat);
+    return `<div class="cell"><button class="svc" style="--c:${col.c};--c50:${col.c50};--c6:${col.c6}" data-service="${esc(s.title)}">
+      <span class="svc-ic">${icon(s.icon)}</span>
+      <span class="svc-t">${esc(s.title)}</span>
+      <span class="svc-d">${esc(s.line)}</span>
+      <span class="svc-go">${icon('arrow-up-right')}</span></button></div>`;
+  }
+  function renderServices(animateFrom = -1) {
+    let list = C.services.filter(s => filter === 'all' || s.cat === filter);
+    const featured = C.services.filter(s => s.featured);
+    const limited = filter === 'all' && !showAll && featured.length && featured.length < list.length;
+    if (limited) list = featured;
+    else if (filter === 'all') list = [...featured, ...C.services.filter(s => !s.featured)];
+    let h = list.map(svcCard).join('');
+    grid.innerHTML = h;
+    grid.classList.toggle('three', filter !== 'all');
+    $$('.cell', grid).forEach((c, i) => {
+      if (animateFrom >= 0 && i >= animateFrom) { c.classList.add('enter'); c.style.animationDelay = ((i - animateFrom) * 55) + 'ms'; }
+    });
+    moreWrap.style.display = filter === 'all' && featured.length < C.services.length ? '' : 'none';
+    moreWrap.classList.toggle('open', showAll);
+    $('span', moreBtn).textContent = showAll ? 'Show fewer' : `Show all ${C.services.length} services`;
+  }
+  filters.addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    filter = b.dataset.f;
+    $$('.chip', filters).forEach(c => { c.classList.toggle('on', c === b); c.setAttribute('aria-selected', c === b); });
+    renderServices(0);
+  });
+  moreBtn.addEventListener('click', () => {
+    const before = C.services.filter(s => s.featured).length;
+    showAll = !showAll;
+    renderServices(showAll ? before : -1);
+    if (!showAll) $('#services').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+  });
+  grid.addEventListener('click', e => { const b = e.target.closest('.svc'); if (b) openForm(b.dataset.service); });
+
+  /* ---------------- WHY RISE ---------------- */
+  const whyList = $('#whyList'), stage = $('#stage');
+  let whyIdx = 0, whyTimer = null, whyAuto = !reduce;
+  whyList.innerHTML = C.why.map((w, i) => {
+    const col = COL[w.colour];
+    return `<button class="wi" role="tab" aria-selected="false" data-i="${i}" style="--c:${col.c};--c50:${col.c50};--c6:${col.c6}">
+      <span class="wi-ic">${icon(w.icon)}</span>
+      <span><span class="wi-t">${esc(w.title)}</span><span class="wi-d">${esc(w.line)}</span></span>
+      <span class="prog"><i></i></span></button>`;
+  }).join('');
+  function showWhy(i, fromUser) {
+    whyIdx = i;
+    const w = C.why[i];
+    $$('.wi', whyList).forEach((b, j) => {
+      b.classList.toggle('on', j === i); b.classList.remove('run'); b.setAttribute('aria-selected', j === i);
+    });
+    $$('.v', stage).forEach(v => v.classList.toggle('on', v.dataset.v === w.visual));
+    stage.style.setProperty('--stage', COL[w.colour].bg);
+    if (fromUser) whyAuto = false;
+    clearTimeout(whyTimer);
+    if (whyAuto) {
+      const b = $$('.wi', whyList)[i];
+      void b.offsetWidth; b.classList.add('run');
+      whyTimer = setTimeout(() => showWhy((i + 1) % C.why.length), 6000);
+    }
+  }
+  whyList.addEventListener('click', e => { const b = e.target.closest('.wi'); if (b) showWhy(+b.dataset.i, true); });
+  // start auto-rotation only once the section is on screen
+  new IntersectionObserver((en, ob) => { if (en[0].isIntersecting) { showWhy(0); ob.disconnect(); } }, { threshold: .35 }).observe(stage);
+  showWhy(0); clearTimeout(whyTimer); $$('.wi', whyList)[0].classList.remove('run');
+
+  /* ---------------- REVIEWS / STEPS / FAQ ---------------- */
+  const revTrack = $('#revTrack');
+  revTrack.innerHTML = C.reviews.map(r => {
+    const col = COL[r.colour] || COL.cyan;
+    const q = esc(r.quote).replace(/\[\[(.+?)\]\]/g, '<mark>$1</mark>');
+    return `<figure class="rev" style="--c:${col.c};--hl:${col.hl}">
+      <div class="rev-top"><span class="tag ${r.colour}">${esc(r.tag)}</span>${icon('quote')}</div>
+      <blockquote>“${q}”</blockquote>
+      <figcaption><img src="${r.photo}" alt="${esc(r.name)}"><div><b>${esc(r.name)}</b><span>${esc(r.role)}</span></div></figcaption></figure>`;
+  }).join('');
+  (function carousel() {
+    const dots = $('#revDots'); let timer = null, paused = false, pages = 1;
+    const stepW = () => { const c = $('.rev', revTrack); return c ? c.getBoundingClientRect().width + 22 : 300; };
+    const perView = () => Math.max(1, Math.round(revTrack.clientWidth / stepW()));
+    const current = () => Math.round(revTrack.scrollLeft / stepW());
+    function buildDots() {
+      pages = Math.max(1, C.reviews.length - perView() + 1);
+      dots.innerHTML = Array.from({ length: pages }, (_, i) => `<button aria-label="Go to review ${i + 1}"></button>`).join('');
+      mark();
+    }
+    function mark() { const i = Math.min(current(), pages - 1); $$('button', dots).forEach((d, j) => d.classList.toggle('on', j === i)); }
+    function goTo(i) {
+      if (i >= pages) i = 0; if (i < 0) i = pages - 1;
+      revTrack.scrollTo({ left: i * stepW(), behavior: reduce ? 'auto' : 'smooth' });
+    }
+    function restart() { clearInterval(timer); if (!reduce) timer = setInterval(() => { if (!paused && !document.hidden) goTo(current() + 1); }, 4500); }
+    $('#revPrev').addEventListener('click', () => { goTo(current() - 1); restart(); });
+    $('#revNext').addEventListener('click', () => { goTo(current() + 1); restart(); });
+    dots.addEventListener('click', e => { const d = e.target.closest('button'); if (!d) return; goTo([...dots.children].indexOf(d)); restart(); });
+    let st; revTrack.addEventListener('scroll', () => { clearTimeout(st); st = setTimeout(mark, 80); }, { passive: true });
+    ['mouseenter', 'focusin', 'touchstart'].forEach(ev => revTrack.addEventListener(ev, () => paused = true, { passive: true }));
+    ['mouseleave', 'focusout', 'touchend'].forEach(ev => revTrack.addEventListener(ev, () => paused = false, { passive: true }));
+    addEventListener('resize', () => { clearTimeout(st); st = setTimeout(buildDots, 150); });
+    buildDots(); restart();
+  })();
+  const STEP = [['#3BCBF7', '#0B243F'], ['#3B6186', '#fff'], ['#0B243F', '#fff'], ['#5D6180', '#fff']];
+  $('#steps').innerHTML = C.steps.map((s, i) => `<li class="st" style="--c:${STEP[i % 4][0]};--t:${STEP[i % 4][1]}">
+      <div class="st-ic">${icon(s.icon)}</div><h3>${esc(s.title)}</h3><p>${esc(s.line)}</p></li>`).join('');
+  $('#faqList').innerHTML = C.faqs.map((f, i) => `<div class="q"><button aria-expanded="false" aria-controls="qa${i}">${esc(f.q)}<span class="pm">${icon('plus')}</span></button>
+      <div class="a" id="qa${i}"><div><p>${esc(f.a)}</p></div></div></div>`).join('');
+  $('#faqList').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const q = b.parentElement, open = !q.classList.contains('open');
+    q.classList.toggle('open', open); b.setAttribute('aria-expanded', open);
+  });
+
+  /* ---------------- HERO SEQUENCE ---------------- */
+
+  /* ---------------- NAV ---------------- */
+  const nav = $('#nav'), toTop = $('#toTop');
+  addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', scrollY > 10);
+    toTop.classList.toggle('show', scrollY > 500);
+  }, { passive: true });
+  toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }));
+  const links = $$('#menu > [data-go]');
+  const spy = new IntersectionObserver(en => en.forEach(x => {
+    if (x.isIntersecting) links.forEach(a => a.classList.toggle('on', a.dataset.go === x.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  ['services', 'why', 'integrations', 'reviews', 'how', 'faq'].forEach(id => spy.observe(document.getElementById(id)));
+  addEventListener('scroll', () => { if (scrollY < 300) links.forEach(a => a.classList.remove('on')); }, { passive: true });
+  const burger = $('#burger'), mnav = $('#mnav');
+  burger.addEventListener('click', () => { const o = !mnav.classList.contains('open'); mnav.classList.toggle('open', o); burger.setAttribute('aria-expanded', o); });
+  
+
+  /* ---------------- INTEGRATION LINES ---------------- */
+  const flow = $('#flow'), svg = $('#flowLines'), NS = 'http://www.w3.org/2000/svg';
+  function drawFlow() {
+    svg.innerHTML = '';
+    if (getComputedStyle(svg).display === 'none') return;
+    const fr = flow.getBoundingClientRect();
+    svg.setAttribute('viewBox', `0 0 ${fr.width} ${fr.height}`);
+    const box = el => { const r = el.getBoundingClientRect(); return { l: r.left - fr.left, r: r.right - fr.left, y: r.top - fr.top + r.height / 2 }; };
+    const hub = box($('[data-hub]')), rise = box($('[data-rise]'));
+    const paths = [];
+    $$('[data-src]').forEach(n => { const b = box(n); paths.push([b.r, b.y, hub.l, hub.y, 'var(--cyan)']); });
+    paths.push([hub.r, hub.y, rise.l, rise.y, 'var(--sun)']);
+    $$('[data-out]').forEach(n => { const b = box(n); paths.push([rise.r, rise.y, b.l, b.y, 'var(--mint)']); });
+    paths.forEach(([x1, y1, x2, y2, col], i) => {
+      const mx = (x1 + x2) / 2;
+      const d = `M${x1} ${y1}C${mx} ${y1} ${mx} ${y2} ${x2} ${y2}`;
+      const p = document.createElementNS(NS, 'path'); p.setAttribute('d', d); svg.appendChild(p);
+      if (reduce) return;
+      const c = document.createElementNS(NS, 'circle'); c.setAttribute('r', 4); c.setAttribute('fill', col.replace('var(--cyan)', '#3BCBF7').replace('var(--sun)', '#3B6186').replace('var(--mint)', '#0B243F'));
+      const a = document.createElementNS(NS, 'animateMotion');
+      a.setAttribute('dur', (2.4 + (i % 3) * .5) + 's'); a.setAttribute('repeatCount', 'indefinite'); a.setAttribute('path', d);
+      a.setAttribute('begin', (-(i * .37) % 2.4).toFixed(2) + 's');
+      c.appendChild(a); svg.appendChild(c);
+    });
+  }
+  let flowT; const reflow = () => { clearTimeout(flowT); flowT = setTimeout(drawFlow, 120); };
+  addEventListener('resize', reflow);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawFlow);
+  addEventListener('load', drawFlow);
+  drawFlow();
+
+  /* ---------------- POPUP FORM ----------------
+     HOOK UP: to send leads to HubSpot, replace the body of submitLead() with a call to
+     https://api.hsforms.com/submissions/v3/integration/submit/{portalId}/{formGuid}
+     using the fields below (location, name, company, email, phone, service). */
+  const modal = $('#modal'), spendOpts = $('#spendOpts');
+  const LOCATIONS = ['UK', 'Dubai', 'US', 'Multiple'];
+  const lead = {};
+  let lastFocus = null;
+  spendOpts.innerHTML = LOCATIONS.map(s => `<button type="button" class="opt" data-v="${s}">${s}${icon('arrow-right')}</button>`).join('');
+  function goStep(n) {
+    $$('.m-step', modal).forEach(s => s.classList.toggle('on', +s.dataset.s === n));
+    $('#mProg').style.display = n === 3 ? 'none' : '';
+    $('#mStepTxt').textContent = `Step ${n} of 2`;
+    $('#mBar').style.width = n === 1 ? '50%' : '100%';
+    if (n === 2) setTimeout(() => $('#fName').focus(), 60);
+  }
+  function openForm(service) {
+    lastFocus = document.activeElement;
+    lead.service = service || '';
+    const about = $('#mAbout');
+    if (service) { about.hidden = false; about.textContent = 'About: ' + service; } else about.hidden = true;
+    goStep(1);
+    modal.classList.add('open'); document.body.style.overflow = 'hidden';
+    setTimeout(() => { const f = $('.opt', modal); f && f.focus(); }, 80);
+  }
+  function closeForm() { modal.classList.remove('open'); document.body.style.overflow = ''; lastFocus && lastFocus.focus && lastFocus.focus(); }
+  window.openForm = openForm;
+  document.addEventListener('click', e => {
+    if (e.target.closest('[data-form]')) { e.preventDefault(); openForm(); }
+    if (e.target.closest('[data-close]')) closeForm();
+    if (e.target.closest('[data-bot]')) { e.preventDefault(); openBot(); }
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { if (modal.classList.contains('open')) closeForm(); else if (bot.classList.contains('open')) closeBot(); } });
+  spendOpts.addEventListener('click', e => {
+    const b = e.target.closest('.opt'); if (!b) return;
+    $$('.opt', spendOpts).forEach(o => o.classList.toggle('sel', o === b));
+    lead.location = b.dataset.v;
+    setTimeout(() => goStep(2), 220);
+  });
+  $('#mBack').addEventListener('click', () => goStep(1));
+  const rules = {
+    fName: v => v.trim().length > 1,
+    fCo: v => v.trim().length > 1,
+    fEmail: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
+    fPhone: v => v.replace(/\D/g, '').length >= 7
+  };
+  Object.keys(rules).forEach(id => $('#' + id).addEventListener('input', e => {
+    if (rules[id](e.target.value)) e.target.closest('.f').classList.remove('err');
+  }));
+  $('#mForm').addEventListener('submit', e => {
+    e.preventDefault();
+    let ok = true, first = null;
+    Object.entries(rules).forEach(([id, fn]) => {
+      const el = $('#' + id), good = fn(el.value);
+      el.closest('.f').classList.toggle('err', !good);
+      if (!good && !first) first = el; ok = ok && good;
+    });
+    if (!ok) { first.focus(); return; }
+    Object.assign(lead, { name: $('#fName').value.trim(), company: $('#fCo').value.trim(), email: $('#fEmail').value.trim(), phone: $('#fCc').value + ' ' + $('#fPhone').value.trim() });
+    submitLead(lead);
+    $('#doneTitle').textContent = `Thanks, ${lead.name.split(' ')[0]}. We'll be in touch.`;
+    goStep(3);
+  });
+  function submitLead(data) { console.log('Lead captured (connect to HubSpot here):', data); }
+
+  /* ---------------- CHATBOT ----------------
+     HOOK UP: to swap this for HubSpot Conversations, add the HubSpot tracking script
+     and call window.HubSpotConversations.widget.open() inside openBot(). */
+  const bot = $('#bot'), botBtn = $('#botBtn'), body = $('#botBody'), chips = $('#botChips'), input = $('#botInput');
+  let greeted = false;
+  function addMsg(html, who) {
+    const d = document.createElement('div'); d.className = 'bm ' + (who === 'me' ? 'me' : 'bot-msg'); d.innerHTML = html;
+    body.appendChild(d); body.scrollTop = body.scrollHeight; return d;
+  }
+  function reply(text) {
+    const t = addMsg('<span class="typing"><i></i><i></i><i></i></span>', 'bot');
+    const q = text.toLowerCase();
+    let best = null, score = 0;
+    C.bot.topics.forEach(tp => {
+      let s = 0;
+      tp.keys.forEach(k => {
+        const re = k.length <= 3 ? new RegExp('\\b' + k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b') : null;
+        if (re ? re.test(q) : q.includes(k)) s += k.length > 4 ? 2 : 1;
+      });
+      if (s > score) { score = s; best = tp; }
+    });
+    setTimeout(() => {
+      let h = esc(best ? best.answer : C.bot.fallback);
+      if (!best || best.cta) h += `<br><button class="btn btn-primary" data-form>Talk to an expert</button>`;
+      if (best && best.link) h += `<br><button class="btn btn-soft" data-go="${best.link.href.replace('#', '')}" data-closebot>${esc(best.link.label)}</button>`;
+      t.innerHTML = h; body.scrollTop = body.scrollHeight;
+    }, reduce ? 50 : 650);
+  }
+  function openBot() {
+    bot.classList.add('open'); botBtn.setAttribute('aria-expanded', 'true'); document.body.classList.add('bot-open');
+    if (!greeted) {
+      greeted = true;
+      addMsg(esc(C.bot.greeting), 'bot');
+      chips.innerHTML = C.bot.chips.map(c => /talk to an expert/i.test(c) ? `<button type="button" class="chip-cta" data-form>${esc(c)}</button>` : `<button type="button">${esc(c)}</button>`).join('');
+    }
+    setTimeout(() => input.focus(), 120);
+  }
+  function closeBot() { bot.classList.remove('open'); botBtn.setAttribute('aria-expanded', 'false'); document.body.classList.remove('bot-open'); }
+  botBtn.addEventListener('click', () => bot.classList.contains('open') ? closeBot() : openBot());
+  $('#botX').addEventListener('click', closeBot);
+  chips.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; if (b.hasAttribute('data-form')) { closeBot(); return; } addMsg(esc(b.textContent), 'me'); reply(b.textContent); });
+  $('#botForm').addEventListener('submit', e => { e.preventDefault(); const v = input.value.trim(); if (!v) return; addMsg(esc(v), 'me'); input.value = ''; reply(v); });
+  body.addEventListener('click', e => { if (e.target.closest('[data-form]')) closeBot(); if (e.target.closest('[data-closebot]')) closeBot(); });
+
+  /* ---------------- IN-PAGE JUMPS (buttons, so previews never treat them as external links) ---------------- */
+  function goTo(id) {
+    const el = id === 'top' ? null : document.getElementById(id);
+    const y = el ? el.getBoundingClientRect().top + scrollY - 74 : 0;
+    scrollTo({ top: Math.max(0, y), behavior: reduce ? 'auto' : 'smooth' });
+    mnav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false');
+  }
+  document.addEventListener('click', e => {
+    const g = e.target.closest('[data-go]');
+    if (g) { e.preventDefault(); goTo(g.dataset.go); return; }
+    const a = e.target.closest('a[href^="#"]');
+    if (a) { e.preventDefault(); goTo(a.getAttribute('href').slice(1) || 'top'); }
+  });
+
+  /* chat launcher waits until the visitor scrolls, so it never covers the client logos on the first screen */
+  const showBot = () => botBtn.classList.toggle('show', scrollY > 220 || bot.classList.contains('open'));
+  addEventListener('scroll', showBot, { passive: true }); showBot();
+
+  /* ---------------- INIT ---------------- */
+  renderFilters(); renderServices();
+})();
+
+</script>
+<script>(function(){var c=document.querySelector('.cta-panel');if(!c)return;if(!('IntersectionObserver' in window)){c.classList.add('bg-in');return;}new IntersectionObserver(function(e,o){if(e[0].isIntersecting){c.classList.add('bg-in');o.disconnect();}},{rootMargin:'1200px 0px'}).observe(c);})();</script>
+</body>
+</html>
