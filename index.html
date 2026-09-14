@@ -1083,21 +1083,10 @@ section{padding:96px 0}
 .v[data-v="grow"].on .grow .gs.s3{opacity:1;transform:none;transition-delay:.76s}
 @media (prefers-reduced-motion:reduce){.grow .gs{opacity:1;transform:none;transition:none}}
 
-/* ---------------- Hero prominence variants (Ashleigh Sep 14 feedback, A1 test).
-   Default (no URL param) = v2 bold weight. Switch with ?hero=1|2|3|4 in URL. ---------------- */
-.hero h1{font-weight:800}
-.hero .lede{font-weight:500}
-.hero .eyebrow{font-weight:700}
-body.hero-v1 .hero h1{font-weight:700;text-shadow:0 2px 22px rgba(0,0,0,.6),0 1px 3px rgba(0,0,0,.5)}
-body.hero-v1 .hero .lede{font-weight:400;text-shadow:0 1px 12px rgba(0,0,0,.65)}
-body.hero-v1 .hero .eyebrow{text-shadow:0 1px 10px rgba(0,0,0,.55)}
-body.hero-v3 .hero-copy{background:rgba(11,36,63,.6);backdrop-filter:blur(8px) saturate(140%);-webkit-backdrop-filter:blur(8px) saturate(140%);padding:32px 30px 34px;border-radius:22px;max-width:620px;box-shadow:0 12px 40px -18px rgba(0,0,0,.5)}
-body.hero-v3 .hero h1{font-weight:700}
-body.hero-v3 .hero .lede{font-weight:400}
-body.hero-v4 .hero h1{text-shadow:0 2px 22px rgba(0,0,0,.55),0 1px 3px rgba(0,0,0,.4)}
-body.hero-v4 .hero .lede{text-shadow:0 1px 12px rgba(0,0,0,.6)}
-body.hero-v4 .hero .eyebrow{text-shadow:0 1px 10px rgba(0,0,0,.5)}
-@media (max-width:560px){body.hero-v3 .hero-copy{padding:24px 20px}}
+/* ---------------- Hero prominence: bold weight + soft text shadow (Ashleigh Sep 14 feedback, A1 winner = v4) ---------------- */
+.hero h1{font-weight:800;text-shadow:0 2px 22px rgba(0,0,0,.55),0 1px 3px rgba(0,0,0,.4)}
+.hero .lede{font-weight:500;text-shadow:0 1px 12px rgba(0,0,0,.6)}
+.hero .eyebrow{font-weight:700;text-shadow:0 1px 10px rgba(0,0,0,.5)}
 </style>
 <style>
 @font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(assets/font-7bfd10a3.woff2) format('woff2')}
@@ -1695,13 +1684,6 @@ body.hero-v4 .hero .eyebrow{text-shadow:0 1px 10px rgba(0,0,0,.5)}
 <button class="totop" id="toTop" aria-label="Back to top"><svg class="ic"><use href="#i-arrow-up"/></svg></button>
 
 <script>
-/* Hero prominence variant switcher: ?hero=1|2|3|4 (default = v2 bold weight) */
-(function(){
-  try {
-    var h = new URLSearchParams(location.search).get('hero');
-    if (h && ['1','2','3','4'].includes(h)) document.body.classList.add('hero-v' + h);
-  } catch (e) {}
-})();
 (function () {
   const C = window.RISE;
   const $ = (s, r = document) => r.querySelector(s);
