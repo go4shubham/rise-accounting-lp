@@ -39,13 +39,13 @@ window.RISE = {
   services: [
     { cat: "accounting", icon: "user-round-check",       title: "Dedicated Chartered Accountant",          line: "A named contact, regular updates and direct access.",        featured: true },
     { cat: "accounting", icon: "book-open-check",        title: "Bookkeeping on Xero or QuickBooks",       line: "Day-to-day records and bank reconciliations, kept current.", featured: true },
-    { cat: "accounting", icon: "file-check-2",           title: "Year-end accounts & Confirmation Statement", line: "Annual accounts and company filings, done on time.",      featured: true },
-    { cat: "accounting", icon: "receipt-pound-sterling", title: "VAT registration & returns",              line: "Registration, returns and ongoing compliance.",              featured: true },
+    { cat: "accounting", icon: "file-check-2",           title: "Year-end accounts, Confirmation Statement & Corporation Tax", line: "Annual accounts, company filings and tax filings, done on time.",      featured: true },
+    { cat: "accounting", icon: "receipt-pound-sterling", title: "VAT Support",                             line: "We ensure you're VAT compliant and never miss a deadline.",  featured: true },
     { cat: "accounting", icon: "wallet",                 title: "Payroll & pensions",                      line: "Payslips, pensions and optional direct payments.",           featured: true },
-    { cat: "operations", icon: "chart-column",           title: "Management accounts",                     line: "Monthly or quarterly P&L, balance sheet and cash flow.",     featured: true },
+    { cat: "operations", icon: "briefcase-business",     title: "Outsourced Finance Function",             line: "Everything you see here plus payroll and vendor payments, and senior finance leaders without hiring in-house.", featured: true },
     { cat: "growth",     icon: "rocket",                 title: "SEIS & EIS Advance Assurance",            line: "Eligibility review, application and HMRC queries.",          featured: true },
-    { cat: "global",     icon: "building-2",             title: "Dubai company formation",                 line: "Free Zone guidance, setup and after-setup support.",         featured: true },
-    { cat: "accounting", icon: "landmark",               title: "Corporation Tax filing",                  line: "Your return prepared and submitted to HMRC." },
+    { cat: "global",     icon: "building-2",             title: "Dubai company formation support",         line: "We guide you through the company formation process from start to finish, including post-setup support.",         featured: true },
+    { cat: "operations", icon: "chart-column",           title: "Management accounts",                     line: "Monthly or quarterly P&L, balance sheet and cash flow." },
     { cat: "operations", icon: "receipt",                title: "Sales invoicing & credit control",        line: "Invoices sent and customer payments followed up." },
     { cat: "operations", icon: "banknote",               title: "Supplier bills & payment runs",           line: "Bills approved and suppliers paid on time." },
     { cat: "operations", icon: "chart-line",             title: "Cash-flow forecasts & budgets",           line: "Rolling forecasts and actual-versus-budget checks." },
@@ -56,7 +56,7 @@ window.RISE = {
     { cat: "growth",     icon: "trending-up",            title: "Financial forecasting & modelling",       line: "Revenue forecasts, runway and break-even analysis." },
     { cat: "growth",     icon: "layers-3",               title: "Scenario planning",                       line: "Model hiring, investment and growth decisions." },
     { cat: "growth",     icon: "hand-coins",             title: "Fundraising & lender reporting",          line: "The numbers investors and lenders ask for." },
-    { cat: "global",     icon: "percent",                title: "UAE accounting, VAT & corporate tax",     line: "Books, returns, annual reporting and local compliance." },
+    { cat: "global",     icon: "percent",                title: "UAE accounting, VAT & corporate tax advice", line: "Stay on top of your finances and compliance obligations with expert support." },
     { cat: "global",     icon: "users-round",            title: "UAE payroll & WPS",                       line: "Payroll and wage-protection rules, handled." },
     { cat: "global",     icon: "plane",                  title: "UK–UAE tax planning",                     line: "Cross-border structuring and residency advice." },
     { cat: "global",     icon: "flag",                   title: "US company setup & ongoing finance",      line: "Formation, books, payroll, tax and annual reporting." },
@@ -630,6 +630,7 @@ section{padding:108px 0;position:relative}
 .partners{display:flex;gap:10px;margin-top:22px}
 .partners .bic{width:36px;height:36px;border-radius:50%;background:#fff;border:2px solid #fff}
 .foot-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.foot-cols.foot-cols-1{grid-template-columns:1fr;max-width:240px}
 .foot h5{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:14px}
 .foot-cols a{display:block;padding:5px 0}
 .foot-mid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:52px;padding-top:34px;border-top:1px solid rgba(255,255,255,.12)}
@@ -1055,7 +1056,48 @@ section{padding:96px 0}
 
 
 .cta-panel{--cta-img:none}
-.cta-panel.bg-in{--cta-img:url(assets/cta-london-4k.webp)}
+.cta-panel.bg-in{--cta-img:url(assets/team-cta.jpg)}
+
+/* ---------------- Hub-and-spoke international panel (Ashleigh Sep 14 feedback, hub-and-spoke pick) ---------------- */
+.hs-wrap{display:flex;flex-direction:column;gap:10px}
+.hs{position:relative;height:300px;margin:6px auto 4px;width:100%;max-width:340px}
+.hs-lines{position:absolute;inset:0;width:100%;height:100%;stroke:var(--ice);stroke-width:2;stroke-dasharray:4 5;fill:none;opacity:.85;z-index:1}
+.hs-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;background:var(--navy);color:#fff;padding:12px 14px 10px;border-radius:16px;box-shadow:var(--shadow-lg);text-align:center;min-width:132px}
+.hs-hub .hs-logo{display:block;background:#fff;border-radius:11px;padding:6px;margin:0 auto 6px;width:44px;height:44px;box-sizing:border-box}
+.hs-hub .hs-logo img{width:100%;height:100%;object-fit:contain;display:block}
+.hs-hub b{display:block;font-size:13px;font-weight:700;line-height:1.2}
+.hs-hub em{display:block;font-style:normal;font-size:11.5px;color:rgba(255,255,255,.72);margin-top:2px}
+.hs-spoke{position:absolute;background:#fff;padding:9px 12px;border-radius:14px;box-shadow:var(--shadow);display:flex;align-items:center;gap:9px;z-index:2;min-width:150px}
+.hs-spoke .code{width:34px;height:34px;font-size:11.5px;flex:none}
+.hs-spoke b{display:block;font-size:13.5px;line-height:1.2}
+.hs-spoke em{display:block;font-style:normal;font-size:11.5px;color:var(--ink-2);line-height:1.3;margin-top:2px}
+.hs-uk{top:0;left:50%;transform:translateX(-50%)}
+.hs-ae{bottom:0;left:0}
+.hs-us{bottom:0;right:0}
+@media (max-width:560px){.hs{max-width:280px;height:280px}.hs-hub{min-width:118px;padding:10px 12px 8px}.hs-spoke{min-width:130px;padding:8px 10px}.hs-spoke b{font-size:12.5px}.hs-spoke em{font-size:11px}}
+
+/* ---------------- Grow panel: staggered bar rise (Ashleigh Sep 14 feedback, C6) ---------------- */
+.grow .gs{opacity:0;transform:translateY(30px) scaleY(.5);transform-origin:bottom center;transition:opacity .55s var(--ease),transform .7s var(--ease)}
+.v[data-v="grow"].on .grow .gs.s1{opacity:1;transform:none;transition-delay:.08s}
+.v[data-v="grow"].on .grow .gs.s2{opacity:1;transform:none;transition-delay:.42s}
+.v[data-v="grow"].on .grow .gs.s3{opacity:1;transform:none;transition-delay:.76s}
+@media (prefers-reduced-motion:reduce){.grow .gs{opacity:1;transform:none;transition:none}}
+
+/* ---------------- Hero prominence variants (Ashleigh Sep 14 feedback, A1 test).
+   Default (no URL param) = v2 bold weight. Switch with ?hero=1|2|3|4 in URL. ---------------- */
+.hero h1{font-weight:800}
+.hero .lede{font-weight:500}
+.hero .eyebrow{font-weight:700}
+body.hero-v1 .hero h1{font-weight:700;text-shadow:0 2px 22px rgba(0,0,0,.6),0 1px 3px rgba(0,0,0,.5)}
+body.hero-v1 .hero .lede{font-weight:400;text-shadow:0 1px 12px rgba(0,0,0,.65)}
+body.hero-v1 .hero .eyebrow{text-shadow:0 1px 10px rgba(0,0,0,.55)}
+body.hero-v3 .hero-copy{background:rgba(11,36,63,.6);backdrop-filter:blur(8px) saturate(140%);-webkit-backdrop-filter:blur(8px) saturate(140%);padding:32px 30px 34px;border-radius:22px;max-width:620px;box-shadow:0 12px 40px -18px rgba(0,0,0,.5)}
+body.hero-v3 .hero h1{font-weight:700}
+body.hero-v3 .hero .lede{font-weight:400}
+body.hero-v4 .hero h1{text-shadow:0 2px 22px rgba(0,0,0,.55),0 1px 3px rgba(0,0,0,.4)}
+body.hero-v4 .hero .lede{text-shadow:0 1px 12px rgba(0,0,0,.6)}
+body.hero-v4 .hero .eyebrow{text-shadow:0 1px 10px rgba(0,0,0,.5)}
+@media (max-width:560px){body.hero-v3 .hero-copy{padding:24px 20px}}
 </style>
 <style>
 @font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(assets/font-7bfd10a3.woff2) format('woff2')}
@@ -1340,13 +1382,12 @@ section{padding:96px 0}
         <div class="va">
           <img src="assets/img-d728c9ed.webp" alt="Two Rise Accounting accountants reviewing a client's numbers">
           <div class="fl t1"><span class="ico" style="background:var(--cyan-50);color:var(--cyan-6)"><svg class="ic"><use href="#i-user-round-check"/></svg></span><div><b>Your accountant</b><span>Same person, every month</span></div></div>
-          <div class="fl t2"><span class="ico" style="background:var(--sun-50);color:var(--sun-6)"><svg class="ic"><use href="#i-calendar-check"/></svg></span><div><b>Monthly catch-up</b><span>In person or on Teams</span></div></div>
+          <div class="fl t2"><span class="ico" style="background:var(--sun-50);color:var(--sun-6)"><svg class="ic"><use href="#i-calendar-check"/></svg></span><div><b>Regular catch-ups</b><span>In person or on Teams</span></div></div>
         </div>
       </div>
       <!-- visual: growth & advisory -->
       <div class="v" data-v="advisory">
         <div class="win dl adv">
-          <div class="dl-h"><span class="ico"><svg class="ic"><use href="#i-rocket"/></svg></span><div><b>Growth &amp; advisory</b><span>Senior finance advice for your next big move</span></div></div>
           <ul>
             <li><span class="adv-i"><svg class="ic"><use href="#i-rocket"/></svg></span><div><b>SEIS &amp; EIS advance assurance</b><span>Sent to HMRC within 48 hours</span></div><em class="tag mint">Submitted</em></li>
             <li><span class="adv-i"><svg class="ic"><use href="#i-chart-pie"/></svg></span><div><b>EMI share options</b><span>Valuation, scheme setup and HMRC</span></div><em class="tag cyan">In progress</em></li>
@@ -1356,13 +1397,21 @@ section{padding:96px 0}
           <div class="adv-foot"><span>Investor pack</span><div class="bar"><i></i></div><b>80%</b></div>
         </div>
       </div>
-      <!-- visual: international expansion -->
+      <!-- visual: international expansion (hub-and-spoke) -->
       <div class="v" data-v="global">
-        <div class="glob">
+        <div class="glob hs-wrap">
           <p class="glob-h">One team across three markets</p>
-          <div class="loc"><span class="code c1">UK</span><div><b>London</b><span>Your dedicated accountant, UK tax, payroll and reporting</span></div></div>
-          <div class="loc"><span class="code c2">UAE</span><div><b>Dubai</b><span>Our own Dubai team: Free Zone setup, UAE VAT and corporate tax</span></div></div>
-          <div class="loc"><span class="code c3">US</span><div><b>United States</b><span>US CPAs we work with: company setup, sales tax and payroll</span></div></div>
+          <div class="hs">
+            <svg class="hs-lines" viewBox="0 0 320 300" aria-hidden="true">
+              <path d="M160 156 L 160 62" />
+              <path d="M160 156 L 66 246" />
+              <path d="M160 156 L 254 246" />
+            </svg>
+            <div class="hs-spoke hs-uk"><span class="code c1">UK</span><div><b>London</b><em>Your dedicated UK team</em></div></div>
+            <div class="hs-spoke hs-ae"><span class="code c2">UAE</span><div><b>Dubai</b><em>Our Dubai team on the ground</em></div></div>
+            <div class="hs-spoke hs-us"><span class="code c3">US</span><div><b>United States</b><em>US CPA partners</em></div></div>
+            <div class="hs-hub"><span class="hs-logo"><img src="assets/logo-f25648fb.svg" alt=""></span><b>Rise Accounting</b><em>Your one team</em></div>
+          </div>
           <p class="glob-f"><svg class="ic"><use href="#i-check"/></svg>All joined up with your UK accounts</p>
         </div>
       </div>
@@ -1386,9 +1435,9 @@ section{padding:96px 0}
           <div class="fee-h"><div><b>Your monthly fee</b><span>Only pay for what you need</span></div><em class="tag mint">No surprise bills</em></div>
           <ul class="fee-l">
             <li><svg class="ic"><use href="#i-book-open-check"/></svg>Bookkeeping<em class="tag cyan">In your fee</em></li>
-            <li><svg class="ic"><use href="#i-receipt-pound-sterling"/></svg>VAT returns<em class="tag cyan">In your fee</em></li>
+            <li><svg class="ic"><use href="#i-receipt-pound-sterling"/></svg>VAT compliance<em class="tag cyan">In your fee</em></li>
             <li><svg class="ic"><use href="#i-wallet"/></svg>Payroll &amp; pensions<em class="tag cyan">In your fee</em></li>
-            <li><svg class="ic"><use href="#i-file-check-2"/></svg>Year-end accounts &amp; tax<em class="tag cyan">In your fee</em></li>
+            <li><svg class="ic"><use href="#i-file-check-2"/></svg>Year-end accounts<em class="tag cyan">In your fee</em></li>
             <li><svg class="ic"><use href="#i-message-circle"/></svg>Ad-hoc questions<em class="tag mint">Always free</em></li>
             <li><svg class="ic"><use href="#i-calendar-check"/></svg>Extra calls &amp; meetings<em class="tag mint">Always free</em></li>
             <li class="no"><svg class="ic"><use href="#i-clock-3"/></svg><s>Billing by the hour</s><em class="tag coral">Never</em></li>
@@ -1416,20 +1465,19 @@ section{padding:96px 0}
         <div class="win dl">
           <div class="dl-h"><span class="ico"><svg class="ic"><use href="#i-bell-ring"/></svg></span><div><b>Coming up</b><span>You don't need to chase us. We stay on top of it.</span></div></div>
           <ul>
-            <li><time><b>07</b>Nov</time><div><b>VAT return, Q3</b><span>Drafted and ready for your OK</span></div><em class="tag sun">Needs you</em></li>
+            <li><time><b>07</b>Nov</time><div><b>Q3 books close</b><span>Reconciled and ready to review</span></div><em class="tag sun">Needs you</em></li>
             <li><time><b>19</b>Nov</time><div><b>PAYE and pensions</b><span>Payment scheduled</span></div><em class="tag mint">Done</em></li>
             <li><time><b>01</b>Dec</time><div><b>Confirmation statement</b><span>Details checked with you</span></div><em class="tag cyan">On it</em></li>
-            <li><time><b>31</b>Dec</time><div><b>Corporation tax</b><span>Bill estimated early, no surprises</span></div><em class="tag mint">Ready</em></li>
+            <li><time><b>31</b>Dec</time><div><b>Year-end pack</b><span>Draft ready for your review</span></div><em class="tag mint">Ready</em></li>
           </ul>
         </div>
       </div>
       <!-- visual: grow -->
       <div class="v" data-v="grow">
         <div class="grow">
-          <p class="grow-note">Same team the whole way. No switching as you grow.</p>
-          <ul class="gs s1"><em class="tag cyan">Starting out</em><li><svg class="ic"><use href="#i-check"/></svg>Bookkeeping</li><li><svg class="ic"><use href="#i-check"/></svg>VAT returns</li><li><svg class="ic"><use href="#i-check"/></svg>Year-end accounts</li></ul>
+          <ul class="gs s1"><em class="tag cyan">Starting out</em><li><svg class="ic"><use href="#i-check"/></svg>Bookkeeping</li><li><svg class="ic"><use href="#i-check"/></svg>VAT compliance</li><li><svg class="ic"><use href="#i-check"/></svg>Year-end accounts</li></ul>
           <ul class="gs s2"><em class="tag sun">Scaling up</em><li><svg class="ic"><use href="#i-check"/></svg>Management accounts</li><li><svg class="ic"><use href="#i-check"/></svg>Payroll</li><li><svg class="ic"><use href="#i-check"/></svg>Forecasting</li><li><svg class="ic"><use href="#i-check"/></svg>SEIS, EIS &amp; EMI</li></ul>
-          <ul class="gs s3"><em class="tag mint">Full finance team</em><li><svg class="ic"><use href="#i-check"/></svg>CFO advisory</li><li><svg class="ic"><use href="#i-check"/></svg>Bills &amp; credit control</li><li><svg class="ic"><use href="#i-check"/></svg>Board reporting</li><li><svg class="ic"><use href="#i-check"/></svg>Dubai &amp; US</li></ul>
+          <ul class="gs s3"><em class="tag mint">Full finance team</em><li><svg class="ic"><use href="#i-check"/></svg>CFO advisory</li><li><svg class="ic"><use href="#i-check"/></svg>Bills &amp; credit control</li><li><svg class="ic"><use href="#i-check"/></svg>Board reporting</li><li><svg class="ic"><use href="#i-check"/></svg>Vendor and payroll payments</li></ul>
         </div>
       </div>
     </div>
@@ -1442,7 +1490,7 @@ section{padding:96px 0}
   <div class="wrap">
     <div class="head">
       <h2>Plugs into the tools you already use</h2>
-      <p class="sub">Nothing to rip out. Your data flows in and your numbers come out ready.</p>
+      <p class="sub">Use your data to make better business decisions.</p>
     </div>
     <div class="flow" id="flow">
       <svg class="flow-lines" id="flowLines" aria-hidden="true"></svg>
@@ -1484,7 +1532,7 @@ section{padding:96px 0}
       </div>
       <div class="fcol f-out">
         <div class="node out" data-out><span class="lg cyan"><svg class="ic"><use href="#i-chart-column"/></svg></span>Management accounts</div>
-        <div class="node out" data-out><span class="lg sun"><svg class="ic"><use href="#i-file-check-2"/></svg></span>VAT &amp; tax filed</div>
+        <div class="node out" data-out><span class="lg cyan"><svg class="ic"><use href="#i-file-check-2"/></svg></span>Annual accounts and compliance</div>
         <div class="node out" data-out><span class="lg mint"><svg class="ic"><use href="#i-wallet"/></svg></span>Payroll paid</div>
         <div class="node out" data-out><span class="lg cyan"><svg class="ic"><use href="#i-messages-square"/></svg></span>Answers in Slack or Teams</div>
       </div>
@@ -1561,26 +1609,13 @@ section{padding:96px 0}
         <p>Accounting partners for fast-growing businesses in the UK, Dubai and the US.</p>
         <div class="partners"><svg class="bic" style="color:#13B5EA"><use href="#b-xero"/></svg><svg class="bic" style="color:#2CA01C"><use href="#b-quickbooks"/></svg></div>
       </div>
-      <div class="foot-cols">
-        <div><h5>Accounting</h5>
-          <a href="https://riseaccounting.co.uk/accounting-packages/">Accounting packages</a>
-          <a href="https://riseaccounting.co.uk/year-end-accounts/">Year-end accounts</a>
-          <a href="https://riseaccounting.co.uk/management-accounts/">Management accounts</a>
-          <a href="https://riseaccounting.co.uk/outsourced-finance-function/">Outsourced finance function</a></div>
-        <div><h5>Growth</h5>
-          <a href="https://riseaccounting.co.uk/emi/">EMI options</a>
-          <a href="https://riseaccounting.co.uk/seis-eis-advance-assurance/">SEIS &amp; EIS</a>
-          <a href="https://riseaccounting.co.uk/financial-forecasting-modelling/">Financial forecasting</a></div>
-        <div><h5>International</h5>
-          <a href="https://riseaccounting.co.uk/dubai/">Dubai accounting</a>
-          <a href="https://riseaccounting.co.uk/dubai-tax-consultant/">Dubai tax consultants</a>
-          <a href="https://riseaccounting.co.uk/set-up-a-company-in-dubai-uk/">Set up in Dubai</a>
-          <a href="https://riseaccounting.co.uk/united-states/">United States</a></div>
-        <div><h5>Company</h5>
-          <a href="https://riseaccounting.co.uk/about/">About Rise Accounting</a>
-          <a href="https://riseaccounting.co.uk/switch-to-rise/">Switch to Rise Accounting</a>
-          <a href="https://riseaccounting.co.uk/success-stories/">Success stories</a>
-          <a href="https://riseaccounting.co.uk/careers/">Careers</a></div>
+      <div class="foot-cols foot-cols-1">
+        <div><h5>Explore</h5>
+          <a href="#services">Services</a>
+          <a href="#why">Why Rise Accounting</a>
+          <a href="#integrations">Integrations</a>
+          <a href="#reviews">Success stories</a>
+          <a href="#faq">FAQs</a></div>
       </div>
     </div>
     <div class="foot-mid">
@@ -1660,6 +1695,13 @@ section{padding:96px 0}
 <button class="totop" id="toTop" aria-label="Back to top"><svg class="ic"><use href="#i-arrow-up"/></svg></button>
 
 <script>
+/* Hero prominence variant switcher: ?hero=1|2|3|4 (default = v2 bold weight) */
+(function(){
+  try {
+    var h = new URLSearchParams(location.search).get('hero');
+    if (h && ['1','2','3','4'].includes(h)) document.body.classList.add('hero-v' + h);
+  } catch (e) {}
+})();
 (function () {
   const C = window.RISE;
   const $ = (s, r = document) => r.querySelector(s);
