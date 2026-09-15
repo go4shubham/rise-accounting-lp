@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rise Accounting | Accountancy firm for tech startups and SMEs</title>
-<meta name="description" content="Accountancy firm for tech startups and scaling SMEs. Chartered accountants covering bookkeeping, VAT compliance, payroll and year-end for one fixed monthly fee. Replies within 24 hours.">
+<title>Rise Accounting | Tech startup accountants in London</title>
+<meta name="description" content="Dedicated tech startup accountants for Seed to Series B founders. SEIS and EIS Advance Assurance, EMI schemes, bookkeeping, VAT compliance and CFO advisory in one fixed monthly fee. Replies within 24 hours.">
 <link rel="preload" as="image" href="assets/hero-london-4k.webp" fetchpriority="high">
 <link rel="icon" href="assets/logo-f25648fb.svg">
 <!--
@@ -27,74 +27,59 @@ window.RISE = {
 
   /* ---------- Service groups (used for filters, colours and the nav menu) ---------- */
   categories: {
-    accounting: { label: "Accounting & compliance",        colour: "cyan"  },
-    operations: { label: "Finance operations & reporting", colour: "steel" },
     growth:     { label: "Growth & advisory",              colour: "navy"  },
-    global:     { label: "International expansion",        colour: "slate" }
+    accounting: { label: "Accounting & compliance",        colour: "cyan"  },
+    operations: { label: "Finance operations & reporting", colour: "steel" }
   },
 
   /* ---------- SERVICES ----------
      Add a service: copy one line, change the words. Keep "line" to one short sentence.
      featured: true  = shown before "Show all" is clicked. 8 featured keeps the grid tidy. */
   services: [
-    { cat: "accounting", icon: "user-round-check",       title: "Dedicated Chartered Accountant",          line: "A named contact, regular updates and direct access.",        featured: true },
-    { cat: "accounting", icon: "book-open-check",        title: "Bookkeeping on Xero or QuickBooks",       line: "Day-to-day records and bank reconciliations, kept current.", featured: true },
-    { cat: "accounting", icon: "file-check-2",           title: "Year-end accounts, Confirmation Statement & Corporation Tax", line: "Annual accounts, company filings and tax filings, done on time.",      featured: true },
-    { cat: "accounting", icon: "receipt-pound-sterling", title: "VAT Support",                             line: "We ensure you're VAT compliant and never miss a deadline.",  featured: true },
-    { cat: "accounting", icon: "wallet",                 title: "Payroll & pensions",                      line: "Payslips, pensions and optional direct payments.",           featured: true },
-    { cat: "operations", icon: "briefcase-business",     title: "Outsourced Finance Function",             line: "Everything you see here plus payroll and vendor payments, and senior finance leaders without hiring in-house.", featured: true },
-    { cat: "growth",     icon: "rocket",                 title: "SEIS & EIS Advance Assurance",            line: "Eligibility review, application and HMRC queries.",          featured: true },
-    { cat: "global",     icon: "building-2",             title: "Dubai company formation support",         line: "We guide you through the company formation process from start to finish, including post-setup support.",         featured: true },
-    { cat: "operations", icon: "chart-column",           title: "Management accounts",                     line: "Monthly or quarterly P&L, balance sheet and cash flow." },
-    { cat: "operations", icon: "receipt",                title: "Sales invoicing & credit control",        line: "Invoices sent and customer payments followed up." },
-    { cat: "operations", icon: "banknote",               title: "Supplier bills & payment runs",           line: "Bills approved and suppliers paid on time." },
-    { cat: "operations", icon: "chart-line",             title: "Cash-flow forecasts & budgets",           line: "Rolling forecasts and actual-versus-budget checks." },
-    { cat: "operations", icon: "presentation",           title: "KPI & board reporting",                   line: "Performance dashboards with clear commentary." },
-    { cat: "operations", icon: "plug-zap",               title: "Finance systems & processes",             line: "Tool setup, invoice capture and connected workflows." },
-    { cat: "growth",     icon: "scale",                  title: "Business valuations",                     line: "For a sale, investment or tax purposes." },
-    { cat: "growth",     icon: "chart-pie",              title: "EMI option schemes",                      line: "Valuation, scheme setup and ongoing compliance." },
-    { cat: "growth",     icon: "trending-up",            title: "Financial forecasting & modelling",       line: "Revenue forecasts, runway and break-even analysis." },
-    { cat: "growth",     icon: "layers-3",               title: "Scenario planning",                       line: "Model hiring, investment and growth decisions." },
-    { cat: "growth",     icon: "hand-coins",             title: "Fundraising & lender reporting",          line: "The numbers investors and lenders ask for." },
-    { cat: "global",     icon: "percent",                title: "UAE accounting, VAT & corporate tax advice", line: "Stay on top of your finances and compliance obligations with expert support." },
-    { cat: "global",     icon: "users-round",            title: "UAE payroll & WPS",                       line: "Payroll and wage-protection rules, handled." },
-    { cat: "global",     icon: "plane",                  title: "UK–UAE tax planning",                     line: "Cross-border structuring and residency advice." },
-    { cat: "global",     icon: "flag",                   title: "US company setup & ongoing finance",      line: "Formation, books, payroll, tax and annual reporting." },
-    { cat: "global",     icon: "shield-check",           title: "US sales tax & audit support",            line: "Sales tax returns and help preparing for audit." }
+    { cat: "growth",     icon: "rocket",                 title: "SEIS & EIS Advance Assurance",            line: "Eligibility review, application and HMRC queries in 48 hours.", featured: true },
+    { cat: "growth",     icon: "chart-pie",              title: "EMI option schemes",                      line: "Valuation, scheme setup and ongoing compliance for your key hires.", featured: true },
+    { cat: "growth",     icon: "hand-coins",             title: "Fundraising & investor reporting",        line: "The financial statements and reports your investors ask for.", featured: true },
+    { cat: "growth",     icon: "trending-up",            title: "Financial forecasting & modelling",       line: "Revenue forecasts, runway and break-even analysis.",          featured: true },
+    { cat: "accounting", icon: "user-round-check",       title: "Dedicated Chartered Accountant",          line: "A named contact for your startup, regular updates and direct access.", featured: true },
+    { cat: "accounting", icon: "book-open-check",        title: "Bookkeeping on Xero or QuickBooks",       line: "Day-to-day records and bank reconciliations, kept current.",  featured: true },
+    { cat: "operations", icon: "chart-column",           title: "Management accounts",                     line: "Monthly P&L, balance sheet and cash flow with commentary.",   featured: true },
+    { cat: "operations", icon: "briefcase-business",     title: "Outsourced Finance Function",             line: "Full finance team on tap. Vendor payments, senior finance leaders and controls, without hiring in-house.", featured: true },
+    { cat: "accounting", icon: "file-check-2",           title: "Year-end accounts, Confirmation Statement & Corporation Tax", line: "Annual accounts, company filings and tax filings, done on time." },
+    { cat: "accounting", icon: "receipt-pound-sterling", title: "VAT Support",                             line: "We ensure you're VAT compliant and never miss a deadline." },
+    { cat: "accounting", icon: "wallet",                 title: "Payroll & pensions",                      line: "Payslips, PAYE, pensions and auto-enrolment for your team." },
+    { cat: "operations", icon: "chart-line",             title: "Cash-flow forecasts & budgets",           line: "Rolling forecasts and runway checks for your board." },
+    { cat: "growth",     icon: "scale",                  title: "Business valuations",                     line: "For funding rounds, EMI schemes or sale." },
+    { cat: "growth",     icon: "layers-3",               title: "Scenario planning",                       line: "Model hiring, investment and growth decisions before you make them." }
   ],
 
   /* ---------- WHY RISE (left list). "visual" must match a block in the page: accountant | chat | fee | books | proactive | grow ---------- */
   why: [
-    { visual: "accountant", colour: "cyan",  icon: "user-round-check",     title: "A dedicated Chartered Accountant", line: "One named expert who knows your business inside out." },
+    { visual: "accountant", colour: "cyan",  icon: "user-round-check",     title: "A dedicated Chartered Accountant", line: "One named expert who knows your startup inside out." },
     { visual: "advisory",   colour: "navy",  icon: "rocket",               title: "Growth & advisory",               line: "SEIS, EIS, EMI, valuations and forecasts for your next big move." },
-    { visual: "global",     colour: "steel", icon: "earth",                title: "International expansion",         line: "Your London team, our own Dubai team and US CPA partners, all joined up." },
+    { visual: "global",     colour: "steel", icon: "trending-up",          title: "Tech startup revenue models",     line: "SaaS, marketplace, e-commerce and D2C revenue recognised the right way." },
     { visual: "chat",       colour: "cyan",  icon: "messages-square",      title: "Answers within 24 hours",         line: "On Slack, Teams, email or a call. Ad-hoc questions welcome." },
     { visual: "fee",        colour: "slate", icon: "badge-pound-sterling", title: "One fixed monthly fee",           line: "Only pay for what you need. No hourly billing, no surprise bills." },
-    { visual: "books",      colour: "steel", icon: "refresh-cw",           title: "Real-time books",                 line: "Reconciled all year, so you always know where you stand." },
+    { visual: "books",      colour: "steel", icon: "refresh-cw",           title: "Real-time books",                 line: "Reconciled all year, so you always know your cash and burn." },
     { visual: "proactive",  colour: "navy",  icon: "bell-ring",            title: "We stay ahead of deadlines",      line: "Reminders well before anything is due. You never chase us." },
-    { visual: "grow",       colour: "cyan",  icon: "trending-up",          title: "Grows with you",                  line: "From your first hire to a full outsourced finance team." }
+    { visual: "grow",       colour: "cyan",  icon: "layers-3",             title: "Scales Pre-Seed to Series B",     line: "Same team the whole way. From first hire to full finance function." }
   ],
 
   /* ---------- REVIEWS. Wrap the key phrase in [[double brackets]] to highlight it. ---------- */
   reviews: [
-    { name: "Barnes Benson",   role: "Strategic Advisor, TourHero",   photo: "assets/img-227c3aaa.webp",  tag: "Reliability",     colour: "cyan",
-      quote: "Integrity, reliability, and communication are what matter most and [[Rise Accounting has ticked all three boxes.]] I know if the team goes off to do something, it will be delivered to the standard we agreed on." },
-    { name: "Hayyaan Ahmad",   role: "Co-Founder, Round",             photo: "assets/img-894f8c47.webp", tag: "Fast replies",    colour: "navy",
-      quote: "[[They are super responsive and aim to deliver quality.]] We've been using them for almost 2 years and really pleased with Fatjeta and the rest of the team." },
-    { name: "Joy Abisaab",     role: "Founder, Mast",                 photo: "assets/img-4780e80c.webp",     tag: "Accuracy",        colour: "steel",
-      quote: "The whole team really know their stuff technically speaking. [[I'm no longer having to check the accounting work being delivered]] which is a huge time save." },
-    { name: "Eleanor Humphrey", role: "Co-Founder & CEO, topl",       photo: "assets/img-e70dcdb0.webp", tag: "Proactive",       colour: "slate",
-      quote: "Their attention to detail and [[proactive approach has made a significant difference]] in streamlining our financial processes, helping me to run my business more efficiently." },
-    { name: "Dimas Urgal",     role: "Finance Lead, Proxima Fusion",  photo: "assets/img-0a34bfff.webp",   tag: "Partnership",     colour: "cyan",
-      quote: "Very good and experienced accountants. [[They are more than service providers, they are partners.]]" },
-    { name: "Nick Kuan",       role: "Director of Finance, Fertifa",  photo: "assets/img-4f8bdc0c.webp",    tag: "Onboarding",      colour: "navy",
+    { name: "Nick Kuan",       role: "Director of Finance, Fertifa",  photo: "assets/img-4f8bdc0c.webp",    tag: "Partnership",     colour: "navy",
       quote: "Communication was great from the very first interaction, through onboarding and now working together. [[It was fast and straightforward to progress]] which is important given how quickly we're moving." },
-    { name: "Pete Robins",     role: "Founder, Project5",             photo: "assets/img-22465c54.webp",    tag: "Serial founder",  colour: "steel",
-      quote: "Project5 is the 5th business I've started... Now in our scale-up stage, [[I'll be sticking with Rise Accounting]] as they've simply delivered on what I needed." },
-    { name: "Aleck O'Neill",   role: "Altair Aviation Services",      photo: "assets/img-4778e0ed.webp",   tag: "UAE setup",       colour: "slate",
-      quote: "Setting up a business in the UAE from abroad can feel pretty daunting, and I wasn't sure where to start. Rise Accounting made the whole process a lot more straightforward than I expected. [[Their insight has had a meaningful impact on my tax position.]]" },
-    { name: "James Douglas",   role: "CCO, Black Star AI",            photo: "assets/img-5441055b.webp",   tag: "SEIS approval",   colour: "cyan",
-      quote: "Highly personable and results oriented company. Had the pleasure of working with Ashwini, who helped us at every stage and made critical and intelligent suggestions that were [[instrumental in achieving our objective in SEIS approval.]]" }
+    { name: "Hayyaan Ahmad",   role: "Co-Founder, Round",             photo: "assets/img-894f8c47.webp",    tag: "Fast replies",    colour: "cyan",
+      quote: "[[They are super responsive and aim to deliver quality.]] We've been using them for almost 2 years and really pleased with Fatjeta and the rest of the team." },
+    { name: "Eleanor Humphrey", role: "Co-Founder & CEO, topl",       photo: "assets/img-e70dcdb0.webp",    tag: "Proactive",       colour: "slate",
+      quote: "Their attention to detail and [[proactive approach has made a significant difference]] in streamlining our financial processes, helping me to run my business more efficiently." },
+    { name: "Dimas Urgal",     role: "Finance Lead, Proxima Fusion",  photo: "assets/img-0a34bfff.webp",    tag: "Investor-ready",  colour: "steel",
+      quote: "Very good and experienced accountants. [[They are more than service providers, they are partners.]]" },
+    { name: "Joy Abisaab",     role: "Founder, Mast",                 photo: "assets/img-4780e80c.webp",    tag: "Accuracy",        colour: "cyan",
+      quote: "The whole team really know their stuff technically speaking. [[I'm no longer having to check the accounting work being delivered]] which is a huge time save." },
+    { name: "James Douglas",   role: "CCO, Black Star AI",            photo: "assets/img-5441055b.webp",    tag: "SEIS approval",   colour: "navy",
+      quote: "Highly personable and results oriented company. Had the pleasure of working with Ashwini, who helped us at every stage and made critical and intelligent suggestions that were [[instrumental in achieving our objective in SEIS approval.]]" },
+    { name: "Pete Robins",     role: "Founder, Project5",             photo: "assets/img-22465c54.webp",    tag: "Serial founder",  colour: "slate",
+      quote: "Project5 is the 5th business I've started... Now in our scale-up stage, [[I'll be sticking with Rise Accounting]] as they've simply delivered on what I needed." }
   ],
 
   /* ---------- HOW IT WORKS ---------- */
@@ -107,28 +92,28 @@ window.RISE = {
 
   /* ---------- FAQS (keep answers to two short lines) ---------- */
   faqs: [
-    { q: "Why should I use a digital-first accountancy firm?",
-      a: "Your books stay up to date in Xero or QuickBooks all year, not caught up once a quarter. Receipts flow in automatically through Dext or Apron, and your accountant answers on Slack or Teams, so you always know where you stand." },
-    { q: "What should I look for when choosing an accounting firm?",
-      a: "A named accountant who knows your business, replies within a day and charges a fixed fee, not by the hour. Check they can advise on tax, fundraising and growth too, not just file on time." },
-    { q: "How much does an accountancy firm charge?",
-      a: "At Rise Accounting you pay one fixed monthly fee, based on what your business needs. You only pay for services you use, such as VAT, payroll or an outsourced finance function, and ad-hoc questions and extra calls are always included." },
-    { q: "Do I need an accounting firm or just bookkeeping software?",
-      a: "Software records your numbers. An accountant makes sure they're right, files with HMRC and Companies House, and tells you what they mean. With Rise Accounting you get both: we set up the software and handle the rest." },
-    { q: "How do I switch to a new accountancy firm?",
-      a: "Send us your current accountant's details. We request professional clearance, collect your records, check you're compliant and handle all HMRC communication. You can switch at any time of year, with no extra onboarding fee." },
-    { q: "When is the right time to hire an accounting firm?",
-      a: "Earlier than most founders think. Common moments for tech startups are when you incorporate, near the £90,000 VAT threshold, when you hire your first employee or when you start raising money. Good foundations early prevent costly fixes later." },
-    { q: "How is Rise Accounting different from other accountancy firms?",
-      a: "You get a dedicated Chartered Accountant, replies within 24 hours on Slack or Teams, and one fixed monthly fee. Our founding team comes from corporate finance, so we help tech startups and scaling businesses with growth, fundraising and expansion to Dubai and the US." },
-    { q: "Can an accounting firm help me grow my business?",
-      a: "Yes. As your outsourced finance function, monthly management accounts, forecasts and scenario plans show you when to hire, raise or spend. We also handle SEIS and EIS, EMI share options, valuations and international expansion." }
+    { q: "What is SEIS and EIS Advance Assurance and how long does it take?",
+      a: "Advance Assurance is HMRC's confirmation that your share issue is likely to qualify for SEIS or EIS relief. Investors ask for it before they wire. We prepare the application, business plan and financials, and file with HMRC. Most decisions come back in 6 to 8 weeks. Our own application prep goes to HMRC within 48 hours of our eligibility call." },
+    { q: "When is the right time for a tech startup to hire an accountant?",
+      a: "Right after you incorporate is ideal. Common trigger points are your first hire, first outside investment, hitting the £90,000 VAT threshold, or preparing for a funding round. Founders who wait until the year-end usually pay more in fixes than they saved on fees." },
+    { q: "Do you set up EMI share option schemes?",
+      a: "Yes. We handle the whole EMI journey. Company valuation for HMRC, scheme rules, option grants, HMRC registration and the annual return. EMI is the most tax-efficient way to give equity to key hires in the UK, and we make sure it's watertight." },
+    { q: "How do you work with Xero or QuickBooks for tech startups?",
+      a: "We are a Xero Platinum Partner and QuickBooks Certified. You get up to 80% off Xero for your first 6 months, passed straight to you. We connect Stripe, Shopify, PayPal, Amazon and A2X, and use Dext or Apron to capture receipts. You get real-time books without the manual admin." },
+    { q: "What financial reporting do investors expect at Seed and Series A?",
+      a: "At Seed, investors want a clean monthly management account, cash runway and a hiring plan. At Series A, they want a full board pack: monthly P&L, balance sheet, cash flow, KPI dashboard, budget-vs-actual and a rolling 18-month forecast. We build and maintain the pack so your board meetings run on real numbers." },
+    { q: "How much runway do we need to worry about?",
+      a: "12 months of runway is the typical minimum before you start the next raise. Under 6 months, options narrow fast. Our forecasting sets your monthly burn, live cash-in-bank and true runway based on scenarios you can toggle. You know your runway to the week, not the quarter." },
+    { q: "How is Rise Accounting different for tech startups?",
+      a: "You get a dedicated Chartered Accountant with tech startup experience, replies within 24 hours on Slack or Teams, and one fixed monthly fee. Our founding team comes from corporate finance, so we speak the language of SaaS, marketplace and e-commerce revenue models. We work with pre-revenue Seed founders through to Series B scale-ups." },
+    { q: "Can you be our outsourced finance function?",
+      a: "Yes. From day-one bookkeeping to a full outsourced finance function, we scale with you. That includes vendor payments, payroll, management accounts, board reporting, forecasting and senior finance advice. You get the full team without the hire cost, and the same faces the whole way." }
   ],
 
   /* ---------- CHATBOT. keys = words that trigger the answer. cta: true shows a "Talk to an expert" button. ---------- */
   bot: {
-    greeting: "Hi! I can answer quick questions about Rise Accounting. Pick a topic or type your own.",
-    chips: ["Pricing & fees", "What's included", "Switching accountants", "VAT & compliance", "Payroll & pensions", "Reporting & forecasts", "SEIS, EIS & EMI", "Dubai & US", "Talk to an expert"],
+    greeting: "Hi! I can answer quick questions about Rise Accounting for tech startups. Pick a topic or type your own.",
+    chips: ["Pricing & fees", "What's included", "SEIS, EIS & EMI", "Runway & forecasts", "Investor reporting", "Payroll & pensions", "VAT & compliance", "Switching accountants", "Talk to an expert"],
     topics: [
       { keys: ["price", "pricing", "cost", "fee", "charge", "how much", "expensive", "cheap", "quote", "budget"],
         answer: "One fixed monthly fee, based on what you actually need. You only pay for services you use, and ad-hoc questions and extra calls are always included. Tap below to get a quote.", cta: true },
@@ -150,8 +135,8 @@ window.RISE = {
         answer: "We handle VAT compliance under Making Tax Digital, your year-end accounts, confirmation statement and Corporation Tax filings. If you're getting close to the £90,000 VAT threshold, we'll flag it early." },
       { keys: ["payroll", "pension", "pensions", "payslip", "paye", "auto-enrol", "wages", "salaries"],
         answer: "We run your payroll every month: payslips, PAYE, pensions and auto-enrolment, done right and on time. We can make the payments to your team too." },
-      { keys: ["report", "reporting", "management accounts", "forecast", "forecasts", "cash flow", "cash-flow", "budget", "board", "kpi", "runway"],
-        answer: "You get monthly or quarterly management accounts with plain-English commentary, plus cash-flow forecasts, budgets and board-ready KPI reports when you need them." },
+      { keys: ["report", "reporting", "management accounts", "forecast", "forecasts", "cash flow", "cash-flow", "budget", "board", "kpi", "runway", "investor", "investor reporting"],
+        answer: "You get monthly management accounts with plain-English commentary, cash-flow forecasts, runway to the week, and board-ready KPI reports. At Series A we build a full board pack: P&L, balance sheet, cash flow, KPI dashboard, budget-vs-actual and a rolling 18-month forecast.", cta: true },
       { keys: ["service", "services", "offer", "bookkeeping"],
         answer: "We cover bookkeeping, VAT compliance, payroll, year-end accounts and Corporation Tax filings, management accounts, forecasting, CFO advice, SEIS and EIS, EMI schemes, valuations, and support in Dubai and the US.", link: { label: "See all services", href: "#services" } },
       { keys: ["in-house", "in house", "hire", "hiring", "finance manager", "finance director", "cfo", "recruit"],
@@ -1297,9 +1282,9 @@ section{padding:96px 0}
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow">Trusted by startups and SMEs in the UK &amp; UAE</p>
-      <h1>Get your accountancy firm<br> for <span class="stroke">less than the cost of one hire</span>.</h1>
-      <p class="lede">Chartered accountants, bookkeepers, tax and payroll experts in one team. Replies within 24 hours with one fixed monthly fee.</p>
+      <p class="eyebrow">Trusted by the UK's fastest-growing tech startups</p>
+      <h1>Grow faster with dedicated<br> <span class="stroke">tech startup accountants</span>.</h1>
+      <p class="lede">Chartered accountants for Seed to Series B tech startups. SEIS &amp; EIS Advance Assurance, EMI, bookkeeping, VAT compliance and payroll in one team. Replies within 24 hours.</p>
       <div class="hero-cta"><button class="btn btn-primary btn-lg" data-form>Talk to an expert</button></div>
       <div class="proof">
         <div class="pf">
@@ -1321,8 +1306,8 @@ section{padding:96px 0}
     <aside class="hero-side">
       <figure class="hq">
         <div class="stars" aria-label="5 stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></div>
-        <blockquote>“They are super responsive and aim to deliver quality.”</blockquote>
-        <figcaption><img src="assets/img-894f8c47.webp" alt=""><div><b>Hayyaan Ahmad</b><span>Co-Founder, Round</span></div></figcaption>
+        <blockquote>“It was fast and straightforward to progress, important given how quickly we're moving.”</blockquote>
+        <figcaption><img src="assets/img-4f8bdc0c.webp" alt=""><div><b>Nick Kuan</b><span>Director of Finance, Fertifa</span></div></figcaption>
       </figure>
     </aside>
   </div>
@@ -1331,7 +1316,7 @@ section{padding:96px 0}
 <!-- ============================ CLIENTS ============================ -->
 <div class="clients">
   <div class="wrap">
-    <p>Trusted by high-growth tech startups and SMEs</p>
+    <p>Trusted by the UK's fastest-growing tech startups</p>
     <div class="logos">
       <img src="assets/img-d66909f2.webp" alt="Cauli Box" style="height:44px">
       <img src="assets/img-0dfeba16.webp" alt="hifo.co" style="height:31px">
@@ -1347,8 +1332,8 @@ section{padding:96px 0}
 <section id="services">
   <div class="wrap">
     <div class="head">
-      <h2>Everything your scaling business needs</h2>
-      <p class="sub">Start with what causes the most headaches. Add more as you grow.</p>
+      <h2>Everything your tech startup needs</h2>
+      <p class="sub">Start with SEIS and EIS. Add bookkeeping, payroll and VAT as you grow. Bring the full finance function when you scale.</p>
     </div>
     <div class="filters" id="filters" role="tablist" aria-label="Filter services"></div>
     <div class="svc-grid" id="svcGrid"></div>
@@ -1361,8 +1346,8 @@ section{padding:96px 0}
 <section id="why" class="white">
   <div class="wrap">
     <div class="why-top">
-      <h2>What Rise Accounting does for you</h2>
-      <p class="sub">What you get from day one, and as you grow.</p>
+      <h2>Why tech startups pick Rise Accounting</h2>
+      <p class="sub">What you get from day one, and as you grow to Series B.</p>
     </div>
     <div class="why">
     <div class="why-list" id="whyList" role="tablist" aria-label="Reasons to choose Rise Accounting"></div>
@@ -1541,7 +1526,7 @@ section{padding:96px 0}
   <div class="wrap">
     <div class="head">
       <h2>Don't take our word for it</h2>
-      <p class="sub">Founders and finance leads on what changed after switching accountancy firm to Rise Accounting.</p>
+      <p class="sub">Tech startup founders and finance leads on what changed after moving to Rise Accounting.</p>
     </div>
     <div class="rev-track" id="revTrack" aria-roledescription="carousel" aria-label="Client reviews"></div>
     <div class="rev-nav">
@@ -1557,7 +1542,7 @@ section{padding:96px 0}
   <div class="wrap">
     <div class="head">
       <h2>Up and running in less than a week</h2>
-      <p class="sub">Switching accountancy firm? We handle the handover with your current accountants and HMRC.</p>
+      <p class="sub">Switching accountants? We handle the handover, your SEIS records and HMRC.</p>
     </div>
     <ol class="steps" id="steps"></ol>
     <div class="how-cta"><button class="btn btn-primary" data-form>Talk to an expert</button></div>
@@ -1577,12 +1562,12 @@ section{padding:96px 0}
   <div class="wrap">
     <div class="cta-panel">
       <div class="cta-in">
-        <h2>Get a finance team that's already on it</h2>
-        <p class="sub">Talk to an accountant for free. We'll look at your setup and suggest a plan that fits.</p>
+        <h2>Unlock your growth with tech startup accountants</h2>
+        <p class="sub">Talk to a chartered accountant for free. We'll look at your setup and suggest a plan that fits your stage.</p>
         <ul class="ticks">
           <li><svg class="ic"><use href="#i-check"/></svg>Free consultation</li>
           <li><svg class="ic"><use href="#i-check"/></svg>Chartered Accountants</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Built for SMEs</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Built for tech scale-ups</li>
         </ul>
         <button class="btn btn-primary" data-form>Talk to an expert</button>
       </div>
@@ -1597,7 +1582,7 @@ section{padding:96px 0}
     <div class="foot-top">
       <div class="foot-brand">
         <img src="assets/logo-98bf498e.svg" alt="Rise Accounting">
-        <p>Accounting partners for fast-growing businesses in the UK, Dubai and the US.</p>
+        <p>Chartered accountants for tech startups in the UK.</p>
         <div class="partners"><svg class="bic" style="color:#13B5EA"><use href="#b-xero"/></svg><svg class="bic" style="color:#2CA01C"><use href="#b-quickbooks"/></svg></div>
       </div>
       <nav class="foot-nav" aria-label="Footer navigation">
