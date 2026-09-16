@@ -131,10 +131,9 @@ section{padding:96px 0;position:relative}
 .hero-r{position:relative}
 .banks-title{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:16px;text-align:center}
 .banks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:22px;background:linear-gradient(135deg,#5766D6 0%,#4048B2 100%);border-radius:22px;box-shadow:0 30px 60px -24px rgba(78,90,199,.5)}
-.bcard{aspect-ratio:16/10;border-radius:12px;background:#fff;display:grid;place-items:center;font-weight:800;font-size:15px;letter-spacing:-.02em;position:relative;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.08);transition:transform .3s var(--ease)}
-.bcard:hover{transform:translateY(-4px)}
-.bcard::before{content:"";position:absolute;right:-30%;top:-40%;width:80%;height:120%;border-radius:50%;opacity:.85;transition:transform .4s var(--ease)}
-.bcard:hover::before{transform:scale(1.15)}
+/* Bank cards intentionally STATIC — no hover transform, no ::before movement (Sep 17 fix: perceived rotation on scroll) */
+.bcard{aspect-ratio:16/10;border-radius:12px;background:#fff;display:grid;place-items:center;font-weight:800;font-size:15px;letter-spacing:-.02em;position:relative;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.08)}
+.bcard::before{content:"";position:absolute;right:-30%;top:-40%;width:80%;height:120%;border-radius:50%;opacity:.85}
 .bcard span{position:relative;z-index:1;padding:0 10px;text-align:center}
 .b-tide{background:#00CFB0;color:#fff}.b-tide::before{background:#00A88F}
 .b-barclays{background:#1A78D5;color:#fff}.b-barclays::before{background:#00395D}
@@ -165,6 +164,15 @@ section{padding:96px 0;position:relative}
 .rev-google{position:absolute;top:20px;right:20px;width:22px;height:22px}
 .rev-quote{font-size:14.5px;line-height:1.55;color:var(--ink-2)}
 @media (max-width:760px){.reviews-strip{grid-template-columns:1fr}}
+
+/* ============================ STATS STRIP (Sep 17 addition, sits above Packages) ============================ */
+.stats-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:900px;margin:0 auto 44px;padding:22px 28px;background:#fff;border-radius:20px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.stat{text-align:center;padding:6px 14px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:26px;font-weight:800;color:var(--indigo);letter-spacing:-.02em;line-height:1.1}
+.stat .stat-stars{color:var(--sun);font-size:15px;letter-spacing:2px;display:inline-block;margin-left:4px;vertical-align:middle}
+.stat span{display:block;font-size:13px;color:var(--ink-2);font-weight:600;margin-top:4px}
+@media (max-width:640px){.stats-strip{grid-template-columns:1fr;gap:14px}.stat{border-right:0;border-bottom:1px solid var(--line);padding-bottom:14px}.stat:last-child{border-bottom:0;padding-bottom:6px}}
 
 /* ============================ PACKAGES ============================ */
 .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1100px;margin:0 auto}
@@ -204,6 +212,8 @@ section{padding:96px 0;position:relative}
 .step:hover{transform:translateY(-3px)}
 .step-mock{height:150px;background:var(--paper);border-radius:12px;margin-bottom:18px;overflow:hidden;position:relative;border:1px solid var(--line)}
 .step-num{position:absolute;top:18px;left:22px;width:32px;height:32px;border-radius:50%;background:var(--indigo);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px;z-index:2}
+.step-time{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:var(--indigo-50);color:var(--indigo);border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+.step-time::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--indigo)}
 .step h3{font-size:17.5px;font-weight:700;margin-bottom:6px}
 .step p{font-size:14.5px;color:var(--ink-2);line-height:1.5}
 .step-cta{background:linear-gradient(155deg,#5766D6,#4048B2);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 28px;border:0}
@@ -477,7 +487,7 @@ section{padding:96px 0;position:relative}
           <div class="rev-avatar" style="background:#F5B301">S</div>
           <div><div class="rev-name">Samm Hallilay</div><div class="rev-stars">★★★★★</div></div>
         </div>
-        <p class="rev-quote">"Rise were super helpful and made everything very easy. I wouldn't hesitate to recommend them to assist with setting up a company."</p>
+        <p class="rev-quote">"Rise were super helpful and made everything very easy. I wouldn't hesitate t recomend them to assist with setting up a copmany."</p>
       </div>
       <div class="rev-card">
         <svg class="rev-google" viewBox="0 0 24 24"><path d="M12 11v3.5h5A5 5 0 1 1 12 7c1.3 0 2.5.5 3.4 1.4l2.5-2.5A8.5 8.5 0 1 0 20.5 12H12z" fill="#4E5AC7"/></svg>
@@ -506,6 +516,11 @@ section{padding:96px 0;position:relative}
       <span class="eyebrow">Choose a package</span>
       <h2>Everything you need to start and scale</h2>
       <p class="sub">We don't charge any fees to incorporate your business in as little as 24 hours. Plus we've reduced the mandatory Companies House fee by £11. Check out our most popular additional services below.</p>
+    </div>
+    <div class="stats-strip">
+      <div class="stat"><b>2,000+</b><span>UK businesses incorporated</span></div>
+      <div class="stat"><b>24 hours</b><span>Average incorporation time</span></div>
+      <div class="stat"><b>4.9<span class="stat-stars">★★★★★</span></b><span>From 138 Google reviews</span></div>
     </div>
     <div class="pkg-grid">
 
@@ -601,6 +616,7 @@ section{padding:96px 0;position:relative}
       <article class="step">
         <div class="step-num">1</div>
         <div class="step-mock mock-1"><div class="m-search">Slide.io</div><div class="m-avail">Name available</div></div>
+        <span class="step-time">Takes 30 seconds</span>
         <h3>Choose a name</h3>
         <p>Search for your preferred company name. If it's not available, try alternatives until you find one that is.</p>
       </article>
@@ -612,6 +628,7 @@ section{padding:96px 0;position:relative}
           <div class="row"><b>Card information</b><div class="field">1234 1234 1234 1234 <span class="cards" style="margin-left:auto"><i class="visa"></i><i class="mc"></i></span></div></div>
           <div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><div><b>MM/YY</b><div class="field">05/28</div></div><div><b>CVC</b><div class="field">•••</div></div></div>
         </div>
+        <span class="step-time">Takes 2 minutes</span>
         <h3>Checkout</h3>
         <p>Decide on a package and checkout. You'll then be able to login to the Rise Formations platform.</p>
       </article>
@@ -623,6 +640,7 @@ section{padding:96px 0;position:relative}
           <div class="m-select">Choose an option</div>
           <div class="m-option">Healthcare</div>
         </div>
+        <span class="step-time">Takes 5 minutes</span>
         <h3>Tell us about your business</h3>
         <p>Answer a few simple, jargon-free questions about your business in the platform.</p>
       </article>
@@ -633,6 +651,7 @@ section{padding:96px 0;position:relative}
           <div class="m-pill"><span class="spin"></span>Syncing...</div>
           <div class="m-pill m-connected"><svg class="ic" style="width:12px;height:12px;color:#0C8F6E"><use href="#i-check"/></svg>Connected</div>
         </div>
+        <span class="step-time">Up to 24 hours</span>
         <h3>Companies House processing</h3>
         <p>Your information is sent to Companies House for processing.</p>
       </article>
@@ -643,6 +662,7 @@ section{padding:96px 0;position:relative}
           <div class="cert"><svg><use href="#i-file-check"/></svg>Shareholder Certificate Attached</div>
           <div class="cert"><svg><use href="#i-shield-check"/></svg>Company Domain Secured</div>
         </div>
+        <span class="step-time">Same day</span>
         <h3>Receive all relevant certifications</h3>
         <p>All certificates and documents are sent directly to you. And that's it. You can start trading.</p>
       </article>
@@ -784,8 +804,6 @@ section{padding:96px 0;position:relative}
       <details class="q"><summary>Do I need to submit an ID or proof of address?</summary><div class="a">Yes. UK anti-money-laundering rules mean we verify the identity and address of every director and Person of Significant Control. Our platform handles this via a quick digital ID check.</div></details>
       <details class="q"><summary>Do I need a business bank account?</summary><div class="a">A limited company legally needs its own bank account (separate from your personal account). We include a free business bank account of your choice with every package. Tide, Barclays, Wise, ANNA, Mettle and Revolut are all supported.</div></details>
       <details class="q"><summary>How much does it cost?</summary><div class="a">The Starter Package is £0 plus the £89 Companies House fee (we cover £11 of the £100 standard charge). The Privacy Package is £14.99 and the Tech Package is £49.99, both plus the £89 Companies House fee.</div></details>
-      <details class="q"><summary>How long does it take?</summary><div class="a">Most incorporations are live within 24 hours, depending on Companies House processing times. Same-day incorporations are possible for applications submitted before 3pm on business days.</div></details>
-      <details class="q"><summary>Can I change my registered address later?</summary><div class="a">Yes. You can update your registered office, directors' address and shareholders through our self-service platform at any time. We handle the Companies House filings on your behalf.</div></details>
     </div>
   </div>
 </section>
