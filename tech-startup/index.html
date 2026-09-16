@@ -970,7 +970,10 @@ section{padding:96px 0}
 .hero .pf b{color:#fff}
 .hero .pf div>span{color:rgba(255,255,255,.78)}
 .hero .pf-sep{background:rgba(255,255,255,.28)}
-.hero .pf-logos>*{box-shadow:0 0 0 2.5px rgba(11,36,63,.55),0 6px 14px -6px rgba(0,0,0,.4)}
+.hero .pf-logos>*{box-shadow:0 6px 14px -6px rgba(0,0,0,.4)}
+.cta-micro{display:block;margin-top:12px;font-size:13px;font-weight:600;color:var(--ink-3);letter-spacing:.01em;flex:0 0 100%;width:100%}
+.hero .cta-micro{color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.45)}
+.cta-panel .cta-micro{color:rgba(255,255,255,.85);text-shadow:0 1px 4px rgba(0,0,0,.3)}
 .hero .ticks{color:rgba(255,255,255,.86)}
 .hero .ticks .ic{color:var(--cyan)}
 /* nav: white over the photo, back to navy-on-white once scrolled */
@@ -1086,13 +1089,20 @@ section{padding:96px 0}
 .oc-hub .oc-logo img{width:100%;height:100%;object-fit:contain;display:block}
 .oc-hub b{display:block;font-size:14px;font-weight:700;line-height:1.2}
 .oc-hub em{display:block;font-style:normal;font-size:11.5px;color:rgba(255,255,255,.72);margin-top:2px}
-.oc-svg{width:100%;height:32px;display:block}
+.oc-cnx{position:relative;width:100%;height:22px;pointer-events:none}
+.oc-cnx i{position:absolute;background:#3B6186;opacity:.55;display:block}
+.oc-cnx .oc-v{top:0;left:50%;width:2px;height:11px;transform:translateX(-50%)}
+.oc-cnx .oc-h{top:10px;left:16.67%;right:16.67%;height:2px}
+.oc-cnx .oc-d{top:11px;width:2px;height:11px}
+.oc-cnx .oc-d1{left:calc(16.67% - 1px)}
+.oc-cnx .oc-d2{left:calc(50% - 1px)}
+.oc-cnx .oc-d3{left:calc(83.33% - 1px)}
 .oc-spokes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%}
 .oc-spoke{background:#fff;padding:10px 10px;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--line);display:flex;align-items:center;gap:8px;min-width:0}
 .oc-spoke .code{width:30px;height:30px;font-size:10.5px;flex:none}
 .oc-spoke b{display:block;font-size:12.5px;line-height:1.2}
 .oc-spoke em{display:block;font-style:normal;font-size:10.5px;color:var(--ink-2);line-height:1.25;margin-top:2px}
-@media (max-width:560px){.oc-hub{min-width:140px;padding:12px 14px 10px}.oc-spokes{gap:6px}.oc-spoke{padding:8px 8px;flex-direction:column;text-align:center;gap:4px}.oc-svg{height:24px}}
+@media (max-width:560px){.oc-hub{min-width:140px;padding:12px 14px 10px}.oc-spokes{gap:6px}.oc-spoke{padding:8px 8px;flex-direction:column;text-align:center;gap:4px}.oc-cnx{height:16px}.oc-cnx .oc-v{height:8px}.oc-cnx .oc-h{top:7px}.oc-cnx .oc-d{top:8px;height:8px}}
 
 /* ---------------- Grow panel: staggered bar rise (Ashleigh Sep 14 feedback, C6) ---------------- */
 .grow .gs{opacity:0;transform:translateY(30px) scaleY(.5);transform-origin:bottom center;transition:opacity .55s var(--ease),transform .7s var(--ease)}
@@ -1200,9 +1210,9 @@ section{padding:96px 0}
 /* Rating 4.9: two layered star rows, foreground clipped to 98% (Sep 16) */
 .rating-49{position:relative;display:inline-block;line-height:0}
 .rating-49 .rating-bg,.rating-49 .rating-fg{display:inline-flex;gap:1px}
-.rating-49 .rating-bg{color:#c8ccd2}
-.rating-49 .rating-fg{position:absolute;top:0;left:0;width:88%;overflow:hidden;color:#F5B301}
-.hero .rating-49 .rating-bg{color:rgba(255,255,255,.4)}
+.rating-49 .rating-bg{color:#94a3b8 !important}
+.rating-49 .rating-fg{position:absolute;top:0;left:0;width:78%;overflow:hidden;color:#F5B301 !important}
+.hero .rating-49 .rating-bg{color:rgba(255,255,255,.35) !important}
 .rating-49 .ic{width:12px;height:12px;fill:currentColor;stroke:none;flex:none}
 
 /* Make rbc-l work as <a> and preserve independent hover */
@@ -1429,7 +1439,7 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
       <button data-go="faq">FAQs</button>
     </nav>
     <div class="nav-r">
-      <button class="btn btn-primary btn-sm" data-form>Talk to an expert</button>
+      <button class="btn btn-primary btn-sm" data-form>Get your finance team</button>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg></button>
     </div>
   </div>
@@ -1454,7 +1464,6 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
           <span class="pf-logos"><svg class="bic" style="color:#13B5EA"><use href="#b-xero"/></svg><svg class="bic" style="color:#2CA01C"><use href="#b-quickbooks"/></svg></span>
           <div><b>Xero Platinum Partner</b><span>QuickBooks Certified Partner</span></div>
         </div>
-        <i class="pf-sep"></i>
         <div class="rev-badge-combo">
           <div class="rbc-logos">
             <a class="rbc-l" href="https://share.google/6MUX0LuoWKIFxz1Rt" target="_blank" rel="noopener" title="See our 108 Google reviews" aria-label="Open Google reviews"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></a>
@@ -1529,7 +1538,7 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
           <li><svg class="ic"><use href="#i-check"/></svg><span><b>Payroll &amp; vendor payments</b> through open banking</span></li>
           <li><svg class="ic"><use href="#i-check"/></svg><span><b>Sales invoicing &amp; credit control</b> to protect cash flow</span></li>
         </ul>
-        <button class="pillar-link" data-form>Talk to an expert <svg class="ic"><use href="#i-chevron-right"/></svg></button>
+        <button class="pillar-link" data-form>Get your finance team <svg class="ic"><use href="#i-chevron-right"/></svg></button>
       </div>
       <div class="pillar-card">
         <div class="pillar-card-head">
@@ -1621,7 +1630,7 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
               <b>Rise Accounting</b>
               <em>Your revenue expert</em>
             </div>
-            <svg class="oc-svg" viewBox="0 0 300 32" preserveAspectRatio="none" aria-hidden="true"><path d="M150 0 L 150 16 M 50 16 L 250 16 M 50 16 L 50 32 M 150 16 L 150 32 M 250 16 L 250 32" stroke="#3B6186" stroke-width="1.6" stroke-dasharray="4 4" fill="none" opacity=".6"/></svg>
+            <div class="oc-cnx" aria-hidden="true"><i class="oc-v"></i><i class="oc-h"></i><i class="oc-d oc-d1"></i><i class="oc-d oc-d2"></i><i class="oc-d oc-d3"></i></div>
             <div class="oc-spokes">
               <div class="oc-spoke"><span class="code c1">SaaS</span><div><b>Subscription</b><em>ARR &amp; MRR</em></div></div>
               <div class="oc-spoke"><span class="code c2">MP</span><div><b>Marketplace</b><em>GMV &amp; take rate</em></div></div>
@@ -1803,7 +1812,7 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
       <p class="sub">Switching accountants? We handle the handover, your SEIS records and HMRC.</p>
     </div>
     <ol class="steps" id="steps"></ol>
-    <div class="how-cta"><button class="btn btn-primary" data-form>Talk to an expert</button></div>
+    <div class="how-cta"><button class="btn btn-primary" data-form>Get your finance team</button></div>
   </div>
 </section>
 
@@ -1827,7 +1836,7 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
           <li><svg class="ic"><use href="#i-check"/></svg>Chartered Accountants</li>
           <li><svg class="ic"><use href="#i-check"/></svg>Built for tech scale-ups</li>
         </ul>
-        <button class="btn btn-primary" data-form>Talk to an expert</button>
+        <button class="btn btn-primary" data-form>Get your finance team</button><span class="cta-micro">No hard sell. Quote by email.</span>
       </div>
     </div>
   </div>
