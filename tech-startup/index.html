@@ -1086,12 +1086,7 @@ section{padding:96px 0}
 .oc-hub .oc-logo img{width:100%;height:100%;object-fit:contain;display:block}
 .oc-hub b{display:block;font-size:14px;font-weight:700;line-height:1.2}
 .oc-hub em{display:block;font-style:normal;font-size:11.5px;color:rgba(255,255,255,.72);margin-top:2px}
-.oc-lines{position:relative;width:100%;height:30px}
-.oc-lines .oc-line-v{position:absolute;top:0;left:calc(50% - 1px);width:0;height:15px;border-left:2px dashed var(--steel);opacity:.55}
-.oc-lines .oc-line-h{position:absolute;top:15px;left:16.67%;right:16.67%;height:0;border-top:2px dashed var(--steel);opacity:.55}
-.oc-lines .oc-line-v1{top:15px;left:calc(16.67% - 1px);height:15px}
-.oc-lines .oc-line-v2{top:15px;left:calc(50% - 1px);height:15px}
-.oc-lines .oc-line-v3{top:15px;left:calc(83.33% - 1px);height:15px}
+.oc-svg{width:100%;height:32px;display:block}
 .oc-spokes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%}
 .oc-spoke{background:#fff;padding:10px 10px;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--line);display:flex;align-items:center;gap:8px;min-width:0}
 .oc-spoke .code{width:30px;height:30px;font-size:10.5px;flex:none}
@@ -1205,8 +1200,9 @@ section{padding:96px 0}
 /* Rating 4.9: two layered star rows, foreground clipped to 98% (Sep 16) */
 .rating-49{position:relative;display:inline-block;line-height:0}
 .rating-49 .rating-bg,.rating-49 .rating-fg{display:inline-flex;gap:1px}
-.rating-49 .rating-bg{color:rgba(245,179,1,.24)}
-.rating-49 .rating-fg{position:absolute;top:0;left:0;width:90%;overflow:hidden;color:#F5B301}
+.rating-49 .rating-bg{color:#c8ccd2}
+.rating-49 .rating-fg{position:absolute;top:0;left:0;width:88%;overflow:hidden;color:#F5B301}
+.hero .rating-49 .rating-bg{color:rgba(255,255,255,.4)}
 .rating-49 .ic{width:12px;height:12px;fill:currentColor;stroke:none;flex:none}
 
 /* Make rbc-l work as <a> and preserve independent hover */
@@ -1452,7 +1448,7 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
       <p class="eyebrow">Trusted by the UK's fastest-growing tech startups</p>
       <h1>Grow faster with dedicated<br> <span class="stroke">tech startup accountants</span>.</h1>
       <p class="lede">Chartered accountants for Seed to Series B tech startups. SEIS &amp; EIS Advance Assurance, EMI, bookkeeping, VAT compliance and payroll in one team. Replies within 24 hours.</p>
-      <div class="hero-cta"><button class="btn btn-primary btn-lg" data-form>Talk to an expert</button></div>
+      <div class="hero-cta"><button class="btn btn-primary btn-lg" data-form>Get your finance team</button><span class="cta-micro">No hard sell. Quote by email.</span></div>
       <div class="proof">
         <div class="pf">
           <span class="pf-logos"><svg class="bic" style="color:#13B5EA"><use href="#b-xero"/></svg><svg class="bic" style="color:#2CA01C"><use href="#b-quickbooks"/></svg></span>
@@ -1625,13 +1621,7 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
               <b>Rise Accounting</b>
               <em>Your revenue expert</em>
             </div>
-            <div class="oc-lines" aria-hidden="true">
-              <div class="oc-line-v"></div>
-              <div class="oc-line-h"></div>
-              <div class="oc-line-v oc-line-v1"></div>
-              <div class="oc-line-v oc-line-v2"></div>
-              <div class="oc-line-v oc-line-v3"></div>
-            </div>
+            <svg class="oc-svg" viewBox="0 0 300 32" preserveAspectRatio="none" aria-hidden="true"><path d="M150 0 L 150 16 M 50 16 L 250 16 M 50 16 L 50 32 M 150 16 L 150 32 M 250 16 L 250 32" stroke="#3B6186" stroke-width="1.6" stroke-dasharray="4 4" fill="none" opacity=".6"/></svg>
             <div class="oc-spokes">
               <div class="oc-spoke"><span class="code c1">SaaS</span><div><b>Subscription</b><em>ARR &amp; MRR</em></div></div>
               <div class="oc-spoke"><span class="code c2">MP</span><div><b>Marketplace</b><em>GMV &amp; take rate</em></div></div>
