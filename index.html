@@ -1068,21 +1068,26 @@ section{padding:96px 0}
 .hs-wrap{display:flex;flex-direction:column;gap:10px}
 .hs{position:relative;height:300px;margin:6px auto 4px;width:100%;max-width:340px}
 .hs-lines{position:absolute;inset:0;width:100%;height:100%;stroke:var(--ice);stroke-width:2;stroke-dasharray:4 5;fill:none;opacity:.85;z-index:1}
-/* Globe hub-and-spoke Option B: SVG world with pins, no overflow (Sep 16 rebuild) */
-.globe-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;padding:12px 8px}
-.globe{position:relative;width:100%;max-width:360px;display:flex;justify-content:center;align-items:center}
-.globe-svg{width:100%;height:auto;display:block}
-.globe-hub{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);z-index:3;background:var(--navy);color:#fff;padding:12px 16px 10px;border-radius:16px;box-shadow:var(--shadow-lg);text-align:center;min-width:150px}
-.globe-hub .gh-logo{display:block;background:#fff;border-radius:11px;padding:6px;margin:0 auto 6px;width:40px;height:40px;box-sizing:border-box}
-.globe-hub .gh-logo img{width:100%;height:100%;object-fit:contain;display:block}
-.globe-hub b{display:block;font-size:13px;font-weight:700;line-height:1.2}
-.globe-hub em{display:block;font-style:normal;font-size:11px;color:rgba(255,255,255,.7);margin-top:2px}
-.globe-spokes{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%;max-width:400px;margin-top:6px}
-.globe-spoke{background:#fff;padding:10px 12px;border-radius:14px;box-shadow:var(--shadow);display:flex;align-items:center;gap:8px;min-width:0}
-.globe-spoke .code{width:30px;height:30px;font-size:10.5px;flex:none}
-.globe-spoke b{display:block;font-size:12.5px;line-height:1.2}
-.globe-spoke em{display:block;font-style:normal;font-size:10.5px;color:var(--ink-2);line-height:1.25;margin-top:2px}
-@media (max-width:560px){.globe-hub{min-width:132px;padding:10px 12px 8px}.globe-spokes{max-width:320px;gap:6px}.globe-spoke{padding:8px 8px;flex-direction:column;text-align:center;gap:4px}}
+/* Clean hub + 3-spoke org-chart layout (Sep 16 hub-and-spoke v3) */
+.orgchart-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;padding:8px 6px}
+.orgchart{display:flex;flex-direction:column;align-items:center;gap:0;width:100%;max-width:400px}
+.oc-hub{background:var(--navy);color:#fff;padding:14px 20px 12px;border-radius:16px;box-shadow:var(--shadow-lg);text-align:center;min-width:160px;z-index:2}
+.oc-hub .oc-logo{display:block;background:#fff;border-radius:11px;padding:6px;margin:0 auto 8px;width:44px;height:44px;box-sizing:border-box}
+.oc-hub .oc-logo img{width:100%;height:100%;object-fit:contain;display:block}
+.oc-hub b{display:block;font-size:14px;font-weight:700;line-height:1.2}
+.oc-hub em{display:block;font-style:normal;font-size:11.5px;color:rgba(255,255,255,.72);margin-top:2px}
+.oc-lines{position:relative;width:100%;height:28px}
+.oc-lines .oc-line-v{position:absolute;top:0;left:50%;width:1.5px;height:14px;background:repeating-linear-gradient(180deg,var(--ice) 0 3px,transparent 3px 6px);transform:translateX(-50%)}
+.oc-lines .oc-line-h{position:absolute;top:14px;left:16.67%;right:16.67%;height:1.5px;background:repeating-linear-gradient(90deg,var(--ice) 0 3px,transparent 3px 6px)}
+.oc-lines .oc-line-v1{top:14px;left:16.67%;height:14px}
+.oc-lines .oc-line-v2{top:14px;left:50%;height:14px}
+.oc-lines .oc-line-v3{top:14px;left:83.33%;height:14px}
+.oc-spokes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%}
+.oc-spoke{background:#fff;padding:10px 10px;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--line);display:flex;align-items:center;gap:8px;min-width:0}
+.oc-spoke .code{width:30px;height:30px;font-size:10.5px;flex:none}
+.oc-spoke b{display:block;font-size:12.5px;line-height:1.2}
+.oc-spoke em{display:block;font-style:normal;font-size:10.5px;color:var(--ink-2);line-height:1.25;margin-top:2px}
+@media (max-width:560px){.oc-hub{min-width:140px;padding:12px 14px 10px}.oc-spokes{gap:6px}.oc-spoke{padding:8px 8px;flex-direction:column;text-align:center;gap:4px}.oc-lines{height:22px}.oc-lines .oc-line-v,.oc-lines .oc-line-v1,.oc-lines .oc-line-v2,.oc-lines .oc-line-v3{height:11px}.oc-lines .oc-line-h{top:11px}.oc-lines .oc-line-v1,.oc-lines .oc-line-v2,.oc-lines .oc-line-v3{top:11px}}
 
 /* ---------------- Grow panel: staggered bar rise (Ashleigh Sep 14 feedback, C6) ---------------- */
 .grow .gs{opacity:0;transform:translateY(30px) scaleY(.5);transform-origin:bottom center;transition:opacity .55s var(--ease),transform .7s var(--ease)}
@@ -1122,21 +1127,39 @@ section{padding:96px 0}
 .rev-badge .rb-txt strong{color:#fff}
 .rev-badge .rb-txt em{font-style:normal;color:rgba(255,255,255,.62);margin-left:5px}
 
-/* ---------------- Reviews section trust badges + 4.9 stars (Sep 16 CRO) ---------------- */
+/* ---------------- Reviews section trust badges with stars (Sep 16 CRO) ---------------- */
 .rev-head{display:flex;align-items:center;gap:26px;justify-content:space-between;text-align:left;max-width:none;flex-wrap:wrap}
 .rev-head .rev-head-l{flex:1 1 auto;max-width:640px}
 .rev-badges{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
-.rev-badge-static{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--line);padding:8px 14px;border-radius:32px;box-shadow:var(--shadow)}
-.rev-badge-static .rbs-logo{width:32px;height:32px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none}
+.rev-badge-static{display:inline-flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--line);padding:10px 16px;border-radius:36px;box-shadow:var(--shadow)}
+.rev-badge-static .rbs-logo{width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;border:1px solid var(--line)}
 .rev-badge-static .rbs-logo svg{width:20px;height:20px}
-.rev-badge-static .rbs-c{background:#e62e04;color:#fff;font-weight:800;font-size:17px}
-.rev-badge-static .rbs-info{display:flex;flex-direction:column;line-height:1.15}
-.rev-badge-static .rbs-info b{font-size:16px;font-weight:800;color:var(--navy)}
-.rev-badge-static .rbs-info em{font-style:normal;font-size:11px;color:var(--ink-3);letter-spacing:.03em;text-transform:uppercase}
+.rev-badge-static .rbs-c{background:#e62e04;color:#fff;font-weight:800;font-size:17px;border-color:#e62e04}
+.rev-badge-static .rbs-info{display:flex;flex-direction:column;line-height:1.1;gap:2px}
+.rev-badge-static .rbs-stars{display:inline-flex;gap:1px;color:#F5B301}
+.rev-badge-static .rbs-stars .ic{width:12px;height:12px;fill:currentColor;stroke:none}
+.rev-badge-static .rbs-stars.stars-49 .ic:nth-child(5){opacity:.45}
+.rev-badge-static .rbs-info b{font-size:16px;font-weight:800;color:var(--navy);line-height:1}
+.rev-badge-static .rbs-info em{font-style:normal;font-size:11px;color:var(--ink-3);letter-spacing:.03em;text-transform:uppercase;line-height:1}
 @media (max-width:720px){.rev-head{flex-direction:column;text-align:center;align-items:center}.rev-head .rev-head-l{text-align:center}.rev-badges{justify-content:center}}
 
-/* 4.9 star rating: 4 solid + 1 at 45% opacity for hero Google badge (Sep 16) */
-.rb-stars.stars-49 .ic:nth-child(5){opacity:.45}
+/* Combined hero badge (Google + Clutch in one clickable pill, Sep 16) */
+.rev-badge-combo{display:inline-flex;align-items:center;gap:12px;padding:9px 16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:34px;text-decoration:none;color:#fff;transition:background .2s,border-color .2s,transform .2s var(--ease)}
+.rev-badge-combo:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.34);transform:translateY(-2px)}
+.rev-badge-combo .rbc-logos{display:inline-flex;align-items:center}
+.rev-badge-combo .rbc-l{width:28px;height:28px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;border:2px solid #fff}
+.rev-badge-combo .rbc-l+.rbc-l{margin-left:-8px}
+.rev-badge-combo .rbc-l svg{width:16px;height:16px}
+.rev-badge-combo .rbc-c{background:#e62e04;color:#fff;font-weight:800;font-size:14px;border-color:#e62e04}
+.rev-badge-combo .rbc-body{display:flex;flex-direction:column;line-height:1.1;gap:2px}
+.rev-badge-combo .rbc-stars{display:inline-flex;gap:1px;color:#F5B301}
+.rev-badge-combo .rbc-stars .ic{width:12px;height:12px;fill:currentColor;stroke:none}
+.rev-badge-combo .rbc-stars.stars-49 .ic:nth-child(5){opacity:.45}
+.rev-badge-combo .rbc-txt{font-size:12.5px;font-weight:700;color:#fff;letter-spacing:.01em;white-space:nowrap}
+.rev-badge-combo .rbc-txt strong{color:#fff;font-weight:800;margin-right:4px}
+
+/* Force gold stars everywhere */
+.stars,.rb-stars,.rbc-stars,.rbs-stars,.hq .stars,.pf .stars{color:#F5B301!important}
 
 /* ---------------- Stats strip: 4 tiles above reviews (Sep 16 CRO) ---------------- */
 .stats-strip{background:var(--bg);padding:44px 0}
@@ -1366,15 +1389,15 @@ section{padding:96px 0}
           <div><b>Xero Platinum Partner</b><span>QuickBooks Certified Partner</span></div>
         </div>
         <i class="pf-sep"></i>
-        <a class="rev-badge" href="https://share.google/6MUX0LuoWKIFxz1Rt" target="_blank" rel="noopener" aria-label="4.9 star rated on Google, 108 reviews">
-          <span class="rb-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span>
-          <span class="rb-stars stars-49"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
-          <span class="rb-txt"><strong>4.9</strong> <em>108 Google reviews</em></span>
-        </a>
-        <a class="rev-badge" href="https://clutch.co/profile/rise-accounting" target="_blank" rel="noopener" aria-label="5 star rated on Clutch, 30 reviews">
-          <span class="rb-logo rb-c">C</span>
-          <span class="rb-stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
-          <span class="rb-txt"><strong>5.0</strong> <em>30 Clutch reviews</em></span>
+        <a class="rev-badge-combo" href="https://share.google/6MUX0LuoWKIFxz1Rt" target="_blank" rel="noopener" aria-label="4.9 star rated on Google and Clutch, 138 reviews">
+          <span class="rbc-logos">
+            <span class="rbc-l"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span>
+            <span class="rbc-l rbc-c">C</span>
+          </span>
+          <span class="rbc-body">
+            <span class="rbc-stars stars-49"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+            <span class="rbc-txt"><strong>4.9</strong> rated on Google &amp; Clutch</span>
+          </span>
         </a>
       </div>
       <ul class="ticks">
@@ -1471,38 +1494,28 @@ section{padding:96px 0}
           <div class="adv-foot"><span>Investor pack</span><div class="bar"><i></i></div><b>80%</b></div>
         </div>
       </div>
-      <!-- visual: international expansion (globe redesign Sep 16) -->
+      <!-- visual: international expansion (clean hub + 3 spokes org-chart, Sep 16 rebuild) -->
       <div class="v" data-v="global">
-        <div class="glob globe-wrap">
+        <div class="glob orgchart-wrap">
           <p class="glob-h">One team across three markets</p>
-          <div class="globe">
-            <svg class="globe-svg" viewBox="0 0 360 220" aria-hidden="true">
-              <defs>
-                <linearGradient id="gfade" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="var(--cyan)" stop-opacity=".35"/>
-                  <stop offset="100%" stop-color="var(--cyan)" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <circle cx="180" cy="110" r="94" fill="url(#gfade)" stroke="var(--cyan)" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="3 4"/>
-              <ellipse cx="180" cy="110" rx="94" ry="30" fill="none" stroke="var(--cyan)" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="2 4"/>
-              <ellipse cx="180" cy="110" rx="40" ry="94" fill="none" stroke="var(--cyan)" stroke-opacity=".22" stroke-width="1.2" stroke-dasharray="2 4"/>
-              <path d="M96 122 Q 138 60 178 92" fill="none" stroke="var(--cyan)" stroke-width="1.8" stroke-dasharray="3 3" opacity=".7"/>
-              <path d="M178 92 Q 220 60 264 108" fill="none" stroke="var(--cyan)" stroke-width="1.8" stroke-dasharray="3 3" opacity=".7"/>
-              <path d="M178 92 Q 150 160 128 172" fill="none" stroke="var(--cyan)" stroke-width="1.8" stroke-dasharray="3 3" opacity=".7"/>
-              <circle cx="96" cy="122" r="6" fill="var(--navy)"/>
-              <circle cx="264" cy="108" r="6" fill="var(--steel)"/>
-              <circle cx="128" cy="172" r="6" fill="var(--cyan)"/>
-            </svg>
-            <div class="globe-hub">
-              <span class="gh-logo"><img src="assets/logo-f25648fb.svg" alt=""></span>
+          <div class="orgchart">
+            <div class="oc-hub">
+              <span class="oc-logo"><img src="assets/logo-f25648fb.svg" alt=""></span>
               <b>Rise Accounting</b>
               <em>One team, three markets</em>
             </div>
-          </div>
-          <div class="globe-spokes">
-            <div class="globe-spoke"><span class="code c1">UK</span><div><b>London</b><em>Your dedicated UK team</em></div></div>
-            <div class="globe-spoke"><span class="code c2">UAE</span><div><b>Dubai</b><em>Our Dubai team on the ground</em></div></div>
-            <div class="globe-spoke"><span class="code c3">US</span><div><b>United States</b><em>US CPA partners</em></div></div>
+            <div class="oc-lines" aria-hidden="true">
+              <div class="oc-line-v"></div>
+              <div class="oc-line-h"></div>
+              <div class="oc-line-v oc-line-v1"></div>
+              <div class="oc-line-v oc-line-v2"></div>
+              <div class="oc-line-v oc-line-v3"></div>
+            </div>
+            <div class="oc-spokes">
+              <div class="oc-spoke"><span class="code c1">UK</span><div><b>London</b><em>UK team</em></div></div>
+              <div class="oc-spoke"><span class="code c2">UAE</span><div><b>Dubai</b><em>On the ground</em></div></div>
+              <div class="oc-spoke"><span class="code c3">US</span><div><b>United States</b><em>CPA partners</em></div></div>
+            </div>
           </div>
           <p class="glob-f"><svg class="ic"><use href="#i-check"/></svg>All joined up with your UK accounts</p>
         </div>
@@ -1648,11 +1661,17 @@ section{padding:96px 0}
       <div class="rev-badges">
         <div class="rev-badge-static">
           <span class="rbs-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span>
-          <span class="rbs-info"><b>4.9</b><em>108 Google reviews</em></span>
+          <span class="rbs-info">
+            <span class="rbs-stars stars-49"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+            <b>4.9</b><em>108 Google reviews</em>
+          </span>
         </div>
         <div class="rev-badge-static">
           <span class="rbs-logo rbs-c">C</span>
-          <span class="rbs-info"><b>5.0</b><em>30 Clutch reviews</em></span>
+          <span class="rbs-info">
+            <span class="rbs-stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+            <b>5.0</b><em>30 Clutch reviews</em>
+          </span>
         </div>
       </div>
     </div>
