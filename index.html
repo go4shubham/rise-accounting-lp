@@ -1113,7 +1113,8 @@ section{padding:96px 0}
 
 /* ---------------- Microcopy under primary CTA buttons (Sep 16 CRO) ---------------- */
 .cta-micro{display:block;margin-top:12px;font-size:13px;font-weight:600;color:var(--ink-3);letter-spacing:.01em}
-.cta-panel .cta-micro{color:rgba(255,255,255,.7)}
+.hero .cta-micro{color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.45)}
+.cta-panel .cta-micro{color:rgba(255,255,255,.85);text-shadow:0 1px 4px rgba(0,0,0,.3)}
 
 /* ---------------- Hero proof: two clickable review badges (Sep 16 CRO) ---------------- */
 .rev-badge{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:34px;text-decoration:none;color:#fff;transition:background .2s,border-color .2s,transform .2s var(--ease)}
@@ -1141,6 +1142,10 @@ section{padding:96px 0}
 .rev-badge-static .rbs-stars.stars-49 .ic:nth-child(5){opacity:.45}
 .rev-badge-static .rbs-info b{font-size:16px;font-weight:800;color:var(--navy);line-height:1}
 .rev-badge-static .rbs-info em{font-style:normal;font-size:11px;color:var(--ink-3);letter-spacing:.03em;text-transform:uppercase;line-height:1}
+.rev-badge-static.rbs-combo{gap:14px}
+.rev-badge-static.rbs-combo .rbs-logos{display:inline-flex;align-items:center}
+.rev-badge-static.rbs-combo .rbs-logos .rbs-logo{position:relative}
+.rev-badge-static.rbs-combo .rbs-logos .rbs-logo+.rbs-logo{margin-left:-10px}
 @media (max-width:720px){.rev-head{flex-direction:column;text-align:center;align-items:center}.rev-head .rev-head-l{text-align:center}.rev-badges{justify-content:center}}
 
 /* Combined hero badge (Google + Clutch in one clickable pill, Sep 16) */
@@ -1159,7 +1164,20 @@ section{padding:96px 0}
 .rev-badge-combo .rbc-txt strong{color:#fff;font-weight:800;margin-right:4px}
 
 /* Force gold stars everywhere */
-.stars,.rb-stars,.rbc-stars,.rbs-stars,.hq .stars,.pf .stars{color:#F5B301!important}
+.stars,.rb-stars,.rbc-stars,.rbs-stars,.hq .stars,.pf .stars,.rating-fg,.rating-49{color:#F5B301!important}
+
+/* Rating 4.9: two layered star rows, foreground clipped to 98% (Sep 16) */
+.rating-49{position:relative;display:inline-block;line-height:0}
+.rating-49 .rating-bg,.rating-49 .rating-fg{display:inline-flex;gap:1px}
+.rating-49 .rating-bg{color:rgba(245,179,1,.24)}
+.rating-49 .rating-fg{position:absolute;top:0;left:0;width:98%;overflow:hidden;color:#F5B301}
+.rating-49 .ic{width:12px;height:12px;fill:currentColor;stroke:none;flex:none}
+
+/* Make rbc-l work as <a> and preserve independent hover */
+.rev-badge-combo .rbc-logos{display:inline-flex;align-items:center}
+a.rbc-l{cursor:pointer;transition:transform .2s var(--ease);text-decoration:none}
+a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
+.rev-badge-combo{cursor:default}
 
 /* ---------------- Stats strip: 4 tiles above reviews (Sep 16 CRO) ---------------- */
 .stats-strip{background:var(--bg);padding:44px 0}
@@ -1389,16 +1407,16 @@ section{padding:96px 0}
           <div><b>Xero Platinum Partner</b><span>QuickBooks Certified Partner</span></div>
         </div>
         <i class="pf-sep"></i>
-        <a class="rev-badge-combo" href="https://share.google/6MUX0LuoWKIFxz1Rt" target="_blank" rel="noopener" aria-label="4.9 star rated on Google and Clutch, 138 reviews">
-          <span class="rbc-logos">
-            <span class="rbc-l"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span>
-            <span class="rbc-l rbc-c">C</span>
-          </span>
+        <div class="rev-badge-combo">
+          <div class="rbc-logos">
+            <a class="rbc-l" href="https://share.google/6MUX0LuoWKIFxz1Rt" target="_blank" rel="noopener" title="See our 108 Google reviews" aria-label="Open Google reviews"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></a>
+            <a class="rbc-l rbc-c" href="https://clutch.co/profile/rise-accounting" target="_blank" rel="noopener" title="See our 30 Clutch reviews" aria-label="Open Clutch reviews">C</a>
+          </div>
           <span class="rbc-body">
-            <span class="rbc-stars stars-49"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+            <span class="rating-49" aria-label="4.9 out of 5"><span class="rating-bg"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span><span class="rating-fg"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span></span>
             <span class="rbc-txt"><strong>4.9</strong> rated on Google &amp; Clutch</span>
           </span>
-        </a>
+        </div>
       </div>
       <ul class="ticks">
         <li><svg class="ic"><use href="#i-check"/></svg>Free consultation</li>
@@ -1659,18 +1677,14 @@ section{padding:96px 0}
         <p class="sub">Founders and finance leads on what changed after switching accountancy firm to Rise Accounting.</p>
       </div>
       <div class="rev-badges">
-        <div class="rev-badge-static">
-          <span class="rbs-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span>
-          <span class="rbs-info">
-            <span class="rbs-stars stars-49"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
-            <b>4.9</b><em>108 Google reviews</em>
+        <div class="rev-badge-static rbs-combo">
+          <span class="rbs-logos">
+            <span class="rbs-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span>
+            <span class="rbs-logo rbs-c">C</span>
           </span>
-        </div>
-        <div class="rev-badge-static">
-          <span class="rbs-logo rbs-c">C</span>
           <span class="rbs-info">
-            <span class="rbs-stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
-            <b>5.0</b><em>30 Clutch reviews</em>
+            <span class="rating-49" aria-label="4.9 out of 5"><span class="rating-bg"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span><span class="rating-fg"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span></span>
+            <b>4.9</b><em>138 reviews on Google &amp; Clutch</em>
           </span>
         </div>
       </div>
