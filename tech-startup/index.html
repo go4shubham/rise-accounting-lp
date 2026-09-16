@@ -36,17 +36,17 @@ window.RISE = {
      Add a service: copy one line, change the words. Keep "line" to one short sentence.
      featured: true  = shown before "Show all" is clicked. 8 featured keeps the grid tidy. */
   services: [
-    { cat: "growth",     icon: "rocket",                 title: "SEIS & EIS Advance Assurance",            line: "Eligibility review, application and HMRC queries in 48 hours.", featured: true },
-    { cat: "growth",     icon: "chart-pie",              title: "EMI option schemes",                      line: "Valuation, scheme setup and ongoing compliance for your key hires.", featured: true },
-    { cat: "growth",     icon: "hand-coins",             title: "Fundraising & investor reporting",        line: "The financial statements and reports your investors ask for.", featured: true },
-    { cat: "growth",     icon: "trending-up",            title: "Financial forecasting & modelling",       line: "Revenue forecasts, runway and break-even analysis.",          featured: true },
     { cat: "accounting", icon: "user-round-check",       title: "Dedicated Chartered Accountant",          line: "A named contact for your startup, regular updates and direct access.", featured: true },
     { cat: "accounting", icon: "book-open-check",        title: "Bookkeeping on Xero or QuickBooks",       line: "Day-to-day records and bank reconciliations, kept current.",  featured: true },
+    { cat: "accounting", icon: "file-check-2",           title: "Year-end accounts, Confirmation Statement & Corporation Tax", line: "Annual accounts, company filings and tax filings, done on time.", featured: true },
+    { cat: "accounting", icon: "receipt-pound-sterling", title: "VAT Support",                             line: "We ensure you're VAT compliant and never miss a deadline.",   featured: true },
+    { cat: "accounting", icon: "wallet",                 title: "Payroll & pensions",                      line: "Payslips, PAYE, pensions and auto-enrolment for your team.",  featured: true },
     { cat: "operations", icon: "chart-column",           title: "Management accounts",                     line: "Monthly P&L, balance sheet and cash flow with commentary.",   featured: true },
-    { cat: "operations", icon: "briefcase-business",     title: "Outsourced Finance Function",             line: "Full finance team on tap. Vendor payments, senior finance leaders and controls, without hiring in-house.", featured: true },
-    { cat: "accounting", icon: "file-check-2",           title: "Year-end accounts, Confirmation Statement & Corporation Tax", line: "Annual accounts, company filings and tax filings, done on time." },
-    { cat: "accounting", icon: "receipt-pound-sterling", title: "VAT Support",                             line: "We ensure you're VAT compliant and never miss a deadline." },
-    { cat: "accounting", icon: "wallet",                 title: "Payroll & pensions",                      line: "Payslips, PAYE, pensions and auto-enrolment for your team." },
+    { cat: "growth",     icon: "rocket",                 title: "SEIS & EIS Advance Assurance",            line: "Eligibility review, application and HMRC queries in 48 hours." },
+    { cat: "growth",     icon: "chart-pie",              title: "EMI option schemes",                      line: "Valuation, scheme setup and ongoing compliance for your key hires." },
+    { cat: "growth",     icon: "hand-coins",             title: "Fundraising & investor reporting",        line: "The financial statements and reports your investors ask for." },
+    { cat: "growth",     icon: "trending-up",            title: "Financial forecasting & modelling",       line: "Revenue forecasts, runway and break-even analysis." },
+    { cat: "operations", icon: "briefcase-business",     title: "Outsourced Finance Function",             line: "Full finance team on tap. Vendor payments, senior finance leaders and controls, without hiring in-house." },
     { cat: "operations", icon: "chart-line",             title: "Cash-flow forecasts & budgets",           line: "Rolling forecasts and runway checks for your board." },
     { cat: "growth",     icon: "scale",                  title: "Business valuations",                     line: "For funding rounds, EMI schemes or sale." },
     { cat: "growth",     icon: "layers-3",               title: "Scenario planning",                       line: "Model hiring, investment and growth decisions before you make them." }
@@ -1075,6 +1075,34 @@ section{padding:96px 0}
 .hero .lede{font-weight:500;text-shadow:0 1px 12px rgba(0,0,0,.6)}
 .hero .eyebrow{font-weight:700;text-shadow:0 1px 10px rgba(0,0,0,.5)}
 
+/* ---------------- Pillars section: 3 cards in one section (tech-startup Sep 16 consolidation) ---------------- */
+#pillars{padding:80px 0}
+#pillars .head{margin-bottom:44px}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pillar-card{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s}
+.pillar-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--cyan)}
+.pillar-icon{width:52px;height:52px;border-radius:14px;background:rgba(59,203,247,.16);color:var(--navy);display:grid;place-items:center;flex:none}
+.pillar-icon .ic{width:24px;height:24px;stroke-width:2}
+.pillar-eyebrow{display:inline-block;background:rgba(59,203,247,.16);color:var(--navy);padding:5px 11px;border-radius:7px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;align-self:flex-start}
+.pillar-card h3{margin:2px 0 6px;font-size:22px;font-weight:800;line-height:1.15;color:var(--navy);letter-spacing:-.01em}
+.pillar-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.pillar-list li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:var(--ink-2)}
+.pillar-list li .ic{flex:0 0 auto;width:18px;height:18px;color:var(--cyan);stroke-width:2.6;margin-top:2px}
+.pillar-list b{color:var(--navy);font-weight:700}
+.pillar-link{margin-top:auto;padding:12px 0 0;background:none;border:0;color:var(--navy);font-size:15px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;letter-spacing:-.005em}
+.pillar-link .ic{width:16px;height:16px;stroke-width:2.4;transition:transform .2s var(--ease)}
+.pillar-link:hover{color:var(--cyan-6)}
+.pillar-link:hover .ic{transform:translateX(3px)}
+.pillar-card-dark{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);border-color:var(--navy-2);color:#fff}
+.pillar-card-dark .pillar-icon{background:rgba(59,203,247,.22);color:var(--cyan)}
+.pillar-card-dark .pillar-eyebrow{background:rgba(59,203,247,.22);color:var(--cyan)}
+.pillar-card-dark h3{color:#fff}
+.pillar-card-dark .pillar-list li{color:rgba(255,255,255,.82)}
+.pillar-card-dark .pillar-list b{color:#fff}
+.pillar-card-dark .pillar-link{color:var(--cyan)}
+.pillar-card-dark:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:0 20px 50px -20px rgba(11,36,63,.6)}
+@media (max-width:960px){.pillar-grid{grid-template-columns:1fr;gap:18px}#pillars{padding:56px 0}#pillars .head{margin-bottom:32px}}
+
 /* ---------------- Spotlight sections (tech-startup Sep 16 rebuild) ---------------- */
 #growth-spotlight,#off-spotlight,#investor-spotlight{padding:90px 0}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
@@ -1371,25 +1399,46 @@ section{padding:96px 0}
   </div>
 </div>
 
-<!-- ============================ GROWTH & ADVISORY SPOTLIGHT (tech-startup only) ============================ -->
-<section id="growth-spotlight" class="white">
+<!-- ============================ PILLARS (Growth + OFF + Investor in ONE section, tech-startup only) ============================ -->
+<section id="pillars" class="white">
   <div class="wrap">
-    <div class="split">
-      <div class="split-l">
-        <span class="spot-eyebrow">Growth &amp; Advisory</span>
-        <h2>Your fundraising engine, on tap</h2>
-        <ul class="spot-list">
-          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>SEIS &amp; EIS Advance Assurance</b><span>Application, business plan and financials filed with HMRC within 48 hours of our eligibility call.</span></div></li>
-          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>EMI Option Schemes</b><span>Valuation, HMRC registration and annual returns. Attract and retain top talent without burning cash.</span></div></li>
-          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Financial forecasting &amp; modelling</b><span>Revenue forecasts, runway and scenarios that hold up in front of investors.</span></div></li>
+    <div class="head">
+      <h2>Three ways we help you grow, run and raise</h2>
+      <p class="sub">The full startup finance stack. From your first SEIS filing to your Series B board pack.</p>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar-card">
+        <span class="pillar-icon"><svg class="ic"><use href="#i-rocket"/></svg></span>
+        <span class="pillar-eyebrow">Growth &amp; Advisory</span>
+        <h3>Your fundraising engine</h3>
+        <ul class="pillar-list">
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>SEIS &amp; EIS Advance Assurance</b> filed within 48 hours</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>EMI Option Schemes</b> to attract and retain top talent</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Financial forecasting</b> that holds up with investors</span></li>
         </ul>
-        <button class="btn btn-primary" data-form>Book an SEIS call</button>
+        <button class="pillar-link" data-form>Book an SEIS call <svg class="ic"><use href="#i-chevron-right"/></svg></button>
       </div>
-      <div class="split-r">
-        <div class="stat-card stat-card-cyan">
-          <div class="stat-num">48<span>hrs</span></div>
-          <div class="stat-lbl">SEIS Advance Assurance filed with HMRC after your eligibility call</div>
-        </div>
+      <div class="pillar-card pillar-card-dark">
+        <span class="pillar-icon"><svg class="ic"><use href="#i-briefcase-business"/></svg></span>
+        <span class="pillar-eyebrow">Bespoke support</span>
+        <h3>Outsourced finance function</h3>
+        <ul class="pillar-list">
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Dedicated finance team</b> on Slack or Teams</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Payroll &amp; vendor payments</b> through open banking</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Sales invoicing &amp; credit control</b> to protect cash flow</span></li>
+        </ul>
+        <button class="pillar-link" data-form>Talk to an expert <svg class="ic"><use href="#i-chevron-right"/></svg></button>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-icon"><svg class="ic"><use href="#i-chart-line"/></svg></span>
+        <span class="pillar-eyebrow">Fundraising support</span>
+        <h3>Investor-ready financials</h3>
+        <ul class="pillar-list">
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Business valuations</b> for funding rounds and EMI</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Investor reporting</b> and monthly updates</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Financial planning</b> for equity and share issuance</span></li>
+        </ul>
+        <button class="pillar-link" data-form>Enquire now <svg class="ic"><use href="#i-chevron-right"/></svg></button>
       </div>
     </div>
   </div>
@@ -1399,70 +1448,13 @@ section{padding:96px 0}
 <section id="services">
   <div class="wrap">
     <div class="head">
-      <h2>End-to-end accounting for tech startups</h2>
-      <p class="sub">Start with SEIS and EIS. Add bookkeeping, payroll and VAT as you grow. Bring the full finance function when you scale.</p>
+      <h2>Day-to-day accounting for tech startups</h2>
+      <p class="sub">Bookkeeping, payroll, VAT and year-end handled monthly. Add advisory or outsourced finance when you scale.</p>
     </div>
     <div class="filters" id="filters" role="tablist" aria-label="Filter services"></div>
     <div class="svc-grid" id="svcGrid"></div>
     <div class="svc-foot"><div class="more" id="more"><button class="btn btn-soft" id="moreBtn"><span>Show all services</span><svg class="ic"><use href="#i-chevron-down"/></svg></button></div>
     <p class="more-note">Not sure what you need? <button data-form>Tell us what's slowing you down</button></p></div>
-  </div>
-</section>
-
-<!-- ============================ OUTSOURCED FINANCE FUNCTION SPOTLIGHT ============================ -->
-<section id="off-spotlight">
-  <div class="wrap">
-    <div class="split split-reverse">
-      <div class="split-r">
-        <div class="stat-card stat-card-dark">
-          <div class="stat-num">1</div>
-          <div class="stat-lbl">Fixed monthly fee. A full finance team without the in-house hire.</div>
-        </div>
-      </div>
-      <div class="split-l">
-        <span class="spot-eyebrow">Bespoke support</span>
-        <h2>Outsourced finance function</h2>
-        <ul class="spot-list">
-          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Dedicated finance team</b><span>Direct access on Slack or Teams. We integrate with your workflow and move at the pace of your business.</span></div></li>
-          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Payroll &amp; vendor payment management</b><span>Accurate payroll and timely supplier payments through your chosen open banking rails.</span></div></li>
-          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Sales invoicing &amp; credit control</b><span>Invoices sent, aged debt chased and cash collected. Protects cash flow and reduces bad debt.</span></div></li>
-        </ul>
-        <button class="btn btn-primary" data-form>Talk to an expert</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ INVESTOR-READY SPOTLIGHT ============================ -->
-<section id="investor-spotlight" class="white">
-  <div class="wrap">
-    <div class="split">
-      <div class="split-l">
-        <span class="spot-eyebrow">Fundraising support</span>
-        <h2>Get your financials investor-ready</h2>
-        <ul class="spot-list">
-          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Business valuations</b><span>Accurate and up-to-date valuations for funding rounds, EMI schemes or a sale.</span></div></li>
-          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Investor reporting</b><span>Clean, accurate financial statements and monthly investor updates.</span></div></li>
-          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Financial planning</b><span>Guidance on equity structure, stock options, share issuance, transfers and more.</span></div></li>
-        </ul>
-        <button class="btn btn-primary" data-form>Enquire now</button>
-      </div>
-      <div class="split-r">
-        <div class="stat-card stat-card-cyan stat-card-stages">
-          <div class="stages-title">Same team, every stage</div>
-          <div class="stages-row">
-            <span class="stage">Pre-Seed</span>
-            <span class="stage-arrow">›</span>
-            <span class="stage">Seed</span>
-            <span class="stage-arrow">›</span>
-            <span class="stage">Series A</span>
-            <span class="stage-arrow">›</span>
-            <span class="stage stage-live">Series B</span>
-          </div>
-          <div class="stat-lbl">From your first term sheet to your Series B board pack, one team the whole way.</div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
