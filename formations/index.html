@@ -152,15 +152,23 @@ section{padding:96px 0;position:relative}
 /* ============================ TRUST STRIP ============================ */
 .trust{padding:56px 0}
 .trust-lead{text-align:center;font-size:13.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:22px}
-.trust-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:28px 48px;color:var(--ink-3);font-weight:700;font-size:19px;letter-spacing:-.01em;opacity:.75}
-.trust-logos span{transition:opacity .2s,color .2s}
+.trust-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:32px 60px;font-weight:800;font-size:24px;letter-spacing:-.02em}
+.trust-logos span{color:#8896A8;opacity:.7;transition:opacity .2s,color .2s;font-family:"Inter",system-ui,sans-serif}
 .trust-logos span:hover{opacity:1;color:var(--navy)}
+.trust-logos .tl-adaptavist::before{content:"▲";color:#DE350B;margin-right:2px;font-size:.85em}
+.trust-logos .tl-plend{font-weight:500;font-style:italic}
+.trust-logos .tl-mast::after{content:"."}
+.trust-logos .tl-seedlegals{letter-spacing:.14em;font-size:.85em;text-transform:uppercase}
+.trust-logos .tl-earnr::before{content:"🌱 ";font-size:.9em}
+.trust-logos .tl-damahealth::before{content:"◉ ";color:#00A88F;font-size:.85em}
 .reviews-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:44px auto 0}
 .rev-card{background:#fff;padding:22px;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);position:relative}
 .rev-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .rev-avatar{width:40px;height:40px;border-radius:50%;background:var(--indigo);color:#fff;display:grid;place-items:center;font-weight:800;font-size:16px;flex:none}
-.rev-name{font-weight:700;font-size:15.5px;color:var(--navy);line-height:1.2}
-.rev-stars{display:flex;gap:2px;margin-top:3px;color:var(--sun);font-size:14px}
+.rev-name{font-weight:700;font-size:15.5px;color:var(--navy);line-height:1.2;display:inline-flex;align-items:center;gap:6px}
+.rev-verified{width:14px;height:14px;color:var(--indigo);flex:none}
+.rev-stars{display:flex;align-items:center;gap:2px;margin-top:3px;color:var(--sun);font-size:14px}
+.rev-stars .rv-check{width:14px;height:14px;color:var(--indigo);margin-left:4px}
 .rev-google{position:absolute;top:20px;right:20px;width:22px;height:22px}
 .rev-quote{font-size:14.5px;line-height:1.55;color:var(--ink-2)}
 .rev-quote mark{background:linear-gradient(180deg,transparent 62%,rgba(78,90,199,.22) 62%);color:var(--navy);font-weight:600;padding:0 2px;border-radius:2px}
@@ -207,8 +215,8 @@ section{padding:96px 0;position:relative}
 .extra-ic .ic{width:24px;height:24px;stroke-width:1.9}
 .extra b{display:block;font-size:16.5px;font-weight:800;color:var(--navy);margin-bottom:8px;line-height:1.3}
 .extra span{font-size:14.5px;color:var(--ink-2);line-height:1.55}
-.extra-tag{position:absolute;top:16px;right:16px;background:var(--indigo);color:#fff;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.06em}
-.extra-tag.free{background:var(--mint)}
+.extra-tag{position:absolute;top:14px;right:14px;background:var(--sun);color:var(--navy);padding:6px 12px;border-radius:999px;font-size:12.5px;font-weight:800;letter-spacing:.04em;box-shadow:0 4px 12px -4px rgba(245,179,1,.4)}
+.extra-tag.free{background:var(--mint);color:#fff;box-shadow:0 4px 12px -4px rgba(27,196,154,.4)}
 @media (max-width:1000px){.extras-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.extras-grid{grid-template-columns:1fr}}
 
@@ -262,12 +270,16 @@ section{padding:96px 0;position:relative}
 .why-col{display:grid;gap:22px}
 .why-card{background:var(--indigo-50);border-radius:20px;padding:26px}
 .why-card .wc-ic{width:38px;height:38px;border-radius:11px;background:#fff;color:var(--indigo);display:grid;place-items:center;margin-bottom:14px}
-.why-card b{display:block;font-size:17px;font-weight:800;margin-bottom:8px;color:var(--navy)}
+.why-card b{display:block;font-size:17px;font-weight:800;margin-bottom:10px;color:var(--navy)}
 .why-card p{font-size:14.5px;color:var(--ink-2);line-height:1.55}
+.wc-list{display:grid;gap:9px;margin:2px 0 0}
+.wc-list li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.wc-list li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--indigo);flex:none;margin-top:7px}
 .why-card.dark{background:linear-gradient(160deg,#5766D6,#3E48A8);color:#fff}
 .why-card.dark .wc-ic{background:rgba(255,255,255,.14);color:#fff}
 .why-card.dark b{color:#fff}
-.why-card.dark p{color:rgba(255,255,255,.85)}
+.why-card.dark p,.why-card.dark .wc-list li{color:rgba(255,255,255,.86)}
+.why-card.dark .wc-list li::before{background:#fff}
 .why-mock{background:linear-gradient(180deg,#EEF1FA,#DEE3F5);border-radius:24px;padding:30px;display:grid;place-items:center;min-height:400px;position:relative;overflow:hidden}
 .why-mock::before{content:"";position:absolute;inset:auto -10% -50% -10%;height:70%;background:radial-gradient(ellipse,rgba(78,90,199,.2),transparent 70%)}
 .iphone{width:220px;aspect-ratio:9/19;background:#0B2540;border-radius:36px;padding:8px;box-shadow:0 30px 60px -20px rgba(11,37,64,.6);position:relative;z-index:1}
@@ -324,17 +336,40 @@ section{padding:96px 0;position:relative}
 .q .a{padding:0 22px 20px;color:var(--ink-2);font-size:14.5px;line-height:1.6}
 @media (max-width:800px){.faq-grid{grid-template-columns:1fr}}
 
-/* ============================ FLOATING HELP + BACK-TO-TOP (Sep 17 addition) ============================ */
-.fab-help{position:fixed;right:22px;bottom:22px;z-index:80;display:flex;align-items:center;gap:10px;height:52px;padding:0 20px 0 10px;border-radius:999px;background:var(--indigo);color:#fff;font-weight:600;font-size:15px;border:0;cursor:pointer;box-shadow:0 16px 34px -12px rgba(78,90,199,.7);transition:transform .2s var(--ease)}
-.fab-help:hover{transform:translateY(-2px);background:var(--indigo-2)}
-.fab-help .fab-av{width:38px;height:38px;border-radius:50%;background:#fff;color:var(--indigo);display:grid;place-items:center;flex:none;position:relative}
-.fab-help .fab-av::after{content:"";position:absolute;right:0;bottom:0;width:10px;height:10px;border-radius:50%;background:var(--mint);border:2px solid var(--indigo)}
-.fab-help .ic{width:20px;height:20px;stroke-width:2.2}
-.fab-top{position:fixed;right:22px;bottom:86px;z-index:80;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--indigo);box-shadow:var(--shadow-lg);display:grid;place-items:center;border:0;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s,transform .3s var(--ease),visibility .3s}
+/* ============================ CHATBOT + BACK-TO-TOP (ported from Rise Accounting LP, Sep 17) ============================ */
+.bot-btn{position:fixed;right:22px;bottom:22px;z-index:80;display:flex;align-items:center;gap:10px;height:58px;padding:0 20px 0 8px;border-radius:999px;border:0;background:var(--indigo);color:#fff;font-weight:600;font-size:15px;cursor:pointer;box-shadow:0 16px 34px -12px rgba(78,90,199,.6);opacity:0;visibility:hidden;transform:translateY(12px);transition:transform .2s var(--ease),opacity .3s,visibility .3s,background-color .2s}
+.bot-btn.show{opacity:1;visibility:visible;transform:none}
+.bot-btn.show:hover{transform:translateY(-2px);background:var(--indigo-2)}
+.bot-btn .bot-av{width:42px;height:42px;border-radius:50%;background:#fff;color:var(--indigo);display:grid;place-items:center;flex:none;position:relative;font-weight:800;font-size:13px}
+.bot-btn .bot-av::after{content:"";position:absolute;right:0;bottom:1px;width:11px;height:11px;border-radius:50%;background:var(--mint);border:2px solid var(--indigo)}
+.bot{position:fixed;right:22px;bottom:96px;z-index:81;width:min(380px,calc(100vw - 44px));max-height:min(600px,calc(100vh - 130px));background:#fff;border-radius:20px;box-shadow:0 30px 60px -20px rgba(11,37,64,.35);display:none;flex-direction:column;overflow:hidden}
+.bot.open{display:flex}
+.bot-h{display:flex;align-items:center;gap:12px;padding:16px 18px;background:var(--indigo);color:#fff}
+.bot-h .bot-av{width:36px;height:36px;border-radius:50%;background:#fff;color:var(--indigo);display:grid;place-items:center;flex:none;font-weight:800;font-size:12px}
+.bot-h b{display:block;font-size:14.5px;font-weight:700;line-height:1.2}
+.bot-h span{display:block;font-size:12px;opacity:.85;margin-top:2px}
+.bot-x{margin-left:auto;width:32px;height:32px;border-radius:8px;background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;border:0;transition:background-color .15s}
+.bot-x:hover{background:rgba(255,255,255,.14)}
+.bot-body{flex:1;overflow-y:auto;padding:16px 18px;display:flex;flex-direction:column;gap:10px;background:var(--paper);font-size:14px;line-height:1.5}
+.bot-msg{max-width:88%;padding:11px 14px;border-radius:14px;background:#fff;color:var(--navy);box-shadow:0 1px 2px rgba(11,37,64,.06)}
+.bot-msg.me{align-self:flex-end;background:var(--indigo);color:#fff}
+.bot-msg a{color:var(--indigo);font-weight:600;text-decoration:underline}
+.bot-msg.me a{color:#fff}
+.bot-chips{display:flex;flex-wrap:wrap;gap:6px;padding:10px 18px 0;background:#fff}
+.bot-chip{background:var(--indigo-50);color:var(--indigo);padding:6px 12px;border-radius:999px;font-size:12.5px;font-weight:600;border:0;cursor:pointer;transition:background-color .15s,color .15s}
+.bot-chip:hover{background:var(--indigo);color:#fff}
+.bot-in{display:flex;gap:8px;padding:12px 18px 16px;background:#fff}
+.bot-in input{flex:1;height:40px;padding:0 14px;background:var(--paper);border:1.5px solid var(--line);border-radius:10px;font-size:14px;color:var(--navy);min-width:0}
+.bot-in input:focus{outline:0;border-color:var(--indigo);background:#fff}
+.bot-in button{width:40px;height:40px;border-radius:10px;background:var(--indigo);color:#fff;border:0;display:grid;place-items:center;cursor:pointer;transition:background-color .2s}
+.bot-in button:hover{background:var(--indigo-2)}
+.bot-in .ic{width:18px;height:18px;stroke-width:2.2}
+.fab-top{position:fixed;right:22px;bottom:96px;z-index:80;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--indigo);box-shadow:var(--shadow-lg);display:grid;place-items:center;border:0;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s,transform .3s var(--ease),visibility .3s}
 .fab-top.show{opacity:1;visibility:visible;transform:none}
 .fab-top:hover{transform:translateY(-2px)}
 .fab-top .ic{width:20px;height:20px;stroke-width:2.4}
-@media (max-width:560px){.fab-help{right:14px;bottom:14px;height:48px;padding:0 10px}.fab-help span{display:none}.fab-top{right:14px;bottom:74px;width:40px;height:40px}}
+.bot.open ~ .fab-top{right:calc(22px + 396px)}
+@media (max-width:560px){.bot-btn{right:14px;bottom:14px;height:52px;padding:0 14px 0 6px}.bot-btn .lbl{display:none}.bot{right:14px;left:14px;bottom:78px;width:auto;max-width:none}.bot.open ~ .fab-top{right:14px;bottom:auto;top:80px}.fab-top{right:14px;bottom:78px;width:40px;height:40px}}
 
 /* ============================ FOOTER ============================ */
 .foot{background:var(--navy);color:rgba(255,255,255,.86);padding:56px 0 26px}
@@ -380,6 +415,10 @@ section{padding:96px 0;position:relative}
 <symbol id="i-google" viewBox="0 0 24 24"><path d="M12 11v3.5h5A5 5 0 1 1 12 7c1.3 0 2.5.5 3.4 1.4l2.5-2.5A8.5 8.5 0 1 0 20.5 12H12z" fill="currentColor" stroke="none"/></symbol>
 <symbol id="i-message-circle" viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></symbol>
 <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+<symbol id="i-calculator" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol>
+<symbol id="i-verified" viewBox="0 0 24 24"><path d="m12 1 2.4 1.8 3-.5.7 2.9 2.7 1.2-.8 2.9 1.8 2.5-2.1 2.1.4 3-2.9.5-1.3 2.7-2.8-1.3-2.8 1.3-1.3-2.7-2.9-.5.4-3-2.1-2.1.8-2.9L4.2 5.4l2.7-1.2.7-2.9 3 .5z" fill="currentColor" stroke="none"/><path d="m9 12 2 2 4-4" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
 </defs></svg>
 
 <!-- ============================ NAV ============================ -->
@@ -497,14 +536,14 @@ section{padding:96px 0;position:relative}
   <div class="wrap">
     <p class="trust-lead">Trusted by 1,000+ businesses</p>
     <div class="trust-logos">
-      <span>Adaptavist</span><span>Plend</span><span>DamaHealth</span><span>Mast</span><span>SeedLegals</span><span>earnr</span>
+      <span class="tl-adaptavist">Adaptavist</span><span class="tl-plend">plend</span><span class="tl-damahealth">DamaHealth</span><span class="tl-mast">Mast</span><span class="tl-seedlegals">SeedLegals</span><span class="tl-earnr">earnr</span>
     </div>
     <div class="reviews-strip">
       <div class="rev-card">
         <svg class="rev-google" viewBox="0 0 24 24"><path d="M12 11v3.5h5A5 5 0 1 1 12 7c1.3 0 2.5.5 3.4 1.4l2.5-2.5A8.5 8.5 0 1 0 20.5 12H12z" fill="#4E5AC7"/></svg>
         <div class="rev-top">
           <div class="rev-avatar"><span style="position:relative;z-index:1">S</span></div>
-          <div><div class="rev-name">Samm Hallilay</div><div class="rev-stars">★★★★★</div></div>
+          <div><div class="rev-name">Samm Hallilay</div><div class="rev-stars">★★★★★ <svg class="rv-check"><use href="#i-verified"/></svg></div></div>
         </div>
         <p class="rev-quote">"Rise were super helpful and <mark>made everything very easy</mark>. I wouldn't hesitate t recomend them to assist with setting up a copmany."</p>
       </div>
@@ -512,7 +551,7 @@ section{padding:96px 0;position:relative}
         <svg class="rev-google" viewBox="0 0 24 24"><path d="M12 11v3.5h5A5 5 0 1 1 12 7c1.3 0 2.5.5 3.4 1.4l2.5-2.5A8.5 8.5 0 1 0 20.5 12H12z" fill="#4E5AC7"/></svg>
         <div class="rev-top">
           <div class="rev-avatar"><span style="position:relative;z-index:1">J</span></div>
-          <div><div class="rev-name">James Metcalfe</div><div class="rev-stars">★★★★★</div></div>
+          <div><div class="rev-name">James Metcalfe</div><div class="rev-stars">★★★★★ <svg class="rv-check"><use href="#i-verified"/></svg></div></div>
         </div>
         <p class="rev-quote">"Brilliant experience! <mark>Team are fantastic</mark> and have made the process of incorporating incredibly easy!"</p>
       </div>
@@ -520,7 +559,7 @@ section{padding:96px 0;position:relative}
         <svg class="rev-google" viewBox="0 0 24 24"><path d="M12 11v3.5h5A5 5 0 1 1 12 7c1.3 0 2.5.5 3.4 1.4l2.5-2.5A8.5 8.5 0 1 0 20.5 12H12z" fill="#4E5AC7"/></svg>
         <div class="rev-top">
           <div class="rev-avatar"><span style="position:relative;z-index:1">I</span></div>
-          <div><div class="rev-name">Ismail Alrawi</div><div class="rev-stars">★★★★★</div></div>
+          <div><div class="rev-name">Ismail Alrawi</div><div class="rev-stars">★★★★★ <svg class="rv-check"><use href="#i-verified"/></svg></div></div>
         </div>
         <p class="rev-quote"><mark>"Very easy and helpful"</mark></p>
       </div>
@@ -614,11 +653,11 @@ section{padding:96px 0;position:relative}
       <div class="extra"><span class="extra-tag free">FREE</span><div class="extra-ic"><svg class="ic"><use href="#i-bank"/></svg></div><b>Free Business Bank Account</b><span>Required for all limited companies in the UK. Get a free account from your choice of industry-leading banking providers.</span></div>
       <div class="extra"><span class="extra-tag">20% OFF</span><div class="extra-ic"><svg class="ic"><use href="#i-percent"/></svg></div><b>Accounting for 12 months</b><span>Make better business decisions with help from startup accounting experts Rise Accounting.</span></div>
       <div class="extra"><span class="extra-tag">15% OFF</span><div class="extra-ic"><svg class="ic"><use href="#i-file-check"/></svg></div><b>Year End Accounts filing</b><span>If you're not ready for a full time Accountant, you still need to file annual accounts with Companies House and HMRC.</span></div>
-      <div class="extra"><span class="extra-tag">90% OFF</span><div class="extra-ic"><svg class="ic"><use href="#i-hubspot"/></svg></div><b>HubSpot</b><span>Organise, track, and manage all your contacts and data in one place.</span></div>
-      <div class="extra"><span class="extra-tag">10% OFF</span><div class="extra-ic"><svg class="ic"><use href="#i-users"/></svg></div><b>1st Personal Tax Return</b><span>Save on the cost of expert support to meet your compliance obligations.</span></div>
+      <div class="extra"><span class="extra-tag">90% OFF</span><div class="extra-ic"><svg class="ic"><use href="#i-users"/></svg></div><b>HubSpot</b><span>Organise, track, and manage all your contacts and data in one place.</span></div>
+      <div class="extra"><span class="extra-tag">10% OFF</span><div class="extra-ic"><svg class="ic"><use href="#i-file-check"/></svg></div><b>1st Personal Tax Return</b><span>Save on the cost of expert support to meet your compliance obligations.</span></div>
       <div class="extra"><span class="extra-tag">10% OFF</span><div class="extra-ic"><svg class="ic"><use href="#i-shield-check"/></svg></div><b>Business insurance</b><span>Protect your new asset with leading business insurance designed for SMEs.</span></div>
-      <div class="extra"><span class="extra-tag">80% OFF</span><div class="extra-ic"><svg class="ic"><use href="#i-xero"/></svg></div><b>Xero &amp; Quickbooks</b><span>Manage your cashflow with leading accounting software.</span></div>
-      <div class="extra"><span class="extra-tag">20% OFF</span><div class="extra-ic"><svg class="ic"><use href="#i-canva"/></svg></div><b>Canva for 12 months</b><span>Everything you need to create standout branded assets for your business.</span></div>
+      <div class="extra"><span class="extra-tag">80% OFF</span><div class="extra-ic"><svg class="ic"><use href="#i-calculator"/></svg></div><b>Xero &amp; Quickbooks</b><span>Manage your cashflow with leading accounting software.</span></div>
+      <div class="extra"><span class="extra-tag">20% OFF</span><div class="extra-ic"><svg class="ic"><use href="#i-sparkles"/></svg></div><b>Canva for 12 months</b><span>Everything you need to create standout branded assets for your business.</span></div>
     </div>
   </div>
 </section>
@@ -707,12 +746,18 @@ section{padding:96px 0;position:relative}
         <div class="why-card">
           <div class="wc-ic"><svg class="ic"><use href="#i-heart-handshake"/></svg></div>
           <b>Built by founders, for founders</b>
-          <p>We simplify the company formation process by ensuring that your limited company is incorporated quickly and hassle-free. After that we offer ongoing guidance and support from our founding team to connect you with the right tools at the right time to grow your business.</p>
+          <ul class="wc-list">
+            <li>We simplify the company formation process by ensuring that your limited company is incorporated quickly and hassle-free.</li>
+            <li>After that we offer ongoing guidance and support from our founding team to connect you with the right tools at the right time to grow your business.</li>
+          </ul>
         </div>
         <div class="why-card">
           <div class="wc-ic"><svg class="ic"><use href="#i-lock"/></svg></div>
           <b>Security &amp; Compliance</b>
-          <p>Our experts ensure your company is compliant with the latest laws and regulations so you can focus on your business. Our platform is built to ensure your personal information is secure and confidential.</p>
+          <ul class="wc-list">
+            <li>Our experts ensure your company is compliant with the latest laws and regulations so you can focus on your business.</li>
+            <li>Our platform is built to ensure your personal information is secure and confidential.</li>
+          </ul>
         </div>
       </div>
       <div class="why-mock">
@@ -734,12 +779,18 @@ section{padding:96px 0;position:relative}
         <div class="why-card dark">
           <div class="wc-ic"><svg class="ic"><use href="#i-sparkles"/></svg></div>
           <b>Everything in one place</b>
-          <p>Manage the formation process, including any future updates that need to be made to company details, through our easy-to-use, self-service platform. Never lose track of important documents and details again.</p>
+          <ul class="wc-list">
+            <li>Manage the formation process, including any future updates that need to be made to company details, through our easy-to-use, self-service platform.</li>
+            <li>Never lose track of important documents and details again.</li>
+          </ul>
         </div>
         <div class="why-card">
           <div class="wc-ic"><svg class="ic"><use href="#i-pound"/></svg></div>
           <b>Startup friendly prices</b>
-          <p>Our prices are simple and straightforward and designed to make the incorporation process as cost-effective as possible for new business owners.</p>
+          <ul class="wc-list">
+            <li>Our prices are simple and straightforward.</li>
+            <li>Designed to make the incorporation process as cost-effective as possible for new business owners.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -871,24 +922,92 @@ section{padding:96px 0;position:relative}
   </div>
 </footer>
 
-<!-- Floating help pill + back-to-top -->
-<button class="fab-help" id="fabHelp" aria-label="Chat with us">
-  <span class="fab-av"><svg class="ic"><use href="#i-message-circle"/></svg></span>
-  <span>Need help?</span>
+<!-- Chatbot (mirrors Rise Accounting LP pattern, formations-specific topic set) -->
+<button class="bot-btn" id="botBtn" aria-controls="bot" aria-expanded="false">
+  <span class="bot-av">RF</span><span class="lbl">Ask us anything</span>
 </button>
+<div class="bot" id="bot" role="dialog" aria-label="Rise Formations assistant">
+  <div class="bot-h">
+    <span class="bot-av">RF</span>
+    <div><b>Rise Formations assistant</b><span>Quick answers. A founder is one tap away.</span></div>
+    <button class="bot-x" id="botX" aria-label="Close chat"><svg class="ic"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="bot-body" id="botBody"></div>
+  <div class="bot-chips" id="botChips"></div>
+  <form class="bot-in" id="botForm"><input id="botInput" placeholder="Type your question" autocomplete="off" aria-label="Your question"><button type="submit" aria-label="Send"><svg class="ic"><use href="#i-send"/></svg></button></form>
+</div>
 <button class="fab-top" id="fabTop" aria-label="Back to top"><svg class="ic"><use href="#i-arrow-up"/></svg></button>
 
 <script>
-/* --- nav shadow on scroll --- */
 const nav = document.getElementById('topNav');
 const fabTop = document.getElementById('fabTop');
+const botBtn = document.getElementById('botBtn');
+const bot = document.getElementById('bot');
+const botBody = document.getElementById('botBody');
+const botChips = document.getElementById('botChips');
+const botForm = document.getElementById('botForm');
+const botInput = document.getElementById('botInput');
+const botX = document.getElementById('botX');
+
 addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', scrollY > 12);
   fabTop.classList.toggle('show', scrollY > 500);
+  botBtn.classList.toggle('show', scrollY > 220 || bot.classList.contains('open'));
 }, { passive:true });
 fabTop.addEventListener('click', () => scrollTo({ top:0, behavior:'smooth' }));
-document.getElementById('fabHelp').addEventListener('click', () => {
-  location.href = 'mailto:hello@riseformations.co.uk?subject=Question%20about%20incorporation';
+
+/* Formations-specific chatbot topics — each has keyword triggers + a canned answer */
+const TOPICS = [
+  { keys:["pricing","package","cost","fee","price","how much","starter","privacy","tech"],
+    answer:"Three packages: <b>Starter £0</b>, <b>Privacy £14.99</b>, <b>Tech £49.99</b>. All prices are plus the £89 Companies House fee (we cover £11 of the £100 standard charge). Every package includes a free business bank account of your choice." },
+  { keys:["bank","account","tide","barclays","wise","anna","mettle","revolut","monzo"],
+    answer:"We include a free business bank account of your choice with every package. Options: Tide, Barclays, Wise, ANNA, Mettle, Revolut and Monzo. No obligation to go with a challenger bank." },
+  { keys:["how long","time","when","24","hour","fast","quick","live","incorporate","incorporation"],
+    answer:"Most incorporations are live in <b>24 hours</b>, depending on Companies House processing times. Same-day incorporations are possible for applications submitted before 3pm on business days." },
+  { keys:["id","identity","verify","aml","kyc","proof","address check"],
+    answer:"UK anti-money-laundering rules require a quick digital ID check for every director and Person of Significant Control. It takes about 2 minutes and we handle it inside the platform." },
+  { keys:["registered","office","director","business address","central london","mail","secretarial"],
+    answer:"Privacy Package (£14.99) includes 12 months of Central London registered office, directors address and business address, plus mail forwarding and company secretarial service. Keeps your home address off the public register." },
+  { keys:["vat","paye","tax registration","register vat","register paye","insurance"],
+    answer:"Tech Package (£49.99) includes PAYE registration, VAT registration, a free accountant consultation and a 10% discount on business insurance." },
+  { keys:["cancel","refund","change my mind","stop","withdraw","dissolve"],
+    answer:"You can cancel at any point before your details are submitted to Companies House. After submission the company legally exists and we would help you formally dissolve it." },
+  { keys:["founder","human","talk","call","consultation","book","speak"],
+    answer:"Every founder incorporating with us gets a free 30-minute consultation with our team. <a href='#packages'>Pick a package</a> and you can book straight after checkout." }
+];
+const CHIPS = ["Packages & pricing","Free bank accounts","Time to incorporate","ID verification","Address services","VAT & PAYE","Change of mind","Talk to a founder"];
+
+function botSay(text, mine=false){
+  const m = document.createElement('div');
+  m.className = 'bot-msg' + (mine?' me':'');
+  m.innerHTML = text;
+  botBody.appendChild(m);
+  botBody.scrollTop = botBody.scrollHeight;
+}
+function botAnswer(msg){
+  const q = msg.toLowerCase();
+  const topic = TOPICS.find(t => t.keys.some(k => q.includes(k)));
+  botSay(topic ? topic.answer : "Good question. A founder will get back to you within a few hours. <a href='mailto:hello@riseformations.co.uk'>Email us</a> or book a free consultation.");
+}
+function openBot(){
+  bot.classList.add('open');
+  botBtn.setAttribute('aria-expanded','true');
+  if (!botBody.hasChildNodes()){
+    botSay("Hi! I can answer quick questions about starting a UK company with Rise Formations. Pick a topic or type your own.");
+    botChips.innerHTML = CHIPS.map(c => `<button type="button" class="bot-chip">${c}</button>`).join('');
+    botChips.querySelectorAll('.bot-chip').forEach((b,i) => {
+      b.addEventListener('click', () => { botSay(CHIPS[i], true); setTimeout(() => botAnswer(CHIPS[i]), 350); });
+    });
+  }
+}
+function closeBot(){ bot.classList.remove('open'); botBtn.setAttribute('aria-expanded','false'); }
+botBtn.addEventListener('click', () => bot.classList.contains('open') ? closeBot() : openBot());
+botX.addEventListener('click', closeBot);
+botForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const v = botInput.value.trim(); if (!v) return;
+  botSay(v, true); botInput.value = '';
+  setTimeout(() => botAnswer(v), 350);
 });
 
 /* --- name-availability check placeholder (real wiring goes to Companies House name API) --- */
