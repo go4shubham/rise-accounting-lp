@@ -39,21 +39,21 @@ window.RISE = {
   services: [
     { cat: "accounting", icon: "user-round-check",       title: "Dedicated Chartered Accountant",          line: "A named contact, regular updates and direct access.",        featured: true },
     { cat: "accounting", icon: "book-open-check",        title: "Bookkeeping on Xero or QuickBooks",       line: "Day-to-day records and bank reconciliations, kept current.", featured: true },
-    { cat: "accounting", icon: "file-check-2",           title: "Year-end accounts, Confirmation Statement & Corporation Tax", line: "Annual accounts, company filings and tax filings, done on time.",      featured: true },
+    { cat: "accounting", icon: "file-check-2",           title: "Year-end accounts & Corporation Tax filings", line: "Annual accounts, Confirmation Statement and Corporation Tax, filed on time.",      featured: true },
     { cat: "accounting", icon: "receipt-pound-sterling", title: "VAT Support",                             line: "We ensure you're VAT compliant and never miss a deadline.",  featured: true },
-    { cat: "accounting", icon: "wallet",                 title: "Payroll & pensions",                      line: "Payslips, pensions and optional direct payments.",           featured: true },
+    { cat: "accounting", icon: "wallet",                 title: "Payroll & pensions",                      line: "Payslips, pensions and optional direct payments." },
     { cat: "operations", icon: "briefcase-business",     title: "Outsourced Finance Function",             line: "Everything you see here plus payroll and vendor payments, and senior finance leaders without hiring in-house.", featured: true },
     { cat: "growth",     icon: "rocket",                 title: "SEIS & EIS Advance Assurance",            line: "Eligibility review, application and HMRC queries.",          featured: true },
-    { cat: "global",     icon: "building-2",             title: "Dubai company formation support",         line: "We guide you through the company formation process from start to finish, including post-setup support.",         featured: true },
+    { cat: "global",     icon: "building-2",             title: "Dubai company formation support",         line: "We guide you through the company formation process from start to finish, including post-setup support." },
     { cat: "operations", icon: "chart-column",           title: "Management accounts",                     line: "Monthly or quarterly P&L, balance sheet and cash flow." },
     { cat: "operations", icon: "receipt",                title: "Sales invoicing & credit control",        line: "Invoices sent and customer payments followed up." },
     { cat: "operations", icon: "banknote",               title: "Supplier bills & payment runs",           line: "Bills approved and suppliers paid on time." },
     { cat: "operations", icon: "chart-line",             title: "Cash-flow forecasts & budgets",           line: "Rolling forecasts and actual-versus-budget checks." },
-    { cat: "operations", icon: "presentation",           title: "KPI & board reporting",                   line: "Performance dashboards with clear commentary." },
+    { cat: "operations", icon: "presentation",           title: "KPI & board reporting",                   line: "Performance dashboards with clear commentary.", featured: true },
     { cat: "operations", icon: "plug-zap",               title: "Finance systems & processes",             line: "Tool setup, invoice capture and connected workflows." },
     { cat: "growth",     icon: "scale",                  title: "Business valuations",                     line: "For a sale, investment or tax purposes." },
     { cat: "growth",     icon: "chart-pie",              title: "EMI option schemes",                      line: "Valuation, scheme setup and ongoing compliance." },
-    { cat: "growth",     icon: "trending-up",            title: "Financial forecasting & modelling",       line: "Revenue forecasts, runway and break-even analysis." },
+    { cat: "growth",     icon: "trending-up",            title: "Financial forecasting & modelling",       line: "Revenue forecasts, runway and break-even analysis.", featured: true },
     { cat: "growth",     icon: "layers-3",               title: "Scenario planning",                       line: "Model hiring, investment and growth decisions." },
     { cat: "growth",     icon: "hand-coins",             title: "Fundraising & lender reporting",          line: "The numbers investors and lenders ask for." },
     { cat: "global",     icon: "percent",                title: "UAE accounting, VAT & corporate tax advice", line: "Stay on top of your finances and compliance obligations with expert support." },
@@ -1023,7 +1023,7 @@ section{padding:96px 0}
 .adv-foot b{color:var(--navy)}
 .glob{position:relative;width:100%;max-width:470px;display:flex;flex-direction:column;gap:14px}
 .glob-h{text-align:center;font-size:14.5px;font-weight:700;color:var(--ink-2);margin-bottom:4px}
-.glob::before{content:"";position:absolute;left:43px;top:62px;bottom:64px;width:2px;background:repeating-linear-gradient(to bottom,var(--steel) 0 6px,transparent 6px 12px);opacity:.5}
+/* removed: leftover dashed vertical line inside .glob stage (user request 2026-09-17) */
 .loc{position:relative;display:flex;align-items:center;gap:16px;background:#fff;border-radius:18px;box-shadow:var(--shadow);padding:16px 18px;transform:translateX(18px);opacity:0;transition:transform .5s var(--ease),opacity .5s}
 .v.on .loc{transform:none;opacity:1}
 .v.on .loc:nth-of-type(2){transition-delay:.1s}.v.on .loc:nth-of-type(3){transition-delay:.2s}
@@ -1034,7 +1034,7 @@ section{padding:96px 0}
 .glob-f{display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;color:var(--navy);margin-top:4px}
 .glob-f .ic{width:18px;height:18px;color:var(--steel);stroke-width:2.4}
 @media (max-width:980px){.why{grid-template-columns:1fr;gap:30px}.stage{height:500px}}
-@media (max-width:560px){.stage{height:470px}.loc{padding:12px 14px}.code{width:44px;height:44px;font-size:12.5px}.glob::before{left:35px}}
+@media (max-width:560px){.stage{height:470px}.loc{padding:12px 14px}.code{width:44px;height:44px;font-size:12.5px}}
 
 /* ---------------- CLOSING BAND: photo with Navy overlay ---------------- */
 .cta-panel{--cta-img:url(assets/cta-london-4k.webp);background:linear-gradient(rgba(11,36,63,.58),rgba(11,36,63,.58)),var(--cta-img) center 55%/cover no-repeat;padding:96px 32px}
@@ -1449,8 +1449,8 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
 <section id="services">
   <div class="wrap">
     <div class="head">
-      <h2>Everything your scaling business needs</h2>
-      <p class="sub">Start with what causes the most headaches. Add more as you grow.</p>
+      <h2>Everything you need to run and grow your business</h2>
+      <p class="sub">Expand your services as your business grows.</p>
     </div>
     <div class="filters" id="filters" role="tablist" aria-label="Filter services"></div>
     <div class="svc-grid" id="svcGrid"></div>
