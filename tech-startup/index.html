@@ -1078,6 +1078,27 @@ section{padding:96px 0}
 .hs-us{bottom:0;right:0}
 @media (max-width:560px){.hs{max-width:280px;height:280px}.hs-hub{min-width:118px;padding:10px 12px 8px}.hs-spoke{min-width:130px;padding:8px 10px}.hs-spoke b{font-size:12.5px}.hs-spoke em{font-size:11px}}
 
+/* Clean org-chart hub + 3 spokes (Sep 16 tech-startup rebuild) */
+.orgchart-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;padding:8px 6px}
+.orgchart{display:flex;flex-direction:column;align-items:center;gap:0;width:100%;max-width:400px}
+.oc-hub{background:var(--navy);color:#fff;padding:14px 20px 12px;border-radius:16px;box-shadow:var(--shadow-lg);text-align:center;min-width:160px;z-index:2}
+.oc-hub .oc-logo{display:block;background:#fff;border-radius:11px;padding:6px;margin:0 auto 8px;width:44px;height:44px;box-sizing:border-box}
+.oc-hub .oc-logo img{width:100%;height:100%;object-fit:contain;display:block}
+.oc-hub b{display:block;font-size:14px;font-weight:700;line-height:1.2}
+.oc-hub em{display:block;font-style:normal;font-size:11.5px;color:rgba(255,255,255,.72);margin-top:2px}
+.oc-lines{position:relative;width:100%;height:28px}
+.oc-lines .oc-line-v{position:absolute;top:0;left:50%;width:1.5px;height:14px;background:repeating-linear-gradient(180deg,var(--ice) 0 3px,transparent 3px 6px);transform:translateX(-50%)}
+.oc-lines .oc-line-h{position:absolute;top:14px;left:16.67%;right:16.67%;height:1.5px;background:repeating-linear-gradient(90deg,var(--ice) 0 3px,transparent 3px 6px)}
+.oc-lines .oc-line-v1{top:14px;left:16.67%;height:14px}
+.oc-lines .oc-line-v2{top:14px;left:50%;height:14px}
+.oc-lines .oc-line-v3{top:14px;left:83.33%;height:14px}
+.oc-spokes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%}
+.oc-spoke{background:#fff;padding:10px 10px;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--line);display:flex;align-items:center;gap:8px;min-width:0}
+.oc-spoke .code{width:30px;height:30px;font-size:10.5px;flex:none}
+.oc-spoke b{display:block;font-size:12.5px;line-height:1.2}
+.oc-spoke em{display:block;font-style:normal;font-size:10.5px;color:var(--ink-2);line-height:1.25;margin-top:2px}
+@media (max-width:560px){.oc-hub{min-width:140px;padding:12px 14px 10px}.oc-spokes{gap:6px}.oc-spoke{padding:8px 8px;flex-direction:column;text-align:center;gap:4px}.oc-lines{height:22px}.oc-lines .oc-line-v,.oc-lines .oc-line-v1,.oc-lines .oc-line-v2,.oc-lines .oc-line-v3{height:11px}.oc-lines .oc-line-h{top:11px}.oc-lines .oc-line-v1,.oc-lines .oc-line-v2,.oc-lines .oc-line-v3{top:11px}}
+
 /* ---------------- Grow panel: staggered bar rise (Ashleigh Sep 14 feedback, C6) ---------------- */
 .grow .gs{opacity:0;transform:translateY(30px) scaleY(.5);transform-origin:bottom center;transition:opacity .55s var(--ease),transform .7s var(--ease)}
 .v[data-v="grow"].on .grow .gs.s1{opacity:1;transform:none;transition-delay:.08s}
@@ -1173,7 +1194,7 @@ section{padding:96px 0}
 .rating-49{position:relative;display:inline-block;line-height:0}
 .rating-49 .rating-bg,.rating-49 .rating-fg{display:inline-flex;gap:1px}
 .rating-49 .rating-bg{color:rgba(245,179,1,.24)}
-.rating-49 .rating-fg{position:absolute;top:0;left:0;width:98%;overflow:hidden;color:#F5B301}
+.rating-49 .rating-fg{position:absolute;top:0;left:0;width:90%;overflow:hidden;color:#F5B301}
 .rating-49 .ic{width:12px;height:12px;fill:currentColor;stroke:none;flex:none}
 
 /* Make rbc-l work as <a> and preserve independent hover */
@@ -1186,7 +1207,7 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:44px}
 .stats-tile{background:#fff;border-radius:18px;padding:24px 20px;text-align:center;box-shadow:var(--shadow);border-top:3px solid var(--cyan)}
 .stats-tile .st-num{font-size:clamp(28px,3vw,40px);font-weight:800;color:var(--navy);line-height:1;letter-spacing:-.02em}
-.stats-tile .st-num span{font-size:.55em;font-weight:700;margin-left:2px;color:var(--cyan-6)}
+.stats-tile .st-num span{font-size:.8em;font-weight:700;margin-left:3px;color:#F5B301}
 .stats-tile .st-lbl{margin-top:10px;font-size:13px;line-height:1.35;color:var(--ink-2)}
 @media (max-width:820px){.stats-row{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:480px){.stats-row{grid-template-columns:1fr}}
@@ -1582,20 +1603,28 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
           <div class="adv-foot"><span>Investor pack</span><div class="bar"><i></i></div><b>80%</b></div>
         </div>
       </div>
-      <!-- visual: tech startup revenue models (hub-and-spoke) -->
+      <!-- visual: tech startup revenue models (clean hub + 3 spokes org-chart, Sep 16 rebuild) -->
       <div class="v" data-v="global">
-        <div class="glob hs-wrap">
+        <div class="glob orgchart-wrap">
           <p class="glob-h">Revenue models we know inside out</p>
-          <div class="hs">
-            <svg class="hs-lines" viewBox="0 0 320 300" aria-hidden="true">
-              <path d="M160 156 L 160 62" />
-              <path d="M160 156 L 66 246" />
-              <path d="M160 156 L 254 246" />
-            </svg>
-            <div class="hs-spoke hs-uk"><span class="code c1">SaaS</span><div><b>Subscription</b><em>ARR, MRR and deferred revenue</em></div></div>
-            <div class="hs-spoke hs-ae"><span class="code c2">MP</span><div><b>Marketplace</b><em>GMV, take rate and unit economics</em></div></div>
-            <div class="hs-spoke hs-us"><span class="code c3">D2C</span><div><b>E-commerce</b><em>Cash cycle, COGS and inventory</em></div></div>
-            <div class="hs-hub"><span class="hs-logo"><img src="assets/logo-f25648fb.svg" alt=""></span><b>Rise Accounting</b><em>Your revenue expert</em></div>
+          <div class="orgchart">
+            <div class="oc-hub">
+              <span class="oc-logo"><img src="assets/logo-f25648fb.svg" alt=""></span>
+              <b>Rise Accounting</b>
+              <em>Your revenue expert</em>
+            </div>
+            <div class="oc-lines" aria-hidden="true">
+              <div class="oc-line-v"></div>
+              <div class="oc-line-h"></div>
+              <div class="oc-line-v oc-line-v1"></div>
+              <div class="oc-line-v oc-line-v2"></div>
+              <div class="oc-line-v oc-line-v3"></div>
+            </div>
+            <div class="oc-spokes">
+              <div class="oc-spoke"><span class="code c1">SaaS</span><div><b>Subscription</b><em>ARR &amp; MRR</em></div></div>
+              <div class="oc-spoke"><span class="code c2">MP</span><div><b>Marketplace</b><em>GMV &amp; take rate</em></div></div>
+              <div class="oc-spoke"><span class="code c3">D2C</span><div><b>E-commerce</b><em>Cash cycle</em></div></div>
+            </div>
           </div>
           <p class="glob-f"><svg class="ic"><use href="#i-check"/></svg>Board-ready reporting for every model</p>
         </div>
@@ -1739,14 +1768,18 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
         <p class="sub">Tech startup founders and finance leads on what changed after moving to Rise Accounting.</p>
       </div>
       <div class="rev-badges">
-        <div class="rev-badge-static rbs-combo">
-          <span class="rbs-logos">
-            <span class="rbs-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span>
-            <span class="rbs-logo rbs-c">C</span>
-          </span>
+        <div class="rev-badge-static">
+          <span class="rbs-logo"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span>
           <span class="rbs-info">
             <span class="rating-49" aria-label="4.9 out of 5"><span class="rating-bg"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span><span class="rating-fg"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span></span>
-            <b>4.9</b><em>138 reviews on Google &amp; Clutch</em>
+            <b>4.9</b><em>108 Google reviews</em>
+          </span>
+        </div>
+        <div class="rev-badge-static">
+          <span class="rbs-logo rbs-c">C</span>
+          <span class="rbs-info">
+            <span class="rbs-stars"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+            <b>5.0</b><em>30 Clutch reviews</em>
           </span>
         </div>
       </div>
