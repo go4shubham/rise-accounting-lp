@@ -36,17 +36,17 @@ window.RISE = {
      Add a service: copy one line, change the words. Keep "line" to one short sentence.
      featured: true  = shown before "Show all" is clicked. 8 featured keeps the grid tidy. */
   services: [
+    { cat: "growth",     icon: "rocket",                 title: "SEIS & EIS Advance Assurance",            line: "Eligibility review, application and HMRC queries in 48 hours.", featured: true },
+    { cat: "growth",     icon: "chart-pie",              title: "EMI option schemes",                      line: "Valuation, scheme setup and ongoing compliance for your key hires.", featured: true },
+    { cat: "growth",     icon: "hand-coins",             title: "Fundraising & investor reporting",        line: "The financial statements and reports your investors ask for.", featured: true },
+    { cat: "growth",     icon: "trending-up",            title: "Financial forecasting & modelling",       line: "Revenue forecasts, runway and break-even analysis.",           featured: true },
     { cat: "accounting", icon: "user-round-check",       title: "Dedicated Chartered Accountant",          line: "A named contact for your startup, regular updates and direct access.", featured: true },
-    { cat: "accounting", icon: "book-open-check",        title: "Bookkeeping on Xero or QuickBooks",       line: "Day-to-day records and bank reconciliations, kept current.",  featured: true },
+    { cat: "accounting", icon: "book-open-check",        title: "Bookkeeping on Xero or QuickBooks",       line: "Day-to-day records and bank reconciliations, kept current.",   featured: true },
     { cat: "accounting", icon: "file-check-2",           title: "Year-end accounts, Confirmation Statement & Corporation Tax", line: "Annual accounts, company filings and tax filings, done on time.", featured: true },
-    { cat: "accounting", icon: "receipt-pound-sterling", title: "VAT Support",                             line: "We ensure you're VAT compliant and never miss a deadline.",   featured: true },
-    { cat: "accounting", icon: "wallet",                 title: "Payroll & pensions",                      line: "Payslips, PAYE, pensions and auto-enrolment for your team.",  featured: true },
-    { cat: "operations", icon: "chart-column",           title: "Management accounts",                     line: "Monthly P&L, balance sheet and cash flow with commentary.",   featured: true },
-    { cat: "growth",     icon: "rocket",                 title: "SEIS & EIS Advance Assurance",            line: "Eligibility review, application and HMRC queries in 48 hours." },
-    { cat: "growth",     icon: "chart-pie",              title: "EMI option schemes",                      line: "Valuation, scheme setup and ongoing compliance for your key hires." },
-    { cat: "growth",     icon: "hand-coins",             title: "Fundraising & investor reporting",        line: "The financial statements and reports your investors ask for." },
-    { cat: "growth",     icon: "trending-up",            title: "Financial forecasting & modelling",       line: "Revenue forecasts, runway and break-even analysis." },
-    { cat: "operations", icon: "briefcase-business",     title: "Outsourced Finance Function",             line: "Full finance team on tap. Vendor payments, senior finance leaders and controls, without hiring in-house." },
+    { cat: "operations", icon: "briefcase-business",     title: "Outsourced Finance Function",             line: "Full finance team on tap. Vendor payments, senior finance leaders and controls, without hiring in-house.", featured: true },
+    { cat: "accounting", icon: "receipt-pound-sterling", title: "VAT Support",                             line: "We ensure you're VAT compliant and never miss a deadline." },
+    { cat: "accounting", icon: "wallet",                 title: "Payroll & pensions",                      line: "Payslips, PAYE, pensions and auto-enrolment for your team." },
+    { cat: "operations", icon: "chart-column",           title: "Management accounts",                     line: "Monthly P&L, balance sheet and cash flow with commentary." },
     { cat: "operations", icon: "chart-line",             title: "Cash-flow forecasts & budgets",           line: "Rolling forecasts and runway checks for your board." },
     { cat: "growth",     icon: "scale",                  title: "Business valuations",                     line: "For funding rounds, EMI schemes or sale." },
     { cat: "growth",     icon: "layers-3",               title: "Scenario planning",                       line: "Model hiring, investment and growth decisions before you make them." }
@@ -617,9 +617,9 @@ section{padding:108px 0;position:relative}
 .foot-info > div{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;font-size:13.5px;color:rgba(255,255,255,.72)}
 .foot-info b{color:#fff;font-weight:700;font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;min-width:64px;flex:0 0 auto}
 .foot-info a{color:inherit}
-.foot-r{display:flex;flex-direction:column;gap:26px;align-items:flex-end;justify-content:space-between}
-.foot-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;text-align:right}
-.foot-nav a{padding:2px 0;font-size:14.5px;color:rgba(255,255,255,.85)}
+.foot-r{display:flex;flex-direction:column;gap:22px;align-items:flex-end;justify-content:flex-start}
+.foot-nav{display:flex;flex-direction:row;flex-wrap:wrap;gap:6px 22px;align-items:center;justify-content:flex-end;text-align:right}
+.foot-nav a{padding:2px 0;font-size:14px;color:rgba(255,255,255,.85);white-space:nowrap}
 .foot-nav a:hover{color:#fff}
 .foot-badges{display:flex;gap:10px}
 .foot-badges .fb{width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;text-decoration:none;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:transform .2s var(--ease)}
