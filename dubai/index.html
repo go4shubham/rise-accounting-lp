@@ -1098,11 +1098,16 @@ section{padding:96px 0}
 .hs{position:relative;height:300px;margin:6px auto 4px;width:100%;max-width:340px}
 .hs-lines{position:absolute;inset:0;width:100%;height:100%;stroke:var(--ice);stroke-width:2;stroke-dasharray:4 5;fill:none;opacity:.85;z-index:1}
 /* Clean hub + 3-spoke org-chart layout (Sep 16 hub-and-spoke v3) */
-/* Clean hub + 3-spoke org-chart layout with SVG connector (Sep 17 non-scaling-stroke fix) */
+/* Clean hub + 3-spoke org-chart layout with grid-aligned CSS connector (Sep 17 v5, grid-anchored) */
 .orgchart-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;padding:8px 6px}
 .orgchart{display:flex;flex-direction:column;align-items:center;gap:0;width:100%;max-width:400px}
-.oc-line{width:100%;height:22px;display:block;margin:6px 0 4px;flex:none}
-@media (max-width:560px){.oc-line{height:16px;margin:4px 0 2px}}
+.oc-cnx{position:relative;width:100%;padding-top:12px}
+.oc-cnx::before{content:"";position:absolute;top:0;left:calc(50% - 1px);width:2px;height:12px;background:#3B6186;opacity:.55}
+.oc-cnx-rail{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;height:12px}
+.oc-cnx-rail::before{content:"";position:absolute;top:0;left:calc((100% - 20px)/6);right:calc((100% - 20px)/6);height:2px;background:#3B6186;opacity:.55}
+.oc-cnx-drop{position:relative}
+.oc-cnx-drop::after{content:"";position:absolute;top:0;left:calc(50% - 1px);width:2px;height:12px;background:#3B6186;opacity:.55}
+@media (max-width:560px){.oc-cnx{padding-top:8px}.oc-cnx::before{height:8px}.oc-cnx-rail{height:8px;gap:6px}.oc-cnx-rail::before{left:calc((100% - 12px)/6);right:calc((100% - 12px)/6)}.oc-cnx-drop::after{height:8px}}
 .oc-hub{position:relative;background:var(--navy);color:#fff;padding:14px 20px 12px;border-radius:16px;box-shadow:var(--shadow-lg);text-align:center;min-width:160px;z-index:2}
 .oc-hub .oc-logo{display:block;background:#fff;border-radius:11px;padding:6px;margin:0 auto 8px;width:44px;height:44px;box-sizing:border-box}
 .oc-hub .oc-logo img{width:100%;height:100%;object-fit:contain;display:block}
@@ -1544,7 +1549,7 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
               <b>Rise Accounting</b>
               <em>One team, three markets</em>
             </div>
-            <svg class="oc-line" viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true"><line x1="50" y1="0" x2="50" y2="11" stroke="#3B6186" stroke-width="1.5" opacity=".55" vector-effect="non-scaling-stroke"/><line x1="16.67" y1="11" x2="83.33" y2="11" stroke="#3B6186" stroke-width="1.5" opacity=".55" vector-effect="non-scaling-stroke"/><line x1="16.67" y1="11" x2="16.67" y2="22" stroke="#3B6186" stroke-width="1.5" opacity=".55" vector-effect="non-scaling-stroke"/><line x1="50" y1="11" x2="50" y2="22" stroke="#3B6186" stroke-width="1.5" opacity=".55" vector-effect="non-scaling-stroke"/><line x1="83.33" y1="11" x2="83.33" y2="22" stroke="#3B6186" stroke-width="1.5" opacity=".55" vector-effect="non-scaling-stroke"/></svg>
+            <div class="oc-cnx" aria-hidden="true"><div class="oc-cnx-rail"><div class="oc-cnx-drop"></div><div class="oc-cnx-drop"></div><div class="oc-cnx-drop"></div></div></div>
             <div class="oc-spokes">
               <div class="oc-spoke"><span class="code c1">UK</span><div><b>London</b><em>UK team</em></div></div>
               <div class="oc-spoke"><span class="code c2">UAE</span><div><b>Dubai</b><em>On the ground</em></div></div>
