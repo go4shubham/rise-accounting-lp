@@ -155,20 +155,13 @@ section{padding:96px 0;position:relative}
 /* ============================ TRUST STRIP ============================ */
 .trust{padding:56px 0}
 .trust-lead{text-align:center;font-size:14.5px;font-weight:700;letter-spacing:.02em;color:var(--navy);margin-bottom:26px}
-.trust-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:36px 68px;font-weight:800;font-size:26px;letter-spacing:-.025em}
-.trust-logos span{color:#9AA5B4;opacity:.85;transition:opacity .2s,color .2s;font-family:"Inter",system-ui,sans-serif;display:inline-flex;align-items:center;gap:8px}
-.trust-logos span:hover{opacity:1;color:var(--navy)}
-.trust-logos .tl-adaptavist::before{content:"";display:inline-block;width:16px;height:16px;background:#9AA5B4;border-radius:50%;position:relative;flex:none}
-.trust-logos .tl-plend{font-weight:500;font-size:.95em}
-.trust-logos .tl-mast::after{content:"."}
-.trust-logos .tl-seedlegals{letter-spacing:.18em;font-size:.75em;text-transform:uppercase;font-weight:700}
-.trust-logos .tl-earnr::before{content:"";display:inline-block;width:20px;height:16px;background:#9AA5B4;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21c-4-3-7-6-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4-3 7-7 10-1 1-3 1-4 0z' fill='%23000'/></svg>") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21c-4-3-7-6-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4-3 7-7 10-1 1-3 1-4 0z' fill='%23000'/></svg>") center/contain no-repeat;flex:none}
-.trust-logos .tl-damahealth::before{content:"";display:inline-block;width:14px;height:14px;background:transparent;border:2px solid #9AA5B4;border-radius:50%;flex:none}
-.trust-logos .tl-damahealth::after{content:"";display:inline-block;width:5px;height:5px;background:#9AA5B4;border-radius:50%;margin-left:-11px;position:relative;top:1px}
+.trust-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:36px 68px}
+.trust-logos img{height:36px;width:auto;max-width:180px;object-fit:contain;filter:grayscale(1);opacity:.55;transition:opacity .2s,filter .2s}
+.trust-logos img:hover{opacity:1;filter:grayscale(0)}
 .reviews-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:44px auto 0}
 .rev-card{background:#fff;padding:22px;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);position:relative}
 .rev-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.rev-avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;flex:none;background:var(--indigo)}
+.rev-avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;flex:none;background:var(--indigo-50);color:var(--indigo);display:grid;place-items:center;font-weight:800;font-size:16px}
 .rev-avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .rev-name{font-weight:700;font-size:15.5px;color:var(--navy);line-height:1.2;display:inline-flex;align-items:center;gap:6px}
 .rev-verified{width:14px;height:14px;color:var(--indigo);flex:none}
@@ -542,13 +535,18 @@ section{padding:96px 0;position:relative}
     <p class="trust-lead">Trusted by 1,000+ businesses</p>
     <!-- trust-lead font colour hardened to navy (was ink-3), and font-size +1 per user Sep 17 -->
     <div class="trust-logos">
-      <span class="tl-adaptavist">Adaptavist</span><span class="tl-plend">plend</span><span class="tl-damahealth">DamaHealth</span><span class="tl-mast">Mast</span><span class="tl-seedlegals">SeedLegals</span><span class="tl-earnr">earnr</span>
+      <img src="https://riseformations.co.uk/wp-content/uploads/2024/10/adaptavist.svg" alt="Adaptavist" loading="lazy">
+      <img src="https://riseformations.co.uk/wp-content/uploads/2024/10/plendlogo.svg" alt="plend" loading="lazy">
+      <img src="https://riseformations.co.uk/wp-content/uploads/2024/10/damahealth.svg" alt="DamaHealth" loading="lazy">
+      <img src="https://riseformations.co.uk/wp-content/uploads/2024/10/mastlogo.svg" alt="Mast" loading="lazy">
+      <img src="https://riseformations.co.uk/wp-content/uploads/2024/10/seedlegals.svg" alt="SeedLegals" loading="lazy">
+      <img src="https://riseformations.co.uk/wp-content/uploads/2024/11/earnr.svg" alt="earnr" loading="lazy">
     </div>
     <div class="reviews-strip">
       <div class="rev-card">
         <svg class="rev-google" viewBox="0 0 24 24"><path d="M12 11v3.5h5A5 5 0 1 1 12 7c1.3 0 2.5.5 3.4 1.4l2.5-2.5A8.5 8.5 0 1 0 20.5 12H12z" fill="#4E5AC7"/></svg>
         <div class="rev-top">
-          <div class="rev-avatar"><img src="https://i.pravatar.cc/80?u=samm-hallilay" alt="Samm Hallilay" loading="lazy"></div>
+          <div class="rev-avatar">S</div>
           <div><div class="rev-name">Samm Hallilay</div><div class="rev-stars">★★★★★ <svg class="rv-check"><use href="#i-verified"/></svg></div></div>
         </div>
         <p class="rev-quote">"Rise were super helpful and <mark>made everything very easy</mark>. I wouldn't hesitate t recomend them to assist with setting up a copmany."</p>
@@ -556,7 +554,7 @@ section{padding:96px 0;position:relative}
       <div class="rev-card">
         <svg class="rev-google" viewBox="0 0 24 24"><path d="M12 11v3.5h5A5 5 0 1 1 12 7c1.3 0 2.5.5 3.4 1.4l2.5-2.5A8.5 8.5 0 1 0 20.5 12H12z" fill="#4E5AC7"/></svg>
         <div class="rev-top">
-          <div class="rev-avatar"><img src="https://i.pravatar.cc/80?u=james-metcalfe" alt="James Metcalfe" loading="lazy"></div>
+          <div class="rev-avatar">J</div>
           <div><div class="rev-name">James Metcalfe</div><div class="rev-stars">★★★★★ <svg class="rv-check"><use href="#i-verified"/></svg></div></div>
         </div>
         <p class="rev-quote">"Brilliant experience! <mark>Team are fantastic</mark> and have made the process of incorporating incredibly easy!"</p>
@@ -564,7 +562,7 @@ section{padding:96px 0;position:relative}
       <div class="rev-card">
         <svg class="rev-google" viewBox="0 0 24 24"><path d="M12 11v3.5h5A5 5 0 1 1 12 7c1.3 0 2.5.5 3.4 1.4l2.5-2.5A8.5 8.5 0 1 0 20.5 12H12z" fill="#4E5AC7"/></svg>
         <div class="rev-top">
-          <div class="rev-avatar"><img src="https://i.pravatar.cc/80?u=ismail-alrawi" alt="Ismail Alrawi" loading="lazy"></div>
+          <div class="rev-avatar">I</div>
           <div><div class="rev-name">Ismail Alrawi</div><div class="rev-stars">★★★★★ <svg class="rv-check"><use href="#i-verified"/></svg></div></div>
         </div>
         <p class="rev-quote"><mark>"Very easy and helpful"</mark></p>
@@ -924,7 +922,7 @@ section{padding:96px 0;position:relative}
     <div class="foot-bottom">
       <span>© 2026 Rise Formations Ltd</span>
       <span>131 Finsbury Pavement, London, EC2A 1NT</span>
-      <span style="opacity:.55;font-size:11px">build v5 · 2026-09-17</span>
+      <span style="opacity:.55;font-size:11px">build v6 · 2026-09-17</span>
     </div>
   </div>
 </footer>
