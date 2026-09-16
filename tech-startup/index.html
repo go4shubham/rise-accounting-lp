@@ -1074,6 +1074,49 @@ section{padding:96px 0}
 .hero h1{font-weight:800;text-shadow:0 2px 22px rgba(0,0,0,.55),0 1px 3px rgba(0,0,0,.4)}
 .hero .lede{font-weight:500;text-shadow:0 1px 12px rgba(0,0,0,.6)}
 .hero .eyebrow{font-weight:700;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+
+/* ---------------- Spotlight sections (tech-startup Sep 16 rebuild) ---------------- */
+#growth-spotlight,#off-spotlight,#investor-spotlight{padding:90px 0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split-l{max-width:520px}
+.split-l h2{margin:14px 0 28px;font-size:clamp(30px,3.2vw,44px);line-height:1.1}
+.split-l .btn{margin-top:34px}
+.spot-eyebrow{display:inline-block;background:rgba(59,203,247,.16);color:var(--navy);padding:6px 12px;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.spot-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:22px;margin:0}
+.spot-list li{display:flex;gap:14px;align-items:flex-start}
+.spot-list .chk{flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:var(--cyan);color:#fff;display:grid;place-items:center;margin-top:2px;box-shadow:0 4px 12px rgba(59,203,247,.4)}
+.spot-list .chk .ic{width:16px;height:16px;stroke-width:3;color:#fff}
+.spot-list b{display:block;font-size:17px;font-weight:700;color:var(--navy);margin-bottom:4px;letter-spacing:-.01em}
+.spot-list span{font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.split-r{position:relative;display:flex;justify-content:center}
+.stat-card{border-radius:28px;padding:56px 40px;text-align:center;box-shadow:var(--shadow-lg);width:100%;max-width:440px;display:flex;flex-direction:column;justify-content:center;min-height:300px}
+.stat-card-cyan{background:linear-gradient(135deg,#DFF4FC 0%,#B6EAFA 100%)}
+.stat-card-dark{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff}
+.stat-num{font-size:clamp(64px,9vw,128px);font-weight:800;line-height:.9;color:var(--navy);letter-spacing:-.04em}
+.stat-num span{font-size:.36em;font-weight:600;margin-left:8px;color:var(--steel)}
+.stat-card-dark .stat-num{color:#fff}
+.stat-card-dark .stat-num span{color:var(--cyan)}
+.stat-lbl{margin-top:22px;font-size:15.5px;line-height:1.45;color:var(--ink-2);max-width:26ch;margin-left:auto;margin-right:auto}
+.stat-card-dark .stat-lbl{color:rgba(255,255,255,.85)}
+.stat-card-stages{padding:40px 30px;min-height:280px}
+.stat-card-stages .stages-title{font-size:14px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.08em;margin-bottom:22px}
+.stat-card-stages .stages-row{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.stat-card-stages .stage{background:#fff;border:1.5px solid var(--cyan);color:var(--navy);padding:8px 14px;border-radius:24px;font-size:13.5px;font-weight:700}
+.stat-card-stages .stage-live{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:0 8px 20px -8px rgba(11,36,63,.5)}
+.stat-card-stages .stage-arrow{color:var(--steel);font-size:20px;font-weight:800}
+.split-reverse .split-l{order:2}
+.split-reverse .split-r{order:1}
+@media (max-width:900px){#growth-spotlight,#off-spotlight,#investor-spotlight{padding:60px 0}.split{grid-template-columns:1fr;gap:36px}.split-reverse .split-l{order:1}.split-reverse .split-r{order:2}.stat-card{padding:44px 28px;min-height:240px}.stat-card-stages{padding:32px 22px}}
+
+/* ---------------- Reviews header: side-by-side with Clutch badge (tech-startup Sep 16) ---------------- */
+.rev-head{display:flex;align-items:center;gap:24px;justify-content:space-between;text-align:left;max-width:none}
+.rev-head .rev-head-l{flex:1 1 auto;max-width:640px}
+.rev-clutch{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--line);padding:8px 16px;border-radius:32px;flex:0 0 auto;box-shadow:var(--shadow)}
+.rev-clutch .cl-c{background:#e62e04;color:#fff;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:15px;font-family:"Figtree",system-ui,sans-serif}
+.rev-clutch .cl-s{display:inline-flex;gap:1px;color:#F5B301}
+.rev-clutch .cl-s .ic{width:12px;height:12px;fill:currentColor;stroke:none}
+.rev-clutch .cl-n{font-size:11.5px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase}
+@media (max-width:720px){.rev-head{flex-direction:column;text-align:center;align-items:center}.rev-head .rev-head-l{text-align:center}}
 </style>
 <style>
 @font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(assets/font-7bfd10a3.woff2) format('woff2')}
@@ -1328,17 +1371,98 @@ section{padding:96px 0}
   </div>
 </div>
 
+<!-- ============================ GROWTH & ADVISORY SPOTLIGHT (tech-startup only) ============================ -->
+<section id="growth-spotlight" class="white">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-l">
+        <span class="spot-eyebrow">Growth &amp; Advisory</span>
+        <h2>Your fundraising engine, on tap</h2>
+        <ul class="spot-list">
+          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>SEIS &amp; EIS Advance Assurance</b><span>Application, business plan and financials filed with HMRC within 48 hours of our eligibility call.</span></div></li>
+          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>EMI Option Schemes</b><span>Valuation, HMRC registration and annual returns. Attract and retain top talent without burning cash.</span></div></li>
+          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Financial forecasting &amp; modelling</b><span>Revenue forecasts, runway and scenarios that hold up in front of investors.</span></div></li>
+        </ul>
+        <button class="btn btn-primary" data-form>Book an SEIS call</button>
+      </div>
+      <div class="split-r">
+        <div class="stat-card stat-card-cyan">
+          <div class="stat-num">48<span>hrs</span></div>
+          <div class="stat-lbl">SEIS Advance Assurance filed with HMRC after your eligibility call</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================ SERVICES (cards come from CONFIG) ============================ -->
 <section id="services">
   <div class="wrap">
     <div class="head">
-      <h2>Everything your tech startup needs</h2>
+      <h2>End-to-end accounting for tech startups</h2>
       <p class="sub">Start with SEIS and EIS. Add bookkeeping, payroll and VAT as you grow. Bring the full finance function when you scale.</p>
     </div>
     <div class="filters" id="filters" role="tablist" aria-label="Filter services"></div>
     <div class="svc-grid" id="svcGrid"></div>
     <div class="svc-foot"><div class="more" id="more"><button class="btn btn-soft" id="moreBtn"><span>Show all services</span><svg class="ic"><use href="#i-chevron-down"/></svg></button></div>
     <p class="more-note">Not sure what you need? <button data-form>Tell us what's slowing you down</button></p></div>
+  </div>
+</section>
+
+<!-- ============================ OUTSOURCED FINANCE FUNCTION SPOTLIGHT ============================ -->
+<section id="off-spotlight">
+  <div class="wrap">
+    <div class="split split-reverse">
+      <div class="split-r">
+        <div class="stat-card stat-card-dark">
+          <div class="stat-num">1</div>
+          <div class="stat-lbl">Fixed monthly fee. A full finance team without the in-house hire.</div>
+        </div>
+      </div>
+      <div class="split-l">
+        <span class="spot-eyebrow">Bespoke support</span>
+        <h2>Outsourced finance function</h2>
+        <ul class="spot-list">
+          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Dedicated finance team</b><span>Direct access on Slack or Teams. We integrate with your workflow and move at the pace of your business.</span></div></li>
+          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Payroll &amp; vendor payment management</b><span>Accurate payroll and timely supplier payments through your chosen open banking rails.</span></div></li>
+          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Sales invoicing &amp; credit control</b><span>Invoices sent, aged debt chased and cash collected. Protects cash flow and reduces bad debt.</span></div></li>
+        </ul>
+        <button class="btn btn-primary" data-form>Talk to an expert</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ INVESTOR-READY SPOTLIGHT ============================ -->
+<section id="investor-spotlight" class="white">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-l">
+        <span class="spot-eyebrow">Fundraising support</span>
+        <h2>Get your financials investor-ready</h2>
+        <ul class="spot-list">
+          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Business valuations</b><span>Accurate and up-to-date valuations for funding rounds, EMI schemes or a sale.</span></div></li>
+          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Investor reporting</b><span>Clean, accurate financial statements and monthly investor updates.</span></div></li>
+          <li><span class="chk"><svg class="ic"><use href="#i-check"/></svg></span><div><b>Financial planning</b><span>Guidance on equity structure, stock options, share issuance, transfers and more.</span></div></li>
+        </ul>
+        <button class="btn btn-primary" data-form>Enquire now</button>
+      </div>
+      <div class="split-r">
+        <div class="stat-card stat-card-cyan stat-card-stages">
+          <div class="stages-title">Same team, every stage</div>
+          <div class="stages-row">
+            <span class="stage">Pre-Seed</span>
+            <span class="stage-arrow">›</span>
+            <span class="stage">Seed</span>
+            <span class="stage-arrow">›</span>
+            <span class="stage">Series A</span>
+            <span class="stage-arrow">›</span>
+            <span class="stage stage-live">Series B</span>
+          </div>
+          <div class="stat-lbl">From your first term sheet to your Series B board pack, one team the whole way.</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1465,8 +1589,8 @@ section{padding:96px 0}
 <section id="integrations">
   <div class="wrap">
     <div class="head">
-      <h2>Plugs into the tools you already use</h2>
-      <p class="sub">Use your data to make better business decisions.</p>
+      <h2>Digital-first, cloud-based accountants</h2>
+      <p class="sub">Xero Platinum Partner and QuickBooks Certified. We plug into the tools your tech startup already runs on.</p>
     </div>
     <div class="flow" id="flow">
       <svg class="flow-lines" id="flowLines" aria-hidden="true"></svg>
@@ -1524,9 +1648,16 @@ section{padding:96px 0}
 <!-- ============================ REVIEWS (cards come from CONFIG) ============================ -->
 <section id="reviews" class="white">
   <div class="wrap">
-    <div class="head">
-      <h2>Don't take our word for it</h2>
-      <p class="sub">Tech startup founders and finance leads on what changed after moving to Rise Accounting.</p>
+    <div class="head rev-head">
+      <div class="rev-head-l">
+        <h2>Hear from tech startup founders</h2>
+        <p class="sub">Tech startup founders and finance leads on what changed after moving to Rise Accounting.</p>
+      </div>
+      <div class="rev-clutch">
+        <span class="cl-c">C</span>
+        <span class="cl-s"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>
+        <span class="cl-n">30 Reviews</span>
+      </div>
     </div>
     <div class="rev-track" id="revTrack" aria-roledescription="carousel" aria-label="Client reviews"></div>
     <div class="rev-nav">
@@ -1541,7 +1672,7 @@ section{padding:96px 0}
 <section id="how">
   <div class="wrap">
     <div class="head">
-      <h2>Up and running in less than a week</h2>
+      <h2>Onboarding your tech startup in under a week</h2>
       <p class="sub">Switching accountants? We handle the handover, your SEIS records and HMRC.</p>
     </div>
     <ol class="steps" id="steps"></ol>
@@ -1552,7 +1683,7 @@ section{padding:96px 0}
 <!-- ============================ FAQ ============================ -->
 <section id="faq" class="white">
   <div class="wrap">
-    <div class="head"><h2>Questions we get asked a lot</h2></div>
+    <div class="head"><h2>Questions tech startup founders ask</h2></div>
     <div class="faq" id="faqList"></div>
   </div>
 </section>
