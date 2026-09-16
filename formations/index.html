@@ -89,7 +89,7 @@ section{padding:96px 0;position:relative}
 .nav.scrolled{background:rgba(255,255,255,.94);border-color:var(--line)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:22px;height:72px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--navy);letter-spacing:-.01em}
-.brand img{width:26px;height:26px}
+.brand img{height:34px;width:auto}
 .brand-sub{color:var(--indigo);font-weight:700}
 .menu{display:flex;align-items:center;gap:6px}
 .menu a{padding:10px 14px;border-radius:10px;font-size:15px;font-weight:500;color:var(--ink-2);transition:color .15s,background-color .15s}
@@ -147,9 +147,9 @@ section{padding:96px 0;position:relative}
 .benefits-strip{margin-top:22px;text-align:center}
 .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:#fff;border-radius:999px;font-size:14px;font-weight:600;color:var(--navy);box-shadow:var(--shadow)}
 .pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sun);box-shadow:0 0 0 3px rgba(245,179,1,.2)}
-.partner-logos{margin-top:16px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;font-size:14px;font-weight:600;color:var(--ink-3);letter-spacing:.02em}
-.partner-logos span{opacity:.75;transition:opacity .2s}
-.partner-logos span:hover{opacity:1;color:var(--indigo)}
+.partner-logos{margin-top:16px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 28px;color:var(--ink-3)}
+.partner-logos img{height:22px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(1) brightness(.55);opacity:.7;transition:opacity .2s,filter .2s}
+.partner-logos img:hover{opacity:1;filter:grayscale(0) brightness(1)}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-r{max-width:460px;margin:0 auto}.check-input{grid-template-columns:1fr;gap:10px}.check-input select,.check-input .btn{height:52px}}
 
 /* ============================ TRUST STRIP ============================ */
@@ -163,7 +163,9 @@ section{padding:96px 0;position:relative}
 .rev-card{background:#fff;padding:22px;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);position:relative}
 .rev-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .rev-avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;flex:none;background:var(--indigo-50);color:var(--indigo);display:grid;place-items:center;font-weight:800;font-size:16px}
-.rev-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.rev-avatar img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1}
+.rev-avatar.rev-photo{background:none}
+.rev-avatar.rev-photo::after{display:none}
 .rev-name{font-weight:700;font-size:15.5px;color:var(--navy);line-height:1.2;display:inline-flex;align-items:center;gap:6px}
 .rev-verified{width:14px;height:14px;color:var(--indigo);flex:none}
 .rev-stars{display:flex;align-items:center;gap:2px;margin-top:3px;color:var(--sun);font-size:14px}
@@ -477,7 +479,13 @@ section{padding:96px 0;position:relative}
       </div>
       <div class="benefits-strip">
         <span class="pill">Plus £1,000s in benefits from our partners</span>
-        <div class="partner-logos"><span>Xero</span><span>HubSpot</span><span>Monday.com</span><span>Flatpay</span><span>Canva</span></div>
+        <div class="partner-logos">
+          <img src="../assets/formations-xero.svg" alt="Xero" loading="lazy">
+          <img src="../assets/formations-hubspot.svg" alt="HubSpot" loading="lazy">
+          <img src="../assets/formations-monday.svg" alt="Monday.com" loading="lazy">
+          <img src="../assets/formations-flatpay.svg" alt="Flatpay" loading="lazy">
+          <img src="../assets/formations-canva.svg" alt="Canva" loading="lazy">
+        </div>
       </div>
     </aside>
   </div>
@@ -536,19 +544,19 @@ section{padding:96px 0;position:relative}
     <p class="trust-lead">Trusted by 1,000+ businesses</p>
     <!-- trust-lead font colour hardened to navy (was ink-3), and font-size +1 per user Sep 17 -->
     <div class="trust-logos">
-      <img src="https://riseformations.co.uk/wp-content/uploads/2024/10/adaptavist.svg" alt="Adaptavist" loading="lazy">
-      <img src="https://riseformations.co.uk/wp-content/uploads/2024/10/plendlogo.svg" alt="plend" loading="lazy">
-      <img src="https://riseformations.co.uk/wp-content/uploads/2024/10/damahealth.svg" alt="DamaHealth" loading="lazy">
-      <img src="https://riseformations.co.uk/wp-content/uploads/2024/10/mastlogo.svg" alt="Mast" loading="lazy">
-      <img src="https://riseformations.co.uk/wp-content/uploads/2024/10/seedlegals.svg" alt="SeedLegals" loading="lazy">
-      <img src="https://riseformations.co.uk/wp-content/uploads/2024/11/earnr.svg" alt="earnr" loading="lazy">
+      <img src="../assets/formations-adaptavist.svg" alt="Adaptavist" loading="lazy">
+      <img src="../assets/formations-plend.svg" alt="plend" loading="lazy">
+      <img src="../assets/formations-damahealth.svg" alt="DamaHealth" loading="lazy">
+      <img src="../assets/formations-mast.svg" alt="Mast" loading="lazy">
+      <img src="../assets/formations-seedlegals.svg" alt="SeedLegals" loading="lazy">
+      <img src="../assets/formations-earnr.svg" alt="earnr" loading="lazy">
     </div>
     <div class="reviews-strip">
       <div class="rev-card">
         <svg class="rev-google" viewBox="0 0 24 24"><path d="M12 11v3.5h5A5 5 0 1 1 12 7c1.3 0 2.5.5 3.4 1.4l2.5-2.5A8.5 8.5 0 1 0 20.5 12H12z" fill="#4E5AC7"/></svg>
         <div class="rev-top">
-          <div class="rev-avatar">S</div>
-          <div><div class="rev-name">Samm Hallilay</div><div class="rev-stars">★★★★★ <svg class="rv-check"><use href="#i-verified"/></svg></div></div>
+          <div class="rev-avatar rev-photo"><img src="../assets/formations-rev-samm.png" alt="Samm Haillay"></div>
+          <div><div class="rev-name">Samm Haillay</div><div class="rev-stars">★★★★★ <svg class="rv-check"><use href="#i-verified"/></svg></div></div>
         </div>
         <p class="rev-quote">"Rise were super helpful and <mark>made everything very easy</mark>. I wouldn't hesitate t recomend them to assist with setting up a copmany."</p>
       </div>

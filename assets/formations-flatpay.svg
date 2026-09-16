@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" fill="currentColor" aria-label="Flatpay">
+  <g>
+    <circle cx="8" cy="20" r="3"/>
+    <rect x="18" y="8" width="4" height="24" rx="1"/>
+    <circle cx="32" cy="20" r="3"/>
+  </g>
+  <text x="46" y="27" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="-0.5" fill="currentColor">Flatpay</text>
+</svg>
