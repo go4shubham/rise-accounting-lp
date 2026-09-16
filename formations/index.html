@@ -168,7 +168,8 @@ section{padding:96px 0;position:relative}
 .reviews-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:44px auto 0}
 .rev-card{background:#fff;padding:22px;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);position:relative}
 .rev-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.rev-avatar{width:40px;height:40px;border-radius:50%;background:var(--indigo);color:#fff;display:grid;place-items:center;font-weight:800;font-size:16px;flex:none}
+.rev-avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;flex:none;background:var(--indigo)}
+.rev-avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .rev-name{font-weight:700;font-size:15.5px;color:var(--navy);line-height:1.2;display:inline-flex;align-items:center;gap:6px}
 .rev-verified{width:14px;height:14px;color:var(--indigo);flex:none}
 .rev-stars{display:flex;align-items:center;gap:2px;margin-top:3px;color:var(--sun);font-size:14px}
@@ -547,7 +548,7 @@ section{padding:96px 0;position:relative}
       <div class="rev-card">
         <svg class="rev-google" viewBox="0 0 24 24"><path d="M12 11v3.5h5A5 5 0 1 1 12 7c1.3 0 2.5.5 3.4 1.4l2.5-2.5A8.5 8.5 0 1 0 20.5 12H12z" fill="#4E5AC7"/></svg>
         <div class="rev-top">
-          <div class="rev-avatar"><span style="position:relative;z-index:1">S</span></div>
+          <div class="rev-avatar"><img src="https://i.pravatar.cc/80?u=samm-hallilay" alt="Samm Hallilay" loading="lazy"></div>
           <div><div class="rev-name">Samm Hallilay</div><div class="rev-stars">★★★★★ <svg class="rv-check"><use href="#i-verified"/></svg></div></div>
         </div>
         <p class="rev-quote">"Rise were super helpful and <mark>made everything very easy</mark>. I wouldn't hesitate t recomend them to assist with setting up a copmany."</p>
@@ -555,7 +556,7 @@ section{padding:96px 0;position:relative}
       <div class="rev-card">
         <svg class="rev-google" viewBox="0 0 24 24"><path d="M12 11v3.5h5A5 5 0 1 1 12 7c1.3 0 2.5.5 3.4 1.4l2.5-2.5A8.5 8.5 0 1 0 20.5 12H12z" fill="#4E5AC7"/></svg>
         <div class="rev-top">
-          <div class="rev-avatar"><span style="position:relative;z-index:1">J</span></div>
+          <div class="rev-avatar"><img src="https://i.pravatar.cc/80?u=james-metcalfe" alt="James Metcalfe" loading="lazy"></div>
           <div><div class="rev-name">James Metcalfe</div><div class="rev-stars">★★★★★ <svg class="rv-check"><use href="#i-verified"/></svg></div></div>
         </div>
         <p class="rev-quote">"Brilliant experience! <mark>Team are fantastic</mark> and have made the process of incorporating incredibly easy!"</p>
@@ -563,7 +564,7 @@ section{padding:96px 0;position:relative}
       <div class="rev-card">
         <svg class="rev-google" viewBox="0 0 24 24"><path d="M12 11v3.5h5A5 5 0 1 1 12 7c1.3 0 2.5.5 3.4 1.4l2.5-2.5A8.5 8.5 0 1 0 20.5 12H12z" fill="#4E5AC7"/></svg>
         <div class="rev-top">
-          <div class="rev-avatar"><span style="position:relative;z-index:1">I</span></div>
+          <div class="rev-avatar"><img src="https://i.pravatar.cc/80?u=ismail-alrawi" alt="Ismail Alrawi" loading="lazy"></div>
           <div><div class="rev-name">Ismail Alrawi</div><div class="rev-stars">★★★★★ <svg class="rv-check"><use href="#i-verified"/></svg></div></div>
         </div>
         <p class="rev-quote"><mark>"Very easy and helpful"</mark></p>
@@ -923,6 +924,7 @@ section{padding:96px 0;position:relative}
     <div class="foot-bottom">
       <span>© 2026 Rise Formations Ltd</span>
       <span>131 Finsbury Pavement, London, EC2A 1NT</span>
+      <span style="opacity:.55;font-size:11px">build v5 · 2026-09-17</span>
     </div>
   </div>
 </footer>
