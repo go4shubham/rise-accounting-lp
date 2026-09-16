@@ -101,7 +101,7 @@ section{padding:96px 0;position:relative}
 @media (max-width:900px){.menu,.nav-login{display:none}.menu-btn{display:flex}}
 
 /* ============================ HERO ============================ */
-.hero{padding:56px 0 88px;background:linear-gradient(180deg,#F5F8FC 0%,#EEF1FA 100%);overflow:hidden;position:relative}
+.hero{padding:48px 0 72px;background:linear-gradient(180deg,#F5F8FC 0%,#EEF1FA 100%);overflow:hidden;position:relative}
 .hero::before{content:"";position:absolute;inset:auto -20% -60% -20%;height:70%;background:radial-gradient(ellipse at center top,rgba(78,90,199,.10),transparent 60%);pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:1}
 .hero-l h1{margin:14px 0 22px}
@@ -109,7 +109,7 @@ section{padding:96px 0;position:relative}
 .hero-l h1 .num::after{content:"";position:absolute;left:2%;right:2%;bottom:4px;height:12px;background:rgba(78,90,199,.14);border-radius:6px;z-index:-1}
 .hero-l h1 s{color:var(--ink-3);font-weight:600;font-size:.62em;text-decoration:none;position:relative;margin-right:6px}
 .hero-l h1 s::before{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:3px;background:var(--coral);transform:rotate(-6deg);border-radius:2px}
-.ticks{display:grid;gap:11px;margin-bottom:26px}
+.ticks{display:grid;gap:9px;margin-bottom:22px}
 .ticks li{display:flex;align-items:flex-start;gap:12px;font-size:16px;color:var(--navy)}
 .ticks li em{font-style:italic;color:var(--ink-2);font-weight:500;display:block;font-size:14.5px;margin-top:2px}
 .tick-ic{width:22px;height:22px;border-radius:50%;background:var(--indigo-50);color:var(--indigo);display:grid;place-items:center;flex:none;margin-top:2px}
@@ -133,7 +133,7 @@ section{padding:96px 0;position:relative}
 
 .hero-r{position:relative}
 .banks-title{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:16px;text-align:center}
-.banks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:22px;background:linear-gradient(135deg,#5766D6 0%,#4048B2 100%);border-radius:22px;box-shadow:0 30px 60px -24px rgba(78,90,199,.5)}
+.banks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:20px;background:linear-gradient(135deg,#5766D6 0%,#4048B2 100%);border-radius:22px;box-shadow:0 30px 60px -24px rgba(78,90,199,.5)}
 /* Bank cards intentionally STATIC — no hover transform, no ::before movement (Sep 17 fix: perceived rotation on scroll) */
 .bcard{aspect-ratio:16/10;border-radius:12px;background:#fff;display:grid;place-items:center;font-weight:800;font-size:15px;letter-spacing:-.02em;position:relative;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.08)}
 .bcard::before{content:"";position:absolute;right:-30%;top:-40%;width:80%;height:120%;border-radius:50%;opacity:.85}
@@ -154,16 +154,17 @@ section{padding:96px 0;position:relative}
 
 /* ============================ TRUST STRIP ============================ */
 .trust{padding:56px 0}
-.trust-lead{text-align:center;font-size:13.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:22px}
-.trust-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:32px 60px;font-weight:800;font-size:24px;letter-spacing:-.02em}
-.trust-logos span{color:#8896A8;opacity:.7;transition:opacity .2s,color .2s;font-family:"Inter",system-ui,sans-serif}
+.trust-lead{text-align:center;font-size:14.5px;font-weight:700;letter-spacing:.02em;color:var(--navy);margin-bottom:26px}
+.trust-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:36px 68px;font-weight:800;font-size:26px;letter-spacing:-.025em}
+.trust-logos span{color:#9AA5B4;opacity:.85;transition:opacity .2s,color .2s;font-family:"Inter",system-ui,sans-serif;display:inline-flex;align-items:center;gap:8px}
 .trust-logos span:hover{opacity:1;color:var(--navy)}
-.trust-logos .tl-adaptavist::before{content:"▲";color:#DE350B;margin-right:2px;font-size:.85em}
-.trust-logos .tl-plend{font-weight:500;font-style:italic}
+.trust-logos .tl-adaptavist::before{content:"";display:inline-block;width:16px;height:16px;background:#9AA5B4;border-radius:50%;position:relative;flex:none}
+.trust-logos .tl-plend{font-weight:500;font-size:.95em}
 .trust-logos .tl-mast::after{content:"."}
-.trust-logos .tl-seedlegals{letter-spacing:.14em;font-size:.85em;text-transform:uppercase}
-.trust-logos .tl-earnr::before{content:"🌱 ";font-size:.9em}
-.trust-logos .tl-damahealth::before{content:"◉ ";color:#00A88F;font-size:.85em}
+.trust-logos .tl-seedlegals{letter-spacing:.18em;font-size:.75em;text-transform:uppercase;font-weight:700}
+.trust-logos .tl-earnr::before{content:"";display:inline-block;width:20px;height:16px;background:#9AA5B4;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21c-4-3-7-6-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4-3 7-7 10-1 1-3 1-4 0z' fill='%23000'/></svg>") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21c-4-3-7-6-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4-3 7-7 10-1 1-3 1-4 0z' fill='%23000'/></svg>") center/contain no-repeat;flex:none}
+.trust-logos .tl-damahealth::before{content:"";display:inline-block;width:14px;height:14px;background:transparent;border:2px solid #9AA5B4;border-radius:50%;flex:none}
+.trust-logos .tl-damahealth::after{content:"";display:inline-block;width:5px;height:5px;background:#9AA5B4;border-radius:50%;margin-left:-11px;position:relative;top:1px}
 .reviews-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:44px auto 0}
 .rev-card{background:#fff;padding:22px;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);position:relative}
 .rev-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
@@ -538,6 +539,7 @@ section{padding:96px 0;position:relative}
 <section class="trust white">
   <div class="wrap">
     <p class="trust-lead">Trusted by 1,000+ businesses</p>
+    <!-- trust-lead font colour hardened to navy (was ink-3), and font-size +1 per user Sep 17 -->
     <div class="trust-logos">
       <span class="tl-adaptavist">Adaptavist</span><span class="tl-plend">plend</span><span class="tl-damahealth">DamaHealth</span><span class="tl-mast">Mast</span><span class="tl-seedlegals">SeedLegals</span><span class="tl-earnr">earnr</span>
     </div>
