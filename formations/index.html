@@ -155,9 +155,10 @@ section{padding:96px 0;position:relative}
 /* ============================ TRUST STRIP ============================ */
 .trust{padding:56px 0}
 .trust-lead{text-align:center;font-size:14.5px;font-weight:700;letter-spacing:.02em;color:var(--navy);margin-bottom:26px}
-.trust-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:36px 68px}
-.trust-logos img{height:36px;width:auto;max-width:180px;object-fit:contain;filter:grayscale(1);opacity:.55;transition:opacity .2s,filter .2s}
+.trust-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:22px 40px}
+.trust-logos img{height:32px;width:auto;max-width:140px;object-fit:contain;filter:grayscale(1);opacity:.55;transition:opacity .2s,filter .2s}
 .trust-logos img:hover{opacity:1;filter:grayscale(0)}
+@media (min-width:1100px){.trust-logos{flex-wrap:nowrap;gap:44px}}
 .reviews-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:44px auto 0}
 .rev-card{background:#fff;padding:22px;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);position:relative}
 .rev-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
@@ -922,7 +923,7 @@ section{padding:96px 0;position:relative}
     <div class="foot-bottom">
       <span>© 2026 Rise Formations Ltd</span>
       <span>131 Finsbury Pavement, London, EC2A 1NT</span>
-      <span style="opacity:.55;font-size:11px">build v6 · 2026-09-17</span>
+      <span style="opacity:.55;font-size:11px">build v7 · 2026-09-17</span>
     </div>
   </div>
 </footer>
