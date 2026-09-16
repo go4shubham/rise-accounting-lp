@@ -59,6 +59,9 @@ window.RISE = {
     { cat: "global",     icon: "percent",                title: "UAE accounting, VAT & corporate tax advice", line: "Stay on top of your finances and compliance obligations with expert support." },
     { cat: "global",     icon: "users-round",            title: "UAE payroll & WPS",                       line: "Payroll and wage-protection rules, handled." },
     { cat: "global",     icon: "plane",                  title: "UK–UAE tax planning",                     line: "Cross-border structuring and residency advice." },
+    { cat: "global",     icon: "file-check-2",           title: "Tax Residency Certificate support",       line: "TRC application, evidence pack and follow-up with the FTA." },
+    { cat: "global",     icon: "banknote",               title: "Business bank account setup",             line: "Documentation, introductions and support with UAE bank onboarding." },
+    { cat: "global",     icon: "shield-check",           title: "UBO & ESR filings",                       line: "Ultimate Beneficial Owner filings and Economic Substance reports." },
     { cat: "global",     icon: "flag",                   title: "US company setup & ongoing finance",      line: "Formation, books, payroll, tax and annual reporting." },
     { cat: "global",     icon: "shield-check",           title: "US sales tax & audit support",            line: "Sales tax returns and help preparing for audit." }
   ],
@@ -1070,21 +1073,18 @@ section{padding:96px 0}
 .hs-lines{position:absolute;inset:0;width:100%;height:100%;stroke:var(--ice);stroke-width:2;stroke-dasharray:4 5;fill:none;opacity:.85;z-index:1}
 /* Clean hub + 3-spoke org-chart layout (Sep 16 hub-and-spoke v3) */
 .orgchart-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;padding:8px 6px}
-.orgchart{display:flex;flex-direction:column;align-items:center;gap:0;width:100%;max-width:400px}
+.orgchart{display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;max-width:400px}
 .oc-hub{position:relative;background:var(--navy);color:#fff;padding:14px 20px 12px;border-radius:16px;box-shadow:var(--shadow-lg);text-align:center;min-width:160px;z-index:2}
-.oc-hub::after{content:"";position:absolute;bottom:-14px;left:50%;width:2px;height:14px;background:#3B6186;opacity:.55;transform:translateX(-50%)}
 .oc-hub .oc-logo{display:block;background:#fff;border-radius:11px;padding:6px;margin:0 auto 8px;width:44px;height:44px;box-sizing:border-box}
 .oc-hub .oc-logo img{width:100%;height:100%;object-fit:contain;display:block}
 .oc-hub b{display:block;font-size:14px;font-weight:700;line-height:1.2}
 .oc-hub em{display:block;font-style:normal;font-size:11.5px;color:rgba(255,255,255,.72);margin-top:2px}
-.oc-spokes{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%;padding-top:26px;margin-top:0}
-.oc-spokes::before{content:"";position:absolute;top:14px;left:calc((100% - 2*10px)/6);right:calc((100% - 2*10px)/6);height:2px;background:#3B6186;opacity:.55}
-.oc-spoke{position:relative;background:#fff;padding:10px 10px;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--line);display:flex;align-items:center;gap:8px;min-width:0}
-.oc-spoke::before{content:"";position:absolute;top:-14px;left:50%;width:2px;height:14px;background:#3B6186;opacity:.55;transform:translateX(-50%)}
+.oc-spokes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%}
+.oc-spoke{background:#fff;padding:10px 10px;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--line);display:flex;align-items:center;gap:8px;min-width:0}
 .oc-spoke .code{width:30px;height:30px;font-size:10.5px;flex:none}
 .oc-spoke b{display:block;font-size:12.5px;line-height:1.2}
 .oc-spoke em{display:block;font-style:normal;font-size:10.5px;color:var(--ink-2);line-height:1.25;margin-top:2px}
-@media (max-width:560px){.oc-hub{min-width:140px;padding:12px 14px 10px}.oc-hub::after{height:10px;bottom:-10px}.oc-spokes{gap:6px;padding-top:20px}.oc-spokes::before{top:10px}.oc-spoke{padding:8px 8px;flex-direction:column;text-align:center;gap:4px}.oc-spoke::before{height:10px;top:-10px}}
+@media (max-width:560px){.orgchart{gap:12px}.oc-hub{min-width:140px;padding:12px 14px 10px}.oc-spokes{gap:6px}.oc-spoke{padding:8px 8px;flex-direction:column;text-align:center;gap:4px}}
 
 /* ---------------- Grow panel: staggered bar rise (Ashleigh Sep 14 feedback, C6) ---------------- */
 .grow .gs{opacity:0;transform:translateY(30px) scaleY(.5);transform-origin:bottom center;transition:opacity .55s var(--ease),transform .7s var(--ease)}

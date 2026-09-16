@@ -26,31 +26,44 @@
 window.RISE = {
 
   /* ---------- Service groups (used for filters, colours and the nav menu) ---------- */
-  /* categories order = tabs order. Growth first per client. */
+  /* categories order = tabs order. Growth first per client. Identical set to main + Dubai LPs. */
   categories: {
     growth:     { label: "Growth & advisory",              colour: "navy",  default: true },
     accounting: { label: "Accounting & compliance",        colour: "cyan"  },
-    operations: { label: "Finance operations & reporting", colour: "steel" }
+    operations: { label: "Finance operations & reporting", colour: "steel" },
+    global:     { label: "International expansion",        colour: "slate" }
   },
 
   /* ---------- SERVICES ----------
-     Add a service: copy one line, change the words. Keep "line" to one short sentence.
-     featured: true  = shown before "Show all" is clicked. 8 featured keeps the grid tidy. */
+     Identical 27-item list across main + tech-startup + Dubai. Only featured flags differ per page. */
   services: [
-    { cat: "growth",     icon: "rocket",                 title: "SEIS & EIS Advance Assurance",            line: "Eligibility review, application and HMRC queries in 48 hours.", featured: true },
-    { cat: "growth",     icon: "chart-pie",              title: "EMI option schemes",                      line: "Valuation, scheme setup and ongoing compliance for your key hires.", featured: true },
-    { cat: "growth",     icon: "hand-coins",             title: "Fundraising & investor reporting",        line: "The financial statements and reports your investors ask for.", featured: true },
-    { cat: "growth",     icon: "trending-up",            title: "Financial forecasting & modelling",       line: "Revenue forecasts, runway and break-even analysis.",           featured: true },
-    { cat: "accounting", icon: "user-round-check",       title: "Dedicated Chartered Accountant",          line: "A named contact for your startup, regular updates and direct access.", featured: true },
-    { cat: "accounting", icon: "book-open-check",        title: "Bookkeeping on Xero or QuickBooks",       line: "Day-to-day records and bank reconciliations, kept current.",   featured: true },
+    { cat: "growth",     icon: "rocket",                 title: "SEIS & EIS Advance Assurance",            line: "Eligibility review, application and HMRC queries.", featured: true },
+    { cat: "growth",     icon: "chart-pie",              title: "EMI option schemes",                      line: "Valuation, scheme setup and ongoing compliance.", featured: true },
+    { cat: "growth",     icon: "hand-coins",             title: "Fundraising & lender reporting",          line: "The numbers investors and lenders ask for.", featured: true },
+    { cat: "growth",     icon: "trending-up",            title: "Financial forecasting & modelling",       line: "Revenue forecasts, runway and break-even analysis.", featured: true },
+    { cat: "accounting", icon: "user-round-check",       title: "Dedicated Chartered Accountant",          line: "A named contact, regular updates and direct access.", featured: true },
+    { cat: "accounting", icon: "book-open-check",        title: "Bookkeeping on Xero or QuickBooks",       line: "Day-to-day records and bank reconciliations, kept current.", featured: true },
     { cat: "accounting", icon: "file-check-2",           title: "Year-end accounts, Confirmation Statement & Corporation Tax", line: "Annual accounts, company filings and tax filings, done on time.", featured: true },
-    { cat: "operations", icon: "briefcase-business",     title: "Outsourced Finance Function",             line: "Full finance team on tap. Vendor payments, senior finance leaders and controls, without hiring in-house.", featured: true },
+    { cat: "operations", icon: "briefcase-business",     title: "Outsourced Finance Function",             line: "Everything you see here plus payroll and vendor payments, and senior finance leaders without hiring in-house.", featured: true },
     { cat: "accounting", icon: "receipt-pound-sterling", title: "VAT Support",                             line: "We ensure you're VAT compliant and never miss a deadline." },
-    { cat: "accounting", icon: "wallet",                 title: "Payroll & pensions",                      line: "Payslips, PAYE, pensions and auto-enrolment for your team." },
-    { cat: "operations", icon: "chart-column",           title: "Management accounts",                     line: "Monthly P&L, balance sheet and cash flow with commentary." },
-    { cat: "operations", icon: "chart-line",             title: "Cash-flow forecasts & budgets",           line: "Rolling forecasts and runway checks for your board." },
-    { cat: "growth",     icon: "scale",                  title: "Business valuations",                     line: "For funding rounds, EMI schemes or sale." },
-    { cat: "growth",     icon: "layers-3",               title: "Scenario planning",                       line: "Model hiring, investment and growth decisions before you make them." }
+    { cat: "accounting", icon: "wallet",                 title: "Payroll & pensions",                      line: "Payslips, pensions and optional direct payments." },
+    { cat: "operations", icon: "chart-column",           title: "Management accounts",                     line: "Monthly or quarterly P&L, balance sheet and cash flow." },
+    { cat: "operations", icon: "receipt",                title: "Sales invoicing & credit control",        line: "Invoices sent and customer payments followed up." },
+    { cat: "operations", icon: "banknote",               title: "Supplier bills & payment runs",           line: "Bills approved and suppliers paid on time." },
+    { cat: "operations", icon: "chart-line",             title: "Cash-flow forecasts & budgets",           line: "Rolling forecasts and actual-versus-budget checks." },
+    { cat: "operations", icon: "presentation",           title: "KPI & board reporting",                   line: "Performance dashboards with clear commentary." },
+    { cat: "operations", icon: "plug-zap",               title: "Finance systems & processes",             line: "Tool setup, invoice capture and connected workflows." },
+    { cat: "growth",     icon: "scale",                  title: "Business valuations",                     line: "For a sale, investment or tax purposes." },
+    { cat: "growth",     icon: "layers-3",               title: "Scenario planning",                       line: "Model hiring, investment and growth decisions." },
+    { cat: "global",     icon: "building-2",             title: "Dubai company formation support",         line: "Free zone or mainland. We guide the whole setup, licence and post-setup support." },
+    { cat: "global",     icon: "percent",                title: "UAE accounting, VAT & corporate tax advice", line: "Stay on top of your finances and compliance obligations with expert support." },
+    { cat: "global",     icon: "users-round",            title: "UAE payroll & WPS",                       line: "Payroll and wage-protection rules, handled." },
+    { cat: "global",     icon: "plane",                  title: "UK–UAE tax planning",                     line: "Cross-border structuring and residency advice." },
+    { cat: "global",     icon: "file-check-2",           title: "Tax Residency Certificate support",       line: "TRC application, evidence pack and follow-up with the FTA." },
+    { cat: "global",     icon: "banknote",               title: "Business bank account setup",             line: "Documentation, introductions and support with UAE bank onboarding." },
+    { cat: "global",     icon: "shield-check",           title: "UBO & ESR filings",                       line: "Ultimate Beneficial Owner filings and Economic Substance reports." },
+    { cat: "global",     icon: "flag",                   title: "US company setup & ongoing finance",      line: "Formation, books, payroll, tax and annual reporting." },
+    { cat: "global",     icon: "shield-check",           title: "US sales tax & audit support",            line: "Sales tax returns and help preparing for audit." }
   ],
 
   /* ---------- WHY RISE (left list). "visual" must match a block in the page: accountant | chat | fee | books | proactive | grow ---------- */
@@ -1087,21 +1100,18 @@ section{padding:96px 0}
 
 /* Clean org-chart hub + 3 spokes (Sep 16 tech-startup rebuild) */
 .orgchart-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;padding:8px 6px}
-.orgchart{display:flex;flex-direction:column;align-items:center;gap:0;width:100%;max-width:400px}
+.orgchart{display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;max-width:400px}
 .oc-hub{position:relative;background:var(--navy);color:#fff;padding:14px 20px 12px;border-radius:16px;box-shadow:var(--shadow-lg);text-align:center;min-width:160px;z-index:2}
-.oc-hub::after{content:"";position:absolute;bottom:-14px;left:50%;width:2px;height:14px;background:#3B6186;opacity:.55;transform:translateX(-50%)}
 .oc-hub .oc-logo{display:block;background:#fff;border-radius:11px;padding:6px;margin:0 auto 8px;width:44px;height:44px;box-sizing:border-box}
 .oc-hub .oc-logo img{width:100%;height:100%;object-fit:contain;display:block}
 .oc-hub b{display:block;font-size:14px;font-weight:700;line-height:1.2}
 .oc-hub em{display:block;font-style:normal;font-size:11.5px;color:rgba(255,255,255,.72);margin-top:2px}
-.oc-spokes{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%;padding-top:26px;margin-top:0}
-.oc-spokes::before{content:"";position:absolute;top:14px;left:calc((100% - 2*10px)/6);right:calc((100% - 2*10px)/6);height:2px;background:#3B6186;opacity:.55}
-.oc-spoke{position:relative;background:#fff;padding:10px 10px;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--line);display:flex;align-items:center;gap:8px;min-width:0}
-.oc-spoke::before{content:"";position:absolute;top:-14px;left:50%;width:2px;height:14px;background:#3B6186;opacity:.55;transform:translateX(-50%)}
+.oc-spokes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%}
+.oc-spoke{background:#fff;padding:10px 10px;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--line);display:flex;align-items:center;gap:8px;min-width:0}
 .oc-spoke .code{width:30px;height:30px;font-size:10.5px;flex:none}
 .oc-spoke b{display:block;font-size:12.5px;line-height:1.2}
 .oc-spoke em{display:block;font-style:normal;font-size:10.5px;color:var(--ink-2);line-height:1.25;margin-top:2px}
-@media (max-width:560px){.oc-hub{min-width:140px;padding:12px 14px 10px}.oc-hub::after{height:10px;bottom:-10px}.oc-spokes{gap:6px;padding-top:20px}.oc-spokes::before{top:10px}.oc-spoke{padding:8px 8px;flex-direction:column;text-align:center;gap:4px}.oc-spoke::before{height:10px;top:-10px}}
+@media (max-width:560px){.orgchart{gap:12px}.oc-hub{min-width:140px;padding:12px 14px 10px}.oc-spokes{gap:6px}.oc-spoke{padding:8px 8px;flex-direction:column;text-align:center;gap:4px}}
 
 /* ---------------- Grow panel: staggered bar rise (Ashleigh Sep 14 feedback, C6) ---------------- */
 .grow .gs{opacity:0;transform:translateY(30px) scaleY(.5);transform-origin:bottom center;transition:opacity .55s var(--ease),transform .7s var(--ease)}
