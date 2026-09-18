@@ -1028,7 +1028,7 @@ section{padding:96px 0}
 @media (max-width:560px){.stage{height:470px}.loc{padding:12px 14px}.code{width:44px;height:44px;font-size:12.5px}}
 
 /* ---------------- CLOSING BAND: photo with Navy overlay ---------------- */
-.cta-panel{--cta-img:url(../assets/team-cta.jpg);background:linear-gradient(rgba(11,36,63,.58),rgba(11,36,63,.58)),var(--cta-img) center 55%/cover no-repeat;padding:96px 32px}
+.cta-panel{--cta-img:url(../assets/team-cta.jpg);background:linear-gradient(rgba(11,36,63,.82),rgba(11,36,63,.82)),var(--cta-img) center 55%/cover no-repeat;padding:96px 32px}
 .cta-panel h2{color:#fff}
 .cta-panel .sub{color:rgba(255,255,255,.86)}
 .cta .ticks{color:rgba(255,255,255,.88)}
@@ -1576,16 +1576,14 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
   </div>
 </section>
 
-<!-- ============================ AFTER SETUP (cards come from CONFIG.services, 3 post-formation services) ============================ -->
-<section id="services">
+<!-- After-setup services block: DOM structure kept for JS but section VISUALLY REMOVED per user (too little content for a full section). Kept minimal so services JS does not crash. -->
+<section id="services" style="display:none">
   <div class="wrap">
-    <div class="head">
-      <h2>After your company is live</h2>
-      <p class="sub">The same team stays on as your accountants. No switching, no re-onboarding.</p>
-    </div>
+    <div class="head"><h2>After setup</h2></div>
+    <div class="filters" id="filters" role="tablist"></div>
     <div class="svc-grid" id="svcGrid"></div>
     <div class="svc-foot">
-      <p class="more-note">Not sure what you need? <button data-form>Ask on the consultation call</button></p>
+      <div class="more" id="more"><button class="btn btn-soft" id="moreBtn"><span>Show all services</span></button></div>
     </div>
   </div>
 </section>
@@ -1599,8 +1597,8 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
   <div class="wrap">
     <div class="head rev-head">
       <div class="rev-head-l">
-        <h2>Don't take our word for it</h2>
-        <p class="sub">Real Google reviews from founders who set up their UAE company with Rise.</p>
+        <h2>Founders who set up their UAE company with Rise</h2>
+        <p class="sub">Real Google reviews from the .ae page.</p>
       </div>
       <div class="rev-badges">
         <div class="rev-badge-static">
@@ -1654,15 +1652,9 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
     <div class="cta-panel">
       <div class="cta-in">
         <h2>Ready to set up your UAE company?</h2>
-        <p class="sub">Talk to a Chartered Accountant for free. We map Mainland versus Freezone for your business and quote the full cost before you commit anything.</p>
-        <ul class="ticks">
-          <li><svg class="ic"><use href="#i-check"/></svg>Free 30-min consultation, no hard sell</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Chartered Accountants, not brokers</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Dubai team on the ground, London team behind them</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Same team stays on as your accountants after setup</li>
-        </ul>
-        <button class="btn btn-primary" data-form>Book a consultation</button>
-        <span class="cta-micro">30-minute call. Reply within 24 hours.</span>
+        <p class="sub">Free 30-minute consultation with a Chartered Accountant. Dubai team on the ground, London team behind them.</p>
+        <button class="btn btn-primary" data-form>Book a consultation <svg class="ic"><use href="#i-arrow-right"/></svg></button>
+        <span class="cta-micro">Reply within 24 hours. No hard sell.</span>
       </div>
     </div>
   </div>
@@ -1844,36 +1836,37 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
   });
   grid.addEventListener('click', e => { const b = e.target.closest('.svc'); if (b) openForm(b.dataset.service); });
 
-  /* ---------------- WHY RISE ---------------- */
+  /* ---------------- WHY RISE (section removed on this page; block guarded) ---------------- */
   const whyList = $('#whyList'), stage = $('#stage');
-  let whyIdx = 0, whyTimer = null, whyAuto = !reduce;
-  whyList.innerHTML = C.why.map((w, i) => {
-    const col = COL[w.colour];
-    return `<button class="wi" role="tab" aria-selected="false" data-i="${i}" style="--c:${col.c};--c50:${col.c50};--c6:${col.c6}">
-      <span class="wi-ic">${icon(w.icon)}</span>
-      <span><span class="wi-t">${esc(w.title)}</span><span class="wi-d">${esc(w.line)}</span></span>
-      <span class="prog"><i></i></span></button>`;
-  }).join('');
-  function showWhy(i, fromUser) {
-    whyIdx = i;
-    const w = C.why[i];
-    $$('.wi', whyList).forEach((b, j) => {
-      b.classList.toggle('on', j === i); b.classList.remove('run'); b.setAttribute('aria-selected', j === i);
-    });
-    $$('.v', stage).forEach(v => v.classList.toggle('on', v.dataset.v === w.visual));
-    stage.style.setProperty('--stage', COL[w.colour].bg);
-    if (fromUser) whyAuto = false;
-    clearTimeout(whyTimer);
-    if (whyAuto) {
-      const b = $$('.wi', whyList)[i];
-      void b.offsetWidth; b.classList.add('run');
-      whyTimer = setTimeout(() => showWhy((i + 1) % C.why.length), 6000);
+  if (whyList && stage && C.why) {
+    let whyIdx = 0, whyTimer = null, whyAuto = !reduce;
+    whyList.innerHTML = C.why.map((w, i) => {
+      const col = COL[w.colour];
+      return `<button class="wi" role="tab" aria-selected="false" data-i="${i}" style="--c:${col.c};--c50:${col.c50};--c6:${col.c6}">
+        <span class="wi-ic">${icon(w.icon)}</span>
+        <span><span class="wi-t">${esc(w.title)}</span><span class="wi-d">${esc(w.line)}</span></span>
+        <span class="prog"><i></i></span></button>`;
+    }).join('');
+    function showWhy(i, fromUser) {
+      whyIdx = i;
+      const w = C.why[i];
+      $$('.wi', whyList).forEach((b, j) => {
+        b.classList.toggle('on', j === i); b.classList.remove('run'); b.setAttribute('aria-selected', j === i);
+      });
+      $$('.v', stage).forEach(v => v.classList.toggle('on', v.dataset.v === w.visual));
+      stage.style.setProperty('--stage', COL[w.colour].bg);
+      if (fromUser) whyAuto = false;
+      clearTimeout(whyTimer);
+      if (whyAuto) {
+        const b = $$('.wi', whyList)[i];
+        void b.offsetWidth; b.classList.add('run');
+        whyTimer = setTimeout(() => showWhy((i + 1) % C.why.length), 6000);
+      }
     }
+    whyList.addEventListener('click', e => { const b = e.target.closest('.wi'); if (b) showWhy(+b.dataset.i, true); });
+    new IntersectionObserver((en, ob) => { if (en[0].isIntersecting) { showWhy(0); ob.disconnect(); } }, { threshold: .35 }).observe(stage);
+    showWhy(0); clearTimeout(whyTimer); $$('.wi', whyList)[0].classList.remove('run');
   }
-  whyList.addEventListener('click', e => { const b = e.target.closest('.wi'); if (b) showWhy(+b.dataset.i, true); });
-  // start auto-rotation only once the section is on screen
-  new IntersectionObserver((en, ob) => { if (en[0].isIntersecting) { showWhy(0); ob.disconnect(); } }, { threshold: .35 }).observe(stage);
-  showWhy(0); clearTimeout(whyTimer); $$('.wi', whyList)[0].classList.remove('run');
 
   /* ---------------- REVIEWS / STEPS / FAQ ---------------- */
   const revTrack = $('#revTrack');
