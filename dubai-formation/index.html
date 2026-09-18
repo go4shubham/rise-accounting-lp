@@ -1945,14 +1945,15 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
   const spy = new IntersectionObserver(en => en.forEach(x => {
     if (x.isIntersecting) links.forEach(a => a.classList.toggle('on', a.dataset.go === x.target.id));
   }), { rootMargin: '-45% 0px -50% 0px' });
-  ['services', 'why', 'integrations', 'reviews', 'how', 'faq'].forEach(id => spy.observe(document.getElementById(id)));
+  ['services', 'why', 'integrations', 'reviews', 'how', 'faq'].forEach(id => { const el = document.getElementById(id); if (el) spy.observe(el); });
   addEventListener('scroll', () => { if (scrollY < 300) links.forEach(a => a.classList.remove('on')); }, { passive: true });
   const burger = $('#burger'), mnav = $('#mnav');
   burger.addEventListener('click', () => { const o = !mnav.classList.contains('open'); mnav.classList.toggle('open', o); burger.setAttribute('aria-expanded', o); });
   
 
-  /* ---------------- INTEGRATION LINES ---------------- */
+  /* ---------------- INTEGRATION LINES (section deleted; block guarded) ---------------- */
   const flow = $('#flow'), svg = $('#flowLines'), NS = 'http://www.w3.org/2000/svg';
+  if (flow && svg) {
   function drawFlow() {
     svg.innerHTML = '';
     if (getComputedStyle(svg).display === 'none') return;
@@ -1981,6 +1982,7 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawFlow);
   addEventListener('load', drawFlow);
   drawFlow();
+  } /* end if (flow && svg) integration flow guard */
 
   /* ---------------- POPUP FORM ----------------
      HOOK UP: to send leads to HubSpot, replace the body of submitLead() with a call to
