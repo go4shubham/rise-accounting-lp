@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-09-18",
+  "window": "LAST_30_DAYS",
+  "mapping": [
+    {
+      "lp_id": "L1",
+      "current_url": "https://riseformations.co.uk/",
+      "new_url": "https://go4shubham.github.io/rise-accounting-lp/formations/",
+      "account": "Rise Formations - Google Ads",
+      "cid": "714-815-1091",
+      "campaign_name": "Google | Search | UK | Company Formation",
+      "spend_30d": 1588.46,
+      "currency": "GBP",
+      "top_keywords": ["register a company", "register ltd company", "new company registration"]
+    },
+    {
+      "lp_id": "L2",
+      "current_url": "https://riseaccounting.co.uk/tech-startup-accountants/",
+      "new_url": "https://go4shubham.github.io/rise-accounting-lp/tech-startup/",
+      "account": "Rise Accounting - Google Ads",
+      "cid": "262-222-3254",
+      "campaign_name": "Google_Search_Startup_UK",
+      "spend_30d": 2573.50,
+      "currency": "GBP",
+      "top_keywords": ["tech startup accountants", "accountants for tech startups", "accounting for technology companies"]
+    },
+    {
+      "lp_id": "L3",
+      "current_url": "https://riseaccounting.co.uk/dubai/",
+      "new_url": "https://go4shubham.github.io/rise-accounting-lp/dubai/",
+      "account": "Rise Accounting - Google Ads",
+      "cid": "262-222-3254",
+      "campaign_name": "Google_Search_Dubai_Generic_PHS",
+      "ad_group": "Search | Generic | Dubai | Accountancy Firm | PHS",
+      "spend_30d": 28.69,
+      "currency": "GBP",
+      "top_keywords": ["accounting firm", "accounting services", "accounting firm dubai"]
+    },
+    {
+      "lp_id": "L4",
+      "current_url": "https://riseaccounting.co.uk/accountancy-firm/",
+      "new_url": "https://go4shubham.github.io/rise-accounting-lp/",
+      "account": "Rise Accounting - Google Ads",
+      "cid": "262-222-3254",
+      "campaign_name": "Google_Search_Generic_UK_BRO",
+      "spend_30d": 1370.33,
+      "currency": "GBP",
+      "top_keywords": ["accountancy firm", "best accounting firms uk", "accounting firms london"]
+    },
+    {
+      "lp_id": "L5",
+      "current_url": "https://riseaccounting.ae/services/company-formation",
+      "new_url": "https://go4shubham.github.io/rise-accounting-lp/dubai-formation/",
+      "account": "Rise Accounting Dubai",
+      "cid": "258-390-2944",
+      "campaign_name": "Google_Search_Dubai_Formation",
+      "spend_30d": 7641.32,
+      "currency": "AED",
+      "top_keywords": ["business setup in dubai", "business setup consultants in dubai", "setting up a company in dubai"]
+    }
+  ]
+}
