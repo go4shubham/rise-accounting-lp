@@ -1129,7 +1129,7 @@ section{padding:96px 0}
 /* ---------------- Pillars section: 3 cards in one section (tech-startup Sep 16 consolidation) ---------------- */
 #pillars{padding:80px 0}
 #pillars .head{margin-bottom:44px}
-.pillar-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.pillar-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:820px;margin:0 auto}
 .pillar-card{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s}
 .pillar-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--cyan)}
 .pillar-icon{width:52px;height:52px;border-radius:14px;background:rgba(59,203,247,.16);color:var(--navy);display:grid;place-items:center;flex:none}
