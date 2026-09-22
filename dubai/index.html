@@ -66,7 +66,7 @@ window.RISE = {
   why: [
     { visual: "accountant", colour: "cyan",  icon: "user-round-check",     title: "A dedicated Chartered Accountant", line: "One named expert who knows your business inside out." },
     { visual: "advisory",   colour: "navy",  icon: "rocket",               title: "Growth & advisory",               line: "SEIS, EIS, EMI, valuations and forecasts for your next big move." },
-    { visual: "global",     colour: "steel", icon: "earth",                title: "International expansion",         line: "Your London team, our own Dubai team and US CPA partners, all joined up." },
+    { visual: "global",     colour: "steel", icon: "earth",                title: "International expansion",         line: "Own teams in London and Dubai. Trusted CPAs in the US." },
     { visual: "chat",       colour: "cyan",  icon: "messages-square",      title: "Answers within 24 hours",         line: "On Slack, Teams, email or a call. Ad-hoc questions welcome." },
     { visual: "fee",        colour: "slate", icon: "badge-pound-sterling", title: "One fixed monthly fee",           line: "Only pay for what you need. No hourly billing, no surprise bills." },
     { visual: "books",      colour: "steel", icon: "refresh-cw",           title: "Real-time books",                 line: "Reconciled all year, so you always know where you stand." },
@@ -700,6 +700,12 @@ section{padding:108px 0;position:relative}
 .opt:hover{border-color:var(--navy)}
 .opt.sel{border-color:var(--cyan);background:var(--cyan-50)}
 .opt .ic{width:18px;height:18px;color:var(--ink-3)}
+.m-sub{font-size:14px;color:var(--ink-3);margin:8px 0 4px}
+.opts-check .opt{justify-content:flex-start;gap:14px}
+.opts-check .opt .ic-check{width:22px;height:22px;flex:none;border:1.5px solid var(--line);border-radius:5px;background:#fff;display:grid;place-items:center;color:#fff;transition:.15s}
+.opts-check .opt .ic-check svg{width:14px;height:14px;opacity:0;transition:.15s}
+.opts-check .opt.sel .ic-check{border-color:var(--cyan);background:var(--cyan)}
+.opts-check .opt.sel .ic-check svg{opacity:1}
 .fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
 .f{display:flex;flex-direction:column;gap:6px}
 .f.full{grid-column:1/-1}
@@ -1537,14 +1543,14 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
       <div class="v" data-v="global">
         <div class="glob orgchart-wrap">
           <div class="orgchart">
-            <div class="oc-sat oc-sat1"><span class="code c1">UK</span><div><b>London</b><em>UK team</em></div></div>
-            <div class="oc-sat oc-sat2"><span class="code c2">UAE</span><div><b>Dubai</b><em>On the ground</em></div></div>
+            <div class="oc-sat oc-sat1"><span class="code c1">UK</span><div><b>London</b></div></div>
+            <div class="oc-sat oc-sat2"><span class="code c2">UAE</span><div><b>Dubai</b></div></div>
             <div class="oc-hub">
               <span class="oc-logo"><img src="assets/logo-f25648fb.svg" alt=""></span>
               <b>Rise Accounting</b>
-              <em>One team, three markets</em>
+              <em>One team across all markets</em>
             </div>
-            <div class="oc-sat oc-sat3"><span class="code c3">US</span><div><b>United States</b><em>CPA partners</em></div></div>
+            <div class="oc-sat oc-sat3"><span class="code c3">US</span><div><b>United States</b></div></div>
           </div>
         </div>
       </div>
@@ -1803,8 +1809,10 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
       <div class="m-about tag cyan" id="mAbout" hidden></div>
       <div class="m-prog" id="mProg"><span id="mStepTxt">Step 1 of 2</span><div class="bar"><i id="mBar"></i></div></div>
       <div class="m-step on" data-s="1">
-        <h4>What location do you need support in?</h4>
-        <div class="opts" id="spendOpts"></div>
+        <h4>What services are you most interested in?</h4>
+        <p class="m-sub">Select all that apply.</p>
+        <div class="opts opts-check" id="spendOpts"></div>
+        <div class="m-actions"><button type="button" class="btn btn-primary" id="mNext" disabled>Next</button></div>
       </div>
       <form class="m-step" data-s="2" id="mForm" novalidate>
         <h4>Where should we reach you?</h4>
@@ -2054,10 +2062,10 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
      https://api.hsforms.com/submissions/v3/integration/submit/{portalId}/{formGuid}
      using the fields below (location, name, company, email, phone, service). */
   const modal = $('#modal'), spendOpts = $('#spendOpts');
-  const LOCATIONS = ['UK', 'Dubai', 'US', 'Multiple'];
+  const SERVICES = ['Company Formation', 'Corporate Tax', 'Tax Residency Certificates', 'Accounting & Bookkeeping', 'Annual Accounts', 'Management Accounts', 'VAT and/or Payroll'];
   const lead = {};
   let lastFocus = null;
-  spendOpts.innerHTML = LOCATIONS.map(s => `<button type="button" class="opt" data-v="${s}">${s}${icon('arrow-right')}</button>`).join('');
+  spendOpts.innerHTML = SERVICES.map(s => `<button type="button" class="opt" data-v="${s}" aria-pressed="false"><span class="ic-check">${icon('check')}</span><span>${s}</span></button>`).join('');
   function goStep(n) {
     $$('.m-step', modal).forEach(s => s.classList.toggle('on', +s.dataset.s === n));
     $('#mProg').style.display = n === 3 ? 'none' : '';
@@ -2084,9 +2092,17 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { if (modal.classList.contains('open')) closeForm(); else if (bot.classList.contains('open')) closeBot(); } });
   spendOpts.addEventListener('click', e => {
     const b = e.target.closest('.opt'); if (!b) return;
-    $$('.opt', spendOpts).forEach(o => o.classList.toggle('sel', o === b));
-    lead.location = b.dataset.v;
-    setTimeout(() => goStep(2), 220);
+    const nowSel = !b.classList.contains('sel');
+    b.classList.toggle('sel', nowSel);
+    b.setAttribute('aria-pressed', nowSel ? 'true' : 'false');
+    const anySel = $$('.opt.sel', spendOpts).length > 0;
+    $('#mNext').disabled = !anySel;
+  });
+  $('#mNext').addEventListener('click', () => {
+    const picks = $$('.opt.sel', spendOpts).map(o => o.dataset.v);
+    if (!picks.length) return;
+    lead.services = picks;
+    goStep(2);
   });
   $('#mBack').addEventListener('click', () => goStep(1));
   const rules = {
