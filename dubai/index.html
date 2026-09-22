@@ -1877,11 +1877,11 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
       const v = C.categories[defaultCatKey];
       h += `<button class="chip on" data-f="${defaultCatKey}" role="tab" aria-selected="true"><i style="background:${COL[v.colour].c}"></i>${esc(v.label)} <b>${counts[defaultCatKey]}</b></button>`;
     }
-    h += `<button class="chip${defaultCatKey ? '' : ' on'}" data-f="all" role="tab" aria-selected="${defaultCatKey ? 'false' : 'true'}">All services <b>${C.services.length}</b></button>`;
     Object.entries(C.categories).forEach(([k, v]) => {
       if (k === defaultCatKey || !counts[k]) return;
       h += `<button class="chip" data-f="${k}" role="tab" aria-selected="false"><i style="background:${COL[v.colour].c}"></i>${esc(v.label)} <b>${counts[k]}</b></button>`;
     });
+    h += `<button class="chip${defaultCatKey ? '' : ' on'}" data-f="all" role="tab" aria-selected="${defaultCatKey ? 'false' : 'true'}">All services <b>${C.services.length}</b></button>`;
     filters.innerHTML = h;
   }
   function svcCard(s) {
