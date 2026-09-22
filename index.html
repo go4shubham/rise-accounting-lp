@@ -1782,6 +1782,10 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
         <div class="fields">
           <div class="f full"><label for="fName">Name</label><input id="fName" name="name" autocomplete="name" required><small>Please add your name</small></div>
           <div class="f full"><label for="fCo">Company name</label><input id="fCo" name="company" autocomplete="organization" required><small>Please add your company</small></div>
+          <div class="f full"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@company.co.uk" required><small>Please add a valid email</small></div>
+          <div class="f full"><label for="fPhone">Phone number</label>
+            <div class="phone"><select id="fCc" name="country_code" aria-label="Country code"><option value="+44" selected>UK +44</option><option value="+971">UAE +971</option><option value="+1">US +1</option><option value="+353">IE +353</option><option value="">Other</option></select>
+            <input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="7700 900123" required></div><small>Please add a phone number</small></div>
         </div>
         <div class="m-actions"><button type="button" class="btn btn-soft" id="mBack">Back</button><button type="submit" class="btn btn-primary">Talk to an expert</button></div>
         <p class="fine">We only use your details to reply to you. An accountant gets back to you within 24 hours.</p>
@@ -2054,6 +2058,8 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
   const rules = {
     fName: v => v.trim().length > 1,
     fCo: v => v.trim().length > 1,
+    fEmail: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
+    fPhone: v => v.replace(/\D/g, '').length >= 7
   };
   Object.keys(rules).forEach(id => $('#' + id).addEventListener('input', e => {
     if (rules[id](e.target.value)) e.target.closest('.f').classList.remove('err');
@@ -2067,7 +2073,7 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
       if (!good && !first) first = el; ok = ok && good;
     });
     if (!ok) { first.focus(); return; }
-    Object.assign(lead, { name: $('#fName').value.trim(), company: $('#fCo').value.trim() });
+    Object.assign(lead, { name: $('#fName').value.trim(), company: $('#fCo').value.trim(), email: $('#fEmail').value.trim(), phone: $('#fCc').value + ' ' + $('#fPhone').value.trim() });
     submitLead(lead);
     $('#doneTitle').textContent = `Thanks, ${lead.name.split(' ')[0]}. We'll be in touch.`;
     goStep(3);
