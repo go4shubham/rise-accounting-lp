@@ -134,7 +134,7 @@ section{padding:96px 0;position:relative}
 .hero-r{position:relative}
 .banks-title{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:16px;text-align:center}
 .banks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:20px;background:linear-gradient(135deg,#5766D6 0%,#4048B2 100%);border-radius:22px;box-shadow:0 30px 60px -24px rgba(78,90,199,.5)}
-/* Bank cards intentionally STATIC — no hover transform, no ::before movement (Sep 17 fix: perceived rotation on scroll) */
+/* Bank cards intentionally STATIC . no hover transform, no ::before movement (Sep 17 fix: perceived rotation on scroll) */
 .bcard{aspect-ratio:16/10;border-radius:12px;background:#fff;display:grid;place-items:center;font-weight:800;font-size:15px;letter-spacing:-.02em;position:relative;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.08)}
 .bcard::before{content:"";position:absolute;right:-30%;top:-40%;width:80%;height:120%;border-radius:50%;opacity:.85}
 .bcard span{position:relative;z-index:1;padding:0 10px;text-align:center}
@@ -441,7 +441,7 @@ section{padding:96px 0;position:relative}
 
 <main id="main">
 
-<!-- ============================ HERO — VARIANT A (default, ships live) ============================ -->
+<!-- ============================ HERO . VARIANT A (default, ships live) ============================ -->
 <section class="hero" id="hero">
   <div class="wrap hero-grid">
     <div class="hero-l">
@@ -970,7 +970,7 @@ addEventListener('scroll', () => {
 }, { passive:true });
 fabTop.addEventListener('click', () => scrollTo({ top:0, behavior:'smooth' }));
 
-/* Formations-specific chatbot topics — each has keyword triggers + a canned answer */
+/* Formations-specific chatbot topics . each has keyword triggers + a canned answer */
 const TOPICS = [
   { keys:["pricing","package","cost","fee","price","how much","starter","privacy","tech"],
     answer:"Three packages: <b>Starter £0</b>, <b>Privacy £14.99</b>, <b>Tech £49.99</b>. All prices are plus the £89 Companies House fee (we cover £11 of the £100 standard charge). Every package includes a free business bank account of your choice." },
