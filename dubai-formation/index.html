@@ -2052,7 +2052,32 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
     $('#doneTitle').textContent = `Thanks, ${lead.name.split(' ')[0]}. We'll be in touch.`;
     goStep(3);
   });
-  function submitLead(data) { console.log('Lead captured (connect to HubSpot here):', data); }
+  function submitLead(data) {
+    var name = (data.name || '').trim();
+    var spaceIdx = name.indexOf(' ');
+    var firstname = spaceIdx > 0 ? name.slice(0, spaceIdx) : name;
+    var lastname  = spaceIdx > 0 ? name.slice(spaceIdx + 1).trim() : name;
+    if (!firstname) firstname = 'Lead';
+    if (!lastname)  lastname  = firstname;
+    var servicesStr = Array.isArray(data.services) ? data.services.join('; ') : (data.services || '');
+    var body = {
+      fields: [
+        { objectTypeId: '0-1', name: 'firstname', value: firstname },
+        { objectTypeId: '0-1', name: 'lastname',  value: lastname },
+        { objectTypeId: '0-1', name: 'company',   value: data.company || '' },
+        { objectTypeId: '0-1', name: 'email',     value: data.email || '' },
+        { objectTypeId: '0-1', name: 'phone',     value: data.phone || '' },
+        { objectTypeId: '0-1', name: 'what_services_are_you_most_interested_in__dubai_', value: servicesStr },
+        { objectTypeId: '0-1', name: 'services',  value: servicesStr }
+      ],
+      context: { pageUri: window.location.href, pageName: document.title }
+    };
+    fetch('https://api.hsforms.com/submissions/v3/integration/submit/9031287/26e3abb8-e298-40b9-8998-45dcac9f3959', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    }).catch(function(err){ console.warn('HubSpot submit failed:', err); });
+  }
 
   /* ---------------- CHATBOT ----------------
      HOOK UP: to swap this for HubSpot Conversations, add the HubSpot tracking script
