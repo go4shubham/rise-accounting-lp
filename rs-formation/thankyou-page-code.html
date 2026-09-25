@@ -1,0 +1,47 @@
+<!-- ============================================================
+     THANK-YOU PAGE (riseaccounting.ae/thankyou, Framer)
+
+     PART 1: Framer > Page settings (thank-you page) > Custom code >
+     "Start of <head>". Must run BEFORE Meta, GA and Clarity.
+     It saves the visitor's details, then wipes them from the address bar.
+     ============================================================ -->
+<script>
+(function () {
+  if (!location.hash) return;
+  var h = new URLSearchParams(location.hash.slice(1));
+  if (!h.get('email')) return;
+  try {
+    sessionStorage.setItem('rise_prefill', JSON.stringify({
+      firstName: h.get('firstname') || '',
+      lastName: h.get('lastname') || '',
+      email: h.get('email') || '',
+      company: h.get('company') || '',
+      phone: h.get('phone') || ''
+    }));
+  } catch (e) {}
+  history.replaceState(null, '', location.pathname + location.search);
+})();
+</script>
+
+
+<!-- ============================================================
+     PART 2: replaces the current HubSpot calendar embed
+     (Framer Embed component, HTML mode).
+     Set MEETING_LINK to the link in the current embed's data-src
+     (the "Meet with Max Raynor" link), keeping ?embed=true.
+     ============================================================ -->
+<div class="meetings-iframe-container" id="rise-meetings"></div>
+<script>
+(function () {
+  var MEETING_LINK = 'PASTE_MEETING_LINK_HERE?embed=true';
+  var url = new URL(MEETING_LINK);
+  try {
+    var p = JSON.parse(sessionStorage.getItem('rise_prefill') || '{}');
+    Object.keys(p).forEach(function (k) { if (p[k]) url.searchParams.set(k, p[k]); });
+  } catch (e) {}
+  document.getElementById('rise-meetings').setAttribute('data-src', url.toString());
+  var s = document.createElement('script');
+  s.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js';
+  document.body.appendChild(s);
+})();
+</script>
