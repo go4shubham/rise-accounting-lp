@@ -2059,7 +2059,17 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
     var lastname  = spaceIdx > 0 ? name.slice(spaceIdx + 1).trim() : name;
     if (!firstname) firstname = 'Lead';
     if (!lastname)  lastname  = firstname;
-    var servicesStr = Array.isArray(data.services) ? data.services.join('; ') : (data.services || '');
+    var SERVICE_VALUE_MAP = {
+      'Company Formation': 'Year End Accounts',
+      'Corporate Tax': 'Corporate Tax',
+      'Tax Residency Certificates': 'Outsourced Finance Function',
+      'Accounting & Bookkeeping': 'Accounting & Bookkeeping',
+      'Annual Accounts': 'EMI Options',
+      'Management Accounts': 'SEIS & EIS',
+      'VAT and/or Payroll': 'VAT and/or Payroll'
+    };
+    var servicesArr = Array.isArray(data.services) ? data.services : (data.services ? [data.services] : []);
+    var servicesStr = servicesArr.map(function(s){ return SERVICE_VALUE_MAP[s] || s; }).join(';');
     var body = {
       fields: [
         { objectTypeId: '0-1', name: 'firstname', value: firstname },
