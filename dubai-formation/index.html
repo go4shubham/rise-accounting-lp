@@ -2069,7 +2069,8 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
       'VAT and/or Payroll': 'VAT and/or Payroll'
     };
     var servicesArr = Array.isArray(data.services) ? data.services : (data.services ? [data.services] : []);
-    var servicesStr = servicesArr.map(function(s){ return SERVICE_VALUE_MAP[s] || s; }).join(';');
+    var servicesEnum  = servicesArr.map(function(s){ return SERVICE_VALUE_MAP[s] || s; }).join(';');
+    var servicesLabel = servicesArr.join(', ');
     var body = {
       fields: [
         { objectTypeId: '0-1', name: 'firstname', value: firstname },
@@ -2077,15 +2078,30 @@ a.rbc-l:hover{transform:translateY(-2px) scale(1.08);z-index:2}
         { objectTypeId: '0-1', name: 'company',   value: data.company || '' },
         { objectTypeId: '0-1', name: 'email',     value: data.email || '' },
         { objectTypeId: '0-1', name: 'phone',     value: data.phone || '' },
-        { objectTypeId: '0-1', name: 'what_services_are_you_most_interested_in_dubai', value: servicesStr }
+        { objectTypeId: '0-1', name: 'what_services_are_you_most_interested_in_dubai', value: servicesEnum }
       ],
       context: { pageUri: window.location.href, pageName: document.title }
     };
+    var urlParams = new URLSearchParams(window.location.search);
+    var redirectParams = new URLSearchParams();
+    redirectParams.set('firstname', firstname);
+    redirectParams.set('lastname', lastname);
+    redirectParams.set('email', data.email || '');
+    redirectParams.set('phone', data.phone || '');
+    redirectParams.set('company', data.company || '');
+    redirectParams.set('services', servicesLabel);
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){
+      var v = urlParams.get(k);
+      if (v) redirectParams.set(k, v);
+    });
+    function goToThankyou() {
+      (window.top || window).location.href = 'https://riseaccounting.ae/thankyou?' + redirectParams.toString();
+    }
     fetch('https://api.hsforms.com/submissions/v3/integration/submit/9031287/26e3abb8-e298-40b9-8998-45dcac9f3959', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body)
-    }).catch(function(err){ console.warn('HubSpot submit failed:', err); });
+    }).then(goToThankyou).catch(function(err){ console.warn('HubSpot submit failed:', err); goToThankyou(); });
   }
 
   /* ---------------- CHATBOT ----------------
